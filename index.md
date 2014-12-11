@@ -1,5 +1,6 @@
 ---
 layout: page
+permalink: /
 title: Fastlane
 weight: 0
 ---

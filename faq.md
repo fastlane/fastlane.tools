@@ -2,6 +2,7 @@
 layout: page
 title: FAQ
 weight: 10
+permalink: /faq/
 ---
 
 ### Why should I automate the release process?
