@@ -1,6 +1,6 @@
 ---
 layout: default
-title: News
+title: news
 permalink: /news/
 ---
 
