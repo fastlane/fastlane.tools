@@ -13,7 +13,7 @@ So you can focus on the release party, instead of the actual release
 > Upload app screenshots, app metadata and ipa files to iTunes Connect using just one command.
 
 ### [snapshot](https://github.com/KrauseFx/snapshot)
-> Let your Mac create screenshots of your iPhone app in all languages on different devices.
+> Automatically take screenshots of your iOS app on all devices in multiple languages.
 
 ### [sigh](https://github.com/KrauseFx/sigh)
 > Sigh... having code signing issues again? Let sigh create and maintain provisioning profiles for you.
