@@ -57,3 +57,9 @@ $on-laptop:        800px;
 blockquote > p {
   font-style: normal;
 }
+
+@media screen and (max-width: 1024px) { /** Otherwise it would overlapse with buttons - also who forks from his iPhone? */
+  #forkRibbon {
+    display: none;
+  }
+}
