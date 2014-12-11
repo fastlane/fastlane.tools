@@ -1,7 +1,8 @@
 ---
 layout: default
-title: news
+title: News
 permalink: /news/
+weight: 5
 ---
 
 <div class="home">

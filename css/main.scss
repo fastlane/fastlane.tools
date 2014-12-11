@@ -50,3 +50,10 @@ $on-laptop:        800px;
         "layout",
         "syntax-highlighting"
 ;
+
+
+/** Added by Felix */
+
+blockquote > p {
+  font-style: normal;
+}
