@@ -28,6 +28,6 @@ Using ```fastlane``` and its tools, you run one command to deploy an update of y
 
 ### How does a Continuous Deployment setup look like?
 Most projects make use of [Jenkins](http://jenkins-ci.org/) on a Mac to automatically generate new test builds for every commit. 
-When integrating the ```fastlane``` tools you extent its functionality to also create new screenshots, release new app updates and send emails with the latest screenshots to the marketing team.
+When integrating the ```fastlane``` tools you extend its functionality to also create new screenshots, release new app updates and send emails with the latest screenshots to the marketing team.
 
 I’m working on a blog post about a good *Jenkins* setup. If you still see this line of text, please send me a message to remind me to finish this.
