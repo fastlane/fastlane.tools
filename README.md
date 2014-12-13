@@ -7,7 +7,7 @@ sudo gem install jekyll
 
 ## Run the server
 ```
-jekyll s --watch
+jekyll serve --watch
 ```
 
 ## Edit files:

@@ -7,7 +7,7 @@ weight: 0
 
 Fastlane
 --------
-So you can focus on the release party, instead of the actual release
+So you can focus on the release party, instead of the actual release 🎉
 
 ### [deliver](https://github.com/KrauseFx/deliver)
 > Upload app screenshots, app metadata and ipa files to iTunes Connect using just one command.
