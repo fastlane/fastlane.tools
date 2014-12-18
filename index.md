@@ -33,7 +33,7 @@ What's fastlane?
 - Define deployment pipelines for beta builds, App Store releases and in house distributions.
 - Store your app configuration once. Used by all tools.
 - Plugin based architecture: Third party tools like [CocoaPods](http://cocoapods.org) and [xctool](https://github.com/facebook/xctool) are already integrated.
-- Jenkins integration: See what part of the deployment takes a long time or causes problems.
+- [Jenkins integration](https://github.com/KrauseFx/fastlane#jenkins-integration): See what part of the deployment takes a long time or causes problems.
 - A setup, which creates all needed configuration files for you.
 - Dynamic configuration: The newly introduced ```Fastfile``` is a flexible Ruby file, which can be extended to fit your needs.
 
