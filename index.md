@@ -37,6 +37,23 @@ What's fastlane?
 - A setup, which creates all needed configuration files for you.
 - Dynamic configuration: The newly introduced ```Fastfile``` is a flexible Ruby file, which can be extended to fit your needs.
 
+### Example ```Fastfile```
+{% highlight ruby %}
+lane :appstore do
+  puts "Ready to deploy to the App Store"
+  xctool          # run unit tests
+  snapshot        # create new screenshots
+  sigh            # download/generate the latest provisioning profile
+  deliver         # upload the screenshots, metadata and app to Apple
+        
+  frameit         # add device frames around the screenshots
+
+  sh "./upload_screenshots_to_s3.sh"
+  say "Successfully depoyed new version to the App Store!"
+end
+{% endhighlight %}
+From now on, you can just run ```fastlane appstore``` to run **tests**, create new **screenshots**, download the required **provisioning profile**, **upload** everything to the App Store, add **device frames** around the screenshots and upload all generated screenshots to **AWS S3** to share with the rest of the team.
+
 
 Why should I automate?
 ----------------------
