@@ -42,13 +42,9 @@ What's fastlane?
 lane :appstore do
   xctool                  # run unit tests
   increment_build_number  # increment the build number by one
-
   snapshot                # create new screenshots
   sigh                    # download/generate the latest provisioning profile
-  
-  puts "Ready to deploy to the App Store"
   deliver                 # upload the screenshots, metadata and app to Apple
-  
   frameit                 # Add device frames around the screenshots
   sh "./upload_screenshots_to_s3.sh" # Example
 
