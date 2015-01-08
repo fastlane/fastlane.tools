@@ -24,20 +24,6 @@
       macro-medium: 768px,
       macro-large: 992px,
       macro-largest: 1248px,
-
-      // Micro adjustments
-      // Used for those instances
-      // where something doesn't quite work.
-      //
-      // eg. micro-macro-breakpoint--micro-name
-      // eg. micro-micro-name
-      //
-      micro-full-img: 400px,
-      micro-small: 500px,
-      micro-medium--adjust-nav: 800px,
-      micro-large: 1000px,
-      micro-largest: 1148px
-
   ) !default;
 
   $mq-static-breakpoint: macro-large !default;
@@ -66,4 +52,19 @@
   $flexdd-base-spacing-unit: 24px !default;
   $flexdd-half-spacing-unit: $flexdd-base-spacing-unit / 2 !default;
   $flexdd-double-spacing-unit: $flexdd-base-spacing-unit * 2 !default;
+
+/*------------------------------------*\
+  $SUSY CONFIG
+\*------------------------------------*/
+
+$total-columns: 12;                  // a 12-column grid
+$column-width: 48px;                 // each column is 4em wide
+$gutter-width: 12px;   // 1em gutters between columns
+
+$susy: (
+  columns: $total-columns,
+  gutters: $gutter-width / $column-width,
+  column-width: $column-width,
+);
+
 
