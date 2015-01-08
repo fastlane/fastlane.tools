@@ -1,0 +1,36 @@
+/*------------------------------------*\
+    $REM
+\*------------------------------------*/
+
+/*
+ * 'rem' is a Sass mixin that converts pixel values to rem values for whatever property is passed to it.
+ * It returns two lines of code — one of the regular pixel values (for IE), and another with the
+ * converted rem values (for everyone else).
+ *
+ * This mixin expects $properties to be a Sass map
+ * 
+ * Sample input:
+ * .element {
+ *   @include rem((
+ *		 padding, 10px 0 2px 5px
+ *   ));
+ * }
+ * 
+ * Sample output:
+ * .element {
+ *   padding: 10px 0 2px 5px;
+ *   padding: 1rem 0 0.2rem 0.5rem;
+ * }
+ * 
+ */
+@mixin rem( $properties ) {
+  @each $property, $value in $properties {
+    @if ( type-of( $value ) == number and $value != 0 ) {
+      // Turn any value into pixels
+      $value: if( unitless( $value ), $value * 1px, $value );
+    }
+
+    #{$property}: $value;
+    #{$property}: rem($value);
+  }
+}

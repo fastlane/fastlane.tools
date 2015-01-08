@@ -1,0 +1,47 @@
+/*------------------------------------*\
+    $CALCULTE PERCENTAGE
+\*------------------------------------*/
+
+/**
+ * Calculate the percentage equivilant of any pixel based value using
+ * Ethan Marcotte's formula from Repsonsive Web Design:
+ * 
+   target / context = result
+ * 
+ * Added in an additional if $old-ie condition to round the percentage
+ * to the nearest whole number as IE7 can't handle sub-pixels
+ * 
+ */
+@function calc-percent( $target, $container ) {
+
+	// check we've got a px value to play with
+	@if ( unitless( $target ) ) {
+    @warn "Assuming #{$target} to be in pixels, attempting to convert it into pixels for you";
+    $target: $target + 0px;
+  }
+
+  @if ( unitless( $container ) ) {
+    @warn "Assuming #{$container} to be in pixels, attempting to convert it into pixels for you";
+    $container: $container + 0px;
+  }
+	
+	@if $old-ie == false {
+	
+		@return ( $target / $container ) * 100%;
+		
+	} @else {
+		
+		@return floor( ( $target / $container ) * 100% );
+		
+	}
+	
+}
+
+
+/**
+ * A shortned helper function of the calculate the percentage function
+ * 
+ */
+@function cp( $target, $container ) {
+	@return calc-percent( $target, $container);
+}

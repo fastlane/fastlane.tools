@@ -1,0 +1,15 @@
+/*------------------------------------*\
+    $BORDER BOX
+\*------------------------------------*/
+
+/**
+ * Sets the box sizing for the applied element
+ * to border-box making the padding inclusive
+ * within the overall width
+ * 
+   `@include box-sizing;`
+ * 
+ */
+@mixin border-box( ) {
+  @include box-sizing( border-box );
+}

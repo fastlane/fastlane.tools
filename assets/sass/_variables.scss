@@ -1,0 +1,69 @@
+/**
+ * Variables File
+ *
+ * Place all site related variables here
+ * Some default variables have been set
+ */
+
+//*-------------------------------------*
+//  $COLOURS
+//*------------------------------------*
+
+//*-------------------------------------*
+//  $BREAKPOINTS
+//*-------------------------------------*
+
+  $flexible-media: true !default;
+  $mq-responsive: true !default;
+
+  $mq-breakpoints: (
+
+      // Major Layout Alterations
+      macro-smallest: 320px,
+      macro-small: 480px,
+      macro-medium: 768px,
+      macro-large: 992px,
+      macro-largest: 1248px,
+
+      // Micro adjustments
+      // Used for those instances
+      // where something doesn't quite work.
+      //
+      // eg. micro-macro-breakpoint--micro-name
+      // eg. micro-micro-name
+      //
+      micro-full-img: 400px,
+      micro-small: 500px,
+      micro-medium--adjust-nav: 800px,
+      micro-large: 1000px,
+      micro-largest: 1148px
+
+  ) !default;
+
+  $mq-static-breakpoint: macro-large !default;
+
+//*-------------------------------------*
+//  $TYPE
+//*-------------------------------------*
+
+  //Base type
+  $base-font-size: 16px   !default;
+  $base-line-height: 24px !default;
+  $base-face: sans-serif  !default;
+
+  //Base font sizes
+  $flexdd-h1-size: 36px !default;
+  $flexdd-h2-size: 28px !default;
+  $flexdd-h3-size: 20px !default;
+  $flexdd-h4-size: 18px !default;
+  $flexdd-h5-size: $base-font-size !default;
+  $flexdd-h6-size: $base-font-size !default;
+
+//*-------------------------------------*
+//  $SPACING
+//*-------------------------------------*
+
+  $flexdd-base-spacing-unit: 24px !default;
+  $flexdd-half-spacing-unit: $flexdd-base-spacing-unit / 2 !default;
+  $flexdd-double-spacing-unit: $flexdd-base-spacing-unit * 2 !default;
+

@@ -1,0 +1,52 @@
+/*------------------------------------*\
+    $BOX
+\*------------------------------------*/
+
+/**
+ * Place any image- and text-like content side-by-side, as per:
+ * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ * E.g.:
+ * 
+   <div class="box">
+       <aside class="box__media--left">
+	       <img src=http://placekitten.com/200/300 alt="Kittens" />
+	   </aside>
+	   <div class="box__body">
+	       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+	       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+	   </div>
+   </div>
+ * 
+ * Demo: jsfiddle.net/inuitcss/cf4Qs
+ * 
+ */
+.box {
+	@extend %cf;
+  display: block;
+}
+
+.box__media--left {
+  float: left;
+  margin-right: $flexdd-base-spacing-unit;
+}
+
+.box__media--right { 
+	float: right; 
+	margin-left: $flexdd-base-spacing-unit;  
+}
+
+.box__media img {
+	display: block;
+	max-width: none; //IE8 Fix
+}
+
+.box__body { 
+	
+	overflow: hidden;
+	position: relative;
+	
+	> :last-child {
+		margin-bottom: 0; 
+	}
+	
+}

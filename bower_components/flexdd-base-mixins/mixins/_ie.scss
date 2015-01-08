@@ -1,0 +1,58 @@
+/*------------------------------------*\
+    $OLD IE
+\*------------------------------------*/
+
+@mixin lt-ie9 {
+
+	@if $old-ie {
+		
+		.lt-ie9 & {
+
+			@content;
+
+		}
+		
+	}
+
+}
+
+@mixin lt-ie8 {
+	
+	@if $old-ie {
+		
+		.lt-ie8 & {
+
+			@content;
+
+		}
+		
+	}
+
+}
+
+@mixin lt-ie7 {
+	
+	@if $old-ie {
+		
+		.lt-ie7 & {
+
+			@content;
+
+		}
+		
+	}
+
+}
+
+/**
+ * A generic mixin for IE.
+ */
+@mixin old-ie {
+
+	@if $old-ie {
+	
+		@content;
+		
+	}
+	
+}

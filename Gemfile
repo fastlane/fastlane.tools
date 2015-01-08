@@ -1,4 +1,6 @@
-ruby '2.0.0'
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'github-pages'
+gem 'sass', '~> 3.4.9'
+gem 'sass-globbing', '1.1.1'
+gem 'compass', '~> 1.0.1'
+gem 'susy', '~> 2.1.3'

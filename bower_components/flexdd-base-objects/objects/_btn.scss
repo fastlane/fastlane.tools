@@ -1,0 +1,23 @@
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+
+/**
+ * Basic button structural styling. Extend in your theme stylesheet.
+ * 
+ * Demo: jsfiddle.net/inuitcss/RqHcp
+ * 
+ */
+.btn {
+	font: inherit;
+  cursor: pointer;
+  border: none;
+  display: inline-block;
+  margin: 0;
+  line-height: 1;
+}
+
+.btn,
+.btn:hover{
+    text-decoration: none;
+}

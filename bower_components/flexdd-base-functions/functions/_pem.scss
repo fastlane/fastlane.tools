@@ -1,0 +1,26 @@
+/*------------------------------------*\
+    $PEM
+\*------------------------------------*/
+
+/**
+ * Convert pixels to ems
+ * 
+   pixels / base-font = em
+ * 
+ */
+@function pem( $px, $base: $base-font-size ) {
+	
+	// check we've got a px value to play with
+	@if ( unitless( $px ) ) {
+    @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+    $px: $px + 0px;
+  }
+
+  @if ( unitless( $base ) ) {
+    @warn "Assuming #{$base} to be in pixels, attempting to convert it into pixels for you";
+    $base: $base + 0px;
+  }
+	
+	@return ( $px / $base ) * 1em;
+	
+}

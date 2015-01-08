@@ -1,0 +1,26 @@
+{
+  "name": "Flexdd Base Reset",
+  "version": "1.0.1",
+  "authors": [
+    "Adam Bulmer <mintuz1990@gmail.com>"
+  ],
+  "main": "_base.reset.scss",
+  "keywords": [
+    "Flexdd",
+    "Sass",
+    "Package",
+    "Frontend Framework",
+    "Reset",
+    "Compass",
+    "Frontend Boilerplate"
+  ],
+  "license": "MIT",
+  "homepage": "http://mintuz.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Flexdd Core Framework",
+  "version": "1.0.1",
+  "authors": [
+    "Adam Bulmer <mintuz1990@gmail.com>"
+  ],
+  "main": "_main.scss",
+  "keywords": [
+    "Flexdd",
+    "Sass",
+    "Package",
+    "Frontend Framework",
+    "Frontend Boilerplate"
+  ],
+  "license": "MIT",
+  "homepage": "http://mintuz.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "flexdd-base-reset": "~1.0",
+    "flexdd-base-functions": "~1.0",
+    "flexdd-base-mixins": "~1.0",
+    "flexdd-base-objects": "~1.0"
+  },
+  "_release": "1.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.1",
+    "commit": "7f078132580932ab1b1e09425d4ec5c2772c448b"
+  },
+  "_source": "git://github.com/flexdd/framework.git",
+  "_target": "~1.0.1",
+  "_originalSource": "flexdd-framework",
+  "_direct": true
+}
