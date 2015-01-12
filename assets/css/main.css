@@ -1542,21 +1542,18 @@ html {
   font-size: 0.875em;
   line-height: 1.71429em;
 }
-@media all and (min-width: 78em) {
+@media all and (min-width: 64.0625em) {
   /* line 1, ../sass/objects/_button.scss */
   .btn--white {
-    -webkit-transition: all .3s;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
   }
   /* line 23, ../sass/objects/_button.scss */
-  .btn--white:after, .btn--white:before {
-    content: '';
-    -webkit-transition: all 0.3s;
-    position: absolute;
-    z-index: -1;
-  }
-  /* line 30, ../sass/objects/_button.scss */
   .btn--white:hover, .btn--white:active {
-    color: white;
+    color: #363636;
+    background-color: white;
   }
 }
 

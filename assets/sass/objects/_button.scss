@@ -7,7 +7,6 @@
   width: 150px;
   border-radius: 3px;
   color: white;
-
   cursor: pointer;
   position: relative;
   background: transparent;
@@ -18,22 +17,15 @@
   font-weight: 400;
   @include adjust-font-size-to(14px);
 
-  @include mq( $from:macro-largest ) {
-    -webkit-transition: all .3s;
-    &:after, &:before {
-      content: '';
-      -webkit-transition: all 0.3s;
-      position: absolute;
-      z-index: -1;
-    }
+  @include mq($from:macro-large) {
 
-    &:hover,
-    &:active {
-      color: white;
-    }
-
+    @include transition(all 0.1s ease-in-out);
+      &:hover,
+      &:active {
+        color: $grey;
+        background-color: white;
+      }
   }
-
 
 
 }
