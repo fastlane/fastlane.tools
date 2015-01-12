@@ -1723,14 +1723,25 @@ html {
 }
 /* line 45, ../sass/partials/_siteHeader.scss */
 .nav-links li a {
-  font-size: 1.125em;
-  line-height: 1.33333em;
+  font-size: 0.9375em;
+  line-height: 1.6em;
   color: #363636;
   line-height: 50px;
   padding: 14px;
 }
+@media all and (min-width: 30em) {
+  /* line 45, ../sass/partials/_siteHeader.scss */
+  .nav-links li a {
+    font-size: 1.125em;
+    line-height: 1.33333em;
+  }
+}
+/* line 54, ../sass/partials/_siteHeader.scss */
+.nav-links li a:last-child {
+  padding-right: 0px;
+}
 
-/* line 56, ../sass/partials/_siteHeader.scss */
+/* line 63, ../sass/partials/_siteHeader.scss */
 .one {
   background: red;
   width: 6.33333%;
@@ -1738,14 +1749,14 @@ html {
   margin-left: 1%;
   margin-right: 1%;
 }
-/* line 59, ../sass/partials/_siteHeader.scss */
+/* line 66, ../sass/partials/_siteHeader.scss */
 .one:first-child {
   width: 6.33333%;
   float: left;
   margin-left: 1%;
   margin-right: 1%;
 }
-/* line 63, ../sass/partials/_siteHeader.scss */
+/* line 70, ../sass/partials/_siteHeader.scss */
 .one:last-child {
   width: 6.33333%;
   float: right;
@@ -1753,7 +1764,7 @@ html {
   margin-right: 1%;
 }
 
-/* line 67, ../sass/partials/_siteHeader.scss */
+/* line 74, ../sass/partials/_siteHeader.scss */
 .con {
   max-width: 1200px;
   margin-left: auto;

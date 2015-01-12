@@ -43,10 +43,17 @@
     li {
       display: inline-block;
       a{
-        @include adjust-font-size-to(18px);
+        @include adjust-font-size-to(15px);
+        @include mq($from:macro-small) {
+          @include adjust-font-size-to(18px);
+        }
+
         color:$grey;
         line-height: 50px;
         padding: 14px;
+        &:last-child{
+          padding-right: 0px;
+        }
 
       }
     }
