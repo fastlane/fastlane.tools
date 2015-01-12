@@ -1574,29 +1574,29 @@ html {
 /* line 1, ../sass/layouts/_layoutHero.scss */
 .layout--hero {
   height: 100%;
-  background: url("../img/background.jpg");
+  background: linear-gradient(rgba(0, 150, 170, 0.4), rgba(0, 150, 170, 0.4)), url("../img/background.jpg");
   background-size: cover;
   background-position: center;
 }
 
-/* line 8, ../sass/layouts/_layoutHero.scss */
+/* line 13, ../sass/layouts/_layoutHero.scss */
 .wrap--hero {
   height: 100%;
 }
 
-/* line 13, ../sass/layouts/_layoutHero.scss */
+/* line 18, ../sass/layouts/_layoutHero.scss */
 .layout_content--hero {
   height: 100%;
   display: table;
 }
 
-/* line 18, ../sass/layouts/_layoutHero.scss */
+/* line 23, ../sass/layouts/_layoutHero.scss */
 .hero__content {
   display: table-cell;
   vertical-align: middle;
 }
 
-/* line 23, ../sass/layouts/_layoutHero.scss */
+/* line 28, ../sass/layouts/_layoutHero.scss */
 .hero__title {
   font-size: 1.75em;
   line-height: 1.71429em;
@@ -1607,7 +1607,7 @@ html {
   color: white;
 }
 @media all and (min-width: 30em) {
-  /* line 23, ../sass/layouts/_layoutHero.scss */
+  /* line 28, ../sass/layouts/_layoutHero.scss */
   .hero__title {
     margin-bottom: 18px;
     font-size: 4.125em;
@@ -1615,7 +1615,7 @@ html {
   }
 }
 
-/* line 38, ../sass/layouts/_layoutHero.scss */
+/* line 43, ../sass/layouts/_layoutHero.scss */
 .hero__subtitle {
   font-size: 1.125em;
   line-height: 1.33333em;
@@ -1625,7 +1625,7 @@ html {
   color: white;
 }
 @media all and (min-width: 30em) {
-  /* line 38, ../sass/layouts/_layoutHero.scss */
+  /* line 43, ../sass/layouts/_layoutHero.scss */
   .hero__subtitle {
     font-size: 2em;
     line-height: 1.5em;

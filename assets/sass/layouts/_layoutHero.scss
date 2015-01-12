@@ -1,6 +1,11 @@
 .layout--hero {
   height:100%;
-  background: url('../img/background.jpg');
+    background:
+    linear-gradient(
+      rgba(0,150,170,0.4),
+      rgba(0,150,170,0.4)
+    ),url('../img/background.jpg');
+
   background-size: cover;
   background-position: center;
 }
