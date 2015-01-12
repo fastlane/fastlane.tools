@@ -58,9 +58,9 @@
   $SUSY CONFIG
 \*------------------------------------*/
 
-$total-columns: 12;                  // a 12-column grid
-$column-width: 76px;                 // each column is 4em wide
-$gutter-width: 26px;   // 1em gutters between columns
+$total-columns: 12;
+$column-width: 76px;
+$gutter-width: 26px;
 
 $susy: (
   columns: $total-columns,

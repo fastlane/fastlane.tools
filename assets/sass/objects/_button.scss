@@ -1,0 +1,39 @@
+.btn--white {
+  margin-top: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  display:table;
+  text-align: center;
+  width: 150px;
+  border-radius: 3px;
+  color: white;
+
+  cursor: pointer;
+  position: relative;
+  background: transparent;
+  z-index: 1;
+  border: 2px solid white;
+  padding:10px;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  @include adjust-font-size-to(14px);
+
+  @include mq( $from:macro-largest ) {
+    -webkit-transition: all .3s;
+    &:after, &:before {
+      content: '';
+      -webkit-transition: all 0.3s;
+      position: absolute;
+      z-index: -1;
+    }
+
+    &:hover,
+    &:active {
+      color: white;
+    }
+
+  }
+
+
+
+}
