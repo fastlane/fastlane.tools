@@ -8,6 +8,7 @@
 //*-------------------------------------*
 //  $COLOURS
 //*------------------------------------*
+  $grey: #363636;
 
 //*-------------------------------------*
 //  $BREAKPOINTS
@@ -58,13 +59,14 @@
 \*------------------------------------*/
 
 $total-columns: 12;                  // a 12-column grid
-$column-width: 48px;                 // each column is 4em wide
-$gutter-width: 12px;   // 1em gutters between columns
+$column-width: 76px;                 // each column is 4em wide
+$gutter-width: 26px;   // 1em gutters between columns
 
 $susy: (
   columns: $total-columns,
   gutters: $gutter-width / $column-width,
   column-width: $column-width,
+  gutter-position: split,
 );
 
 
