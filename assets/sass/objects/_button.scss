@@ -19,7 +19,7 @@
 
   @include mq($from:macro-large) {
 
-    @include transition(all 0.1s ease-in-out);
+    @include transition(all 0.2s ease-in-out);
       &:hover,
       &:active {
         color: $grey;
