@@ -1,6 +1,8 @@
 .layout--hero {
   height:100%;
-  background: radial-gradient(ellipse at center, #1e5799 0%,#15366b 99%); /* W3C */
+  background: url('../img/background.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 .wrap--hero {
@@ -19,10 +21,14 @@
 }
 
 .hero__title {
-  @include adjust-font-size-to(48px);
+  @include adjust-font-size-to(28px);
+  margin-bottom: 8px;
+
   @include mq($from:macro-small) {
-    @include adjust-font-size-to(80px);
+    margin-bottom: 18px;
+    @include adjust-font-size-to(66px);
   }
+
   line-height: 1em;
   font-weight: 500;
   text-align: center;
@@ -30,11 +36,12 @@
 }
 
 .hero__subtitle {
-  @include adjust-font-size-to(22px);
+  @include adjust-font-size-to(18px);
   @include mq($from:macro-small) {
-    @include adjust-font-size-to(28px);
+    @include adjust-font-size-to(32px);
   }
 
+  line-height: 1em;
   font-weight: 300;
   text-align: center;
   color: white;
