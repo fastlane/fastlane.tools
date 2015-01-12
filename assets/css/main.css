@@ -1503,3 +1503,108 @@ table-hover tbody tr.info:hover td {
  * Used to setup the type configuration
  * Custom type styles and sizes belong in here.
  */
+/* line 1, ../sass/partials/_siteHeader.scss */
+.site-header {
+  background-color: white;
+  -webkit-transition: height 0.3s;
+  height: 104px;
+  z-index: 999;
+}
+/* line 6, ../sass/partials/_siteHeader.scss */
+.site-header li {
+  display: inline-block;
+  clear: both;
+  margin-right: 24px;
+}
+/* line 10, ../sass/partials/_siteHeader.scss */
+.site-header li:last-child {
+  margin-right: 0;
+}
+/* line 13, ../sass/partials/_siteHeader.scss */
+.site-header li a {
+  color: #9B9B9B;
+}
+
+/* line 19, ../sass/partials/_siteHeader.scss */
+.navigation {
+  width: 85.50725%;
+  float: left;
+  margin-left: 7.24638%;
+  margin-right: -100%;
+}
+
+/* line 23, ../sass/partials/_siteHeader.scss */
+.logo {
+  -webkit-transition: all 0.3s;
+  width: 27.53623%;
+  float: left;
+  margin-right: 1.44928%;
+  padding-top: 32px;
+  padding-bottom: 12px;
+}
+@media all and (max-width: 47.99em) {
+  /* line 23, ../sass/partials/_siteHeader.scss */
+  .logo {
+    width: 56.52174%;
+    float: left;
+    margin-right: 1.44928%;
+  }
+}
+/* line 31, ../sass/partials/_siteHeader.scss */
+.logo img {
+  height: 70px;
+}
+
+/* line 37, ../sass/partials/_siteHeader.scss */
+.nav-links {
+  -webkit-transition: all 0.3s;
+  width: 71.01449%;
+  float: right;
+  margin-right: 0;
+  text-align: right;
+  padding-top: 42px;
+}
+@media all and (max-width: 47.99em) {
+  /* line 37, ../sass/partials/_siteHeader.scss */
+  .nav-links {
+    width: 42.02899%;
+    float: right;
+    margin-right: 0;
+    padding-top: 38px;
+  }
+  /* line 46, ../sass/partials/_siteHeader.scss */
+  .nav-links ul {
+    display: none;
+  }
+  /* line 51, ../sass/partials/_siteHeader.scss */
+  .nav-links .mobile-active {
+    -webkit-transition: all 0.3s;
+    width: 100%;
+    background: white;
+    position: absolute;
+    top: 104px;
+    z-index: 999;
+    left: 0px;
+    text-align: center;
+    display: block;
+  }
+  /* line 62, ../sass/partials/_siteHeader.scss */
+  .nav-links .mobile-active li {
+    margin-right: 0;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+  }
+}
+@media all and (min-width: 48em) {
+  /* line 74, ../sass/partials/_siteHeader.scss */
+  .nav-links .mobile-nav {
+    display: none;
+  }
+}
+
+/* line 81, ../sass/partials/_siteHeader.scss */
+.site-header--withborder {
+  border-bottom: 2px solid rgba(51, 51, 51, 0.5);
+}
