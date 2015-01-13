@@ -1,0 +1,22 @@
+.content__half {
+  &:first-child {
+    @include span(5 of 10 first);
+  }
+  &:last-child {
+    @include span(5 of 10 last);
+
+  }
+}
+
+.content--padded-double {
+  padding-top: 78px;
+  padding-bottom: 78px;
+}
+
+.content {
+  ul {
+    li {
+      display: block;
+    }
+  }
+}

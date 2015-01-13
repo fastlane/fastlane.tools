@@ -1,4 +1,13 @@
-
 .layout__content {
-   @include span(12 of 12);
+   @include span(isolate 10 at 2);
+}
+
+.layout__half {
+  &:first-child {
+    @include span(5 of 10 first);
+  }
+  &:last-child {
+    @include span(5 of 10 last);
+  }
+
 }

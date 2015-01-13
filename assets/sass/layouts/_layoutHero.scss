@@ -1,10 +1,11 @@
 .layout--hero {
   height:100%;
-    background:
-    linear-gradient(
-      rgba(0,150,170,0.4),
-      rgba(0,150,170,0.4)
-    ),url('../img/background.jpg');
+  background:
+  linear-gradient(
+    51deg,
+    rgba(#0288D1,0.60) 0%,
+    rgba(#CDDC39,0.60) 100%),
+  url("http://www.anguscertified.com/wp-content/uploads/2014/10/uploads-14115408840644deb16b0-2dc933e3.jpg");
 
   background-size: cover;
   background-position: center;
@@ -15,9 +16,10 @@
 
 }
 
-.layout_content--hero {
+.layout__content--hero {
   height:100%;
   display:table;
+  @include span(12 of 12);
 }
 
 .hero__content {

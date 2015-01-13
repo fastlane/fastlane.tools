@@ -1571,32 +1571,42 @@ html {
   }
 }
 
+/* line 1, ../sass/objects/_featureList.scss */
+.feature-list li {
+  font-size: 1.5625em;
+  line-height: 1.92em;
+}
+
 /* line 1, ../sass/layouts/_layoutHero.scss */
 .layout--hero {
   height: 100%;
-  background: linear-gradient(rgba(0, 150, 170, 0.4), rgba(0, 150, 170, 0.4)), url("../img/background.jpg");
+  background: linear-gradient(51deg, rgba(2, 136, 209, 0.6) 0%, rgba(205, 220, 57, 0.6) 100%), url("http://www.anguscertified.com/wp-content/uploads/2014/10/uploads-14115408840644deb16b0-2dc933e3.jpg");
   background-size: cover;
   background-position: center;
 }
 
-/* line 13, ../sass/layouts/_layoutHero.scss */
+/* line 14, ../sass/layouts/_layoutHero.scss */
 .wrap--hero {
   height: 100%;
 }
 
-/* line 18, ../sass/layouts/_layoutHero.scss */
-.layout_content--hero {
+/* line 19, ../sass/layouts/_layoutHero.scss */
+.layout__content--hero {
   height: 100%;
   display: table;
+  width: 98%;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 
-/* line 23, ../sass/layouts/_layoutHero.scss */
+/* line 25, ../sass/layouts/_layoutHero.scss */
 .hero__content {
   display: table-cell;
   vertical-align: middle;
 }
 
-/* line 28, ../sass/layouts/_layoutHero.scss */
+/* line 30, ../sass/layouts/_layoutHero.scss */
 .hero__title {
   font-size: 1.75em;
   line-height: 1.71429em;
@@ -1607,7 +1617,7 @@ html {
   color: white;
 }
 @media all and (min-width: 30em) {
-  /* line 28, ../sass/layouts/_layoutHero.scss */
+  /* line 30, ../sass/layouts/_layoutHero.scss */
   .hero__title {
     margin-bottom: 18px;
     font-size: 4.125em;
@@ -1615,7 +1625,7 @@ html {
   }
 }
 
-/* line 43, ../sass/layouts/_layoutHero.scss */
+/* line 45, ../sass/layouts/_layoutHero.scss */
 .hero__subtitle {
   font-size: 1.125em;
   line-height: 1.33333em;
@@ -1625,19 +1635,60 @@ html {
   color: white;
 }
 @media all and (min-width: 30em) {
-  /* line 43, ../sass/layouts/_layoutHero.scss */
+  /* line 45, ../sass/layouts/_layoutHero.scss */
   .hero__subtitle {
     font-size: 2em;
     line-height: 1.5em;
   }
 }
 
-/* line 2, ../sass/layouts/_layouts.scss */
+/* line 1, ../sass/layouts/_layouts.scss */
 .layout__content {
-  width: 98%;
+  width: 81.33333%;
   float: left;
-  margin-left: 1%;
-  margin-right: 1%;
+  margin-left: 9.33333%;
+  margin-right: -100%;
+}
+
+/* line 6, ../sass/layouts/_layouts.scss */
+.layout__half:first-child {
+  width: 47.6%;
+  float: left;
+  margin-left: 1.2%;
+  margin-right: 1.2%;
+}
+/* line 9, ../sass/layouts/_layouts.scss */
+.layout__half:last-child {
+  width: 47.6%;
+  float: right;
+  margin-left: 1.2%;
+  margin-right: 1.2%;
+}
+
+/* line 2, ../sass/partials/_content.scss */
+.content__half:first-child {
+  width: 47.6%;
+  float: left;
+  margin-left: 1.2%;
+  margin-right: 1.2%;
+}
+/* line 5, ../sass/partials/_content.scss */
+.content__half:last-child {
+  width: 47.6%;
+  float: right;
+  margin-left: 1.2%;
+  margin-right: 1.2%;
+}
+
+/* line 11, ../sass/partials/_content.scss */
+.content--padded-double {
+  padding-top: 78px;
+  padding-bottom: 78px;
+}
+
+/* line 18, ../sass/partials/_content.scss */
+.content ul li {
+  display: block;
 }
 
 /* line 1, ../sass/partials/_shared.scss */
@@ -1742,12 +1793,7 @@ html {
   padding-right: 0px;
 }
 
-/* line 50, ../sass/main.scss */
-.spacer {
-  height: 1000px;
-}
-
-/* line 54, ../sass/main.scss */
+/* line 52, ../sass/main.scss */
 html, body {
   height: 100%;
 }
