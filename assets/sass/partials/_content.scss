@@ -25,9 +25,16 @@
   ul {
     li {
         display:block;
-        @include adjust-font-size-to(20px);
+        @include adjust-font-size-to(18px);
         font-weight: 400;
         line-height: 30px;
     }
+    margin-bottom: 24px;
+  }
+}
+
+.content--fastlane-features {
+  @include mq($from:macro-small) {
+    padding-top: 145px;
   }
 }

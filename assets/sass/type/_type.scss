@@ -17,12 +17,13 @@ html,body {
 }
 
 h2 {
-  @include adjust-font-size-to(24px);
+  @include adjust-font-size-to(20px);
   font-weight: 600;
+  color: $text-grey;
 }
 
 p {
-  @include adjust-font-size-to(20px);
+  @include adjust-font-size-to(18px);
   font-weight: 400;
   color: $text-grey;
 }

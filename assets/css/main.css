@@ -1517,15 +1517,16 @@ html, body {
 
 /* line 19, ../sass/type/_type.scss */
 h2 {
-  font-size: 1.5em;
-  line-height: 2em;
-  font-weight: 600;
-}
-
-/* line 24, ../sass/type/_type.scss */
-p {
   font-size: 1.25em;
   line-height: 1.2em;
+  font-weight: 600;
+  color: #464646;
+}
+
+/* line 25, ../sass/type/_type.scss */
+p {
+  font-size: 1.125em;
+  line-height: 1.33333em;
   font-weight: 400;
   color: #464646;
 }
@@ -1689,13 +1690,24 @@ p {
   }
 }
 
+/* line 25, ../sass/partials/_content.scss */
+.content ul {
+  margin-bottom: 24px;
+}
 /* line 26, ../sass/partials/_content.scss */
 .content ul li {
   display: block;
-  font-size: 1.25em;
-  line-height: 1.2em;
+  font-size: 1.125em;
+  line-height: 1.33333em;
   font-weight: 400;
   line-height: 30px;
+}
+
+@media all and (min-width: 30em) {
+  /* line 36, ../sass/partials/_content.scss */
+  .content--fastlane-features {
+    padding-top: 145px;
+  }
 }
 
 /* line 1, ../sass/partials/_shared.scss */
