@@ -37,7 +37,6 @@
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
 /* line 9, ../../bower_components/flexdd-base-reset/reset/_normalize.scss */
 html {
   font-family: sans-serif;
@@ -1495,6 +1494,30 @@ table-hover tbody tr.info:hover td {
  * Used to define any font faces
  * or font based mixins.
  */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local("Open Sans Light"), local("OpenSans-Light"), url(fonts/OpenSans-Light.ttf) format("ttf");
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Open Sans Regular"), local("OpenSans-Regular"), url(fonts/OpenSans-Regular.ttf) format("ttf");
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local("Open Sans Semibold"), local("OpenSans-Semibold"), url(fonts/OpenSans-Semibold.ttf) format("ttf");
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Open Sans Bold"), local("OpenSans-Bold"), url(fonts/OpenSans-Bold.ttf) format("ttf");
+}
 /**
  * Custom Icon font File
  */
