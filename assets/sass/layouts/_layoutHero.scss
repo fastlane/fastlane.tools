@@ -1,12 +1,6 @@
 .layout--hero {
   height:100%;
-  background:
-  linear-gradient(
-    51deg,
-    rgba(#0288D1,0.60) 0%,
-    rgba(#CDDC39,0.60) 100%),
-  url("http://www.anguscertified.com/wp-content/uploads/2014/10/uploads-14115408840644deb16b0-2dc933e3.jpg");
-
+  background-image:url("../img/hero.jpg");
   background-size: cover;
   background-position: center;
 }

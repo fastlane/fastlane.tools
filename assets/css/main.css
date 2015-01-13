@@ -1509,16 +1509,25 @@ table-hover tbody tr.info:hover td {
  * Open sans 300,400,600,700
  */
 /* line 13, ../sass/type/_type.scss */
-html {
+html, body {
   font-family: 'Open Sans';
   font-weight: 400;
+  color: #464646;
 }
 
-/* line 18, ../sass/type/_type.scss */
-.herotitle {
-  font-size: 66px;
-  font-weight: 300;
-  text-align: center;
+/* line 19, ../sass/type/_type.scss */
+h2 {
+  font-size: 1.5em;
+  line-height: 2em;
+  font-weight: 600;
+}
+
+/* line 24, ../sass/type/_type.scss */
+p {
+  font-size: 1.25em;
+  line-height: 1.2em;
+  font-weight: 400;
+  color: #464646;
 }
 
 /* line 1, ../sass/objects/_button.scss */
@@ -1580,17 +1589,17 @@ html {
 /* line 1, ../sass/layouts/_layoutHero.scss */
 .layout--hero {
   height: 100%;
-  background: linear-gradient(51deg, rgba(2, 136, 209, 0.6) 0%, rgba(205, 220, 57, 0.6) 100%), url("http://www.anguscertified.com/wp-content/uploads/2014/10/uploads-14115408840644deb16b0-2dc933e3.jpg");
+  background-image: url("../img/hero.jpg");
   background-size: cover;
   background-position: center;
 }
 
-/* line 14, ../sass/layouts/_layoutHero.scss */
+/* line 8, ../sass/layouts/_layoutHero.scss */
 .wrap--hero {
   height: 100%;
 }
 
-/* line 19, ../sass/layouts/_layoutHero.scss */
+/* line 13, ../sass/layouts/_layoutHero.scss */
 .layout__content--hero {
   height: 100%;
   display: table;
@@ -1600,13 +1609,13 @@ html {
   margin-right: 1%;
 }
 
-/* line 25, ../sass/layouts/_layoutHero.scss */
+/* line 19, ../sass/layouts/_layoutHero.scss */
 .hero__content {
   display: table-cell;
   vertical-align: middle;
 }
 
-/* line 30, ../sass/layouts/_layoutHero.scss */
+/* line 24, ../sass/layouts/_layoutHero.scss */
 .hero__title {
   font-size: 1.75em;
   line-height: 1.71429em;
@@ -1617,7 +1626,7 @@ html {
   color: white;
 }
 @media all and (min-width: 30em) {
-  /* line 30, ../sass/layouts/_layoutHero.scss */
+  /* line 24, ../sass/layouts/_layoutHero.scss */
   .hero__title {
     margin-bottom: 18px;
     font-size: 4.125em;
@@ -1625,7 +1634,7 @@ html {
   }
 }
 
-/* line 45, ../sass/layouts/_layoutHero.scss */
+/* line 39, ../sass/layouts/_layoutHero.scss */
 .hero__subtitle {
   font-size: 1.125em;
   line-height: 1.33333em;
@@ -1635,7 +1644,7 @@ html {
   color: white;
 }
 @media all and (min-width: 30em) {
-  /* line 45, ../sass/layouts/_layoutHero.scss */
+  /* line 39, ../sass/layouts/_layoutHero.scss */
   .hero__subtitle {
     font-size: 2em;
     line-height: 1.5em;
@@ -1648,21 +1657,6 @@ html {
   float: left;
   margin-left: 9.33333%;
   margin-right: -100%;
-}
-
-/* line 6, ../sass/layouts/_layouts.scss */
-.layout__half:first-child {
-  width: 47.6%;
-  float: left;
-  margin-left: 1.2%;
-  margin-right: 1.2%;
-}
-/* line 9, ../sass/layouts/_layouts.scss */
-.layout__half:last-child {
-  width: 47.6%;
-  float: right;
-  margin-left: 1.2%;
-  margin-right: 1.2%;
 }
 
 @media all and (min-width: 30em) {
@@ -1698,6 +1692,10 @@ html {
 /* line 26, ../sass/partials/_content.scss */
 .content ul li {
   display: block;
+  font-size: 1.25em;
+  line-height: 1.2em;
+  font-weight: 400;
+  line-height: 37px;
 }
 
 /* line 1, ../sass/partials/_shared.scss */

@@ -10,13 +10,19 @@
  * Open sans 300,400,600,700
  */
 
-html {
+html,body {
   font-family: 'Open Sans';
   font-weight: 400;
+  color: $text-grey;
 }
 
-.herotitle {
-  font-size: 66px;
-  font-weight: 300;
-  text-align: center;
+h2 {
+  @include adjust-font-size-to(24px);
+  font-weight: 600;
+}
+
+p {
+  @include adjust-font-size-to(20px);
+  font-weight: 400;
+  color: $text-grey;
 }
