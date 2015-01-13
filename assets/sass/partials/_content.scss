@@ -1,16 +1,24 @@
 .content__half {
-  &:first-child {
-    @include span(5 of 10 first);
-  }
-  &:last-child {
-    @include span(5 of 10 last);
+  @include mq($from:macro-small) {
+    &:first-child {
+      @include span(5 of 10 first);
+    }
+    &:last-child {
+      @include span(5 of 10 last);
 
+    }
   }
+
 }
 
 .content--padded-double {
-  padding-top: 78px;
-  padding-bottom: 78px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+  @include mq($from:macro-small) {
+    padding-top: 78px;
+    padding-bottom: 78px;
+  }
 }
 
 .content {
