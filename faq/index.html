@@ -44,33 +44,98 @@
 
         <ol class="faq">
           <li>
-            <div class="title"><label for="question1">Question</label></div>
-            <input type="checkbox" id="question1" name="question1">
-            <div class="response">Answer</div>
-          </li>
-          <li>
-          <div class="title"><label for="question2">Question2</label></div>
-            <input type="checkbox" id="question2" name="question2">
-            <div class="response">Answer2</div>
-          </li>
-        </ol>
+            <div class="title"><label for="question1">Why should I automate the release process?</label></div>
+            <input type="checkbox" id="question1" checked="true" name="question1">
+            <div class="response">
+              <ul>
+                <li>Save days of preparing app submission, uploading screenshots and releasing the app</li>
+                <li>Colleague on vacation and a critical bugfix needs to be released? Don’t rely on one person releasing updates</li>
+                <li>Increase software quality and reaction time with more frequent and smaller releases
+                  Deploy from any computer, even your remote server</li>
+                  <li>Start with <b>Continuous Deployment</b>. Just trigger <code>fastlane</code> and you’re good to go
+                    Store <b>everything</b> in git. Never look up build commands again</li>
+                  </ul>
 
-      </div>
 
-    </div>
+                </div>
+              </li>
+              <li>
+                <div class="title"><label for="question2">Where should I start?</label></div>
+                <input type="checkbox" id="question2" checked="true" name="question2">
+                <div class="response">There is a <a href="https://github.com/KrauseFx/fastlane/blob/master/GUIDE.md">guide</a> which describes how to get from zero.
+                  If you need more details about a specific tool, open the corresponding GitHub page, which is linked on the <a href="https://github.com/KrauseFx/fastlane">fastlane repository</a></div>
+                </li>
+                <li>
+                  <div class="title"><label for="question3">What is Continuous Deployment?</label></div>
+                  <input type="checkbox" id="question3" checked="true" name="question3">
+                  <div class="response">
+                    <blockquote>
+                      Continuous Delivery (CD) is a design practice used in software development to automate and improve the process of software delivery</br></br>
+                      <a href="https://en.wikipedia.org/wiki/Continuous_delivery">- Continuous Delivery on Wikipedia</a>
+                    </blockquote>
 
-  </div>
+                    <p>Basically you want to deploy updates more often to the App Store to make it less painful and increase the quality of your app.</p>
 
-  <div class="spacer"></div>
+                    <p>The more steps we developers have to do manually each release, the more mistakes we make. It’s a tedious, repeating task.</p>
 
-  <script src="assets/js/main.js"></script>
-  <script>
-    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-    e.src='//www.google-analytics.com/analytics.js';
-    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-    ga('create','UA-XXXXX-X');ga('send','pageview');
-  </script>
-</body>
-</html>
+                    <p>Using <code>fastlane</code> and its tools, you run one command to deploy an update of your app to the App Store.</p>
+
+                  </div>
+                </li>
+
+
+                <li>
+                  <div class="title"><label for="question4">How does a Continuous Deployment setup look like?</label></div>
+                  <input type="checkbox" id="question4" checked="true" name="question4">
+                  <div class="response">
+                    <p>Most projects make use of <a href="http://jenkins-ci.org/">Jenkins</a> on a Mac to automatically generate new test builds for every commit.</p>
+
+                    <p>When integrating the <code>fastlane</code> tools you extend its functionality to also create new screenshots, release new app updates and send emails with the latest screenshots to the marketing team.</p>
+
+                    <p>Basically your Jenkins build script will now only contain one line, which looks like <code>fastlane beta</code>. <code>fastlane</code> will generate a JUnit Report which Jenkins then displays in the project page.</p>
+
+                    <p>More information about the Jenkins integration can be found in the  <a href="https://github.com/krausefx/fastlane#jenkins-integration">fastlane README</a>.</p>
+                    <p>For a project with a fully working <code>fastlane</code> setup, checkout the <a href="https://github.com/krausefx/fastlane-example">fastlane example project</a>
+                    </p>
+                  </div>
+                </li>
+
+
+                <li>
+                  <div class="title"><label for="question5">My question is not listed</label></div>
+                  <input type="checkbox" id="question5" checked="true" name="question5">
+                  <div class="response">
+                    <p>You can ask anything on Twitter: @KrauseFx or drop me an email: <a href="mailto:fastlane@krausefx.com">fastlane@krausefx.com</a>                    </p>
+                  </div>
+                </li>
+
+
+
+
+
+
+
+
+
+
+              </ol>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="spacer"></div>
+
+        <script src="assets/js/main.js"></script>
+        <script>
+          (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+          e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+          e.src='//www.google-analytics.com/analytics.js';
+          r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+          ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+      </body>
+      </html>

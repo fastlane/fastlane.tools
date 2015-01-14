@@ -1,5 +1,19 @@
 .faq{
   list-style: decimal; padding: 0 0 0 20px;
+  padding-bottom: 38px;
+}
+
+.faq a {
+  color: #2980B9;
+
+}
+
+code {
+  padding: 3px;
+  padding-left: 6px;
+  padding-right: 6px;
+  background-color: #D8D8D8;
+  border-radius: 4px;
 }
 
 .faq li{
@@ -19,6 +33,19 @@
 .faq li .title{
   font-weight: 600;
   display: inline-block;
+  font-size: 20px;
+}
+
+
+.faq p {
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+.faq ul li {
+  border-bottom: none;
+  padding-top: 6px;
+
 }
 
 .faq li label{
@@ -40,6 +67,6 @@
 
 .faq li input[type=checkbox]:checked + .response{
   padding-top: 10px;
-  max-height: 100px;
+  max-height: 500px;
   padding-left: 20px;
 }

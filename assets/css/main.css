@@ -1555,6 +1555,30 @@ p {
   color: #464646;
 }
 
+/* line 1, ../sass/objects/_blockquote.scss */
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "“" "”" "‘" "’";
+}
+
+/* line 8, ../sass/objects/_blockquote.scss */
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+/* line 16, ../sass/objects/_blockquote.scss */
+blockquote p {
+  display: inline;
+}
+
 /* line 1, ../sass/objects/_button.scss */
 .btn--white {
   margin-top: 28px;
@@ -1609,16 +1633,31 @@ p {
 .faq {
   list-style: decimal;
   padding: 0 0 0 20px;
+  padding-bottom: 38px;
 }
 
-/* line 5, ../sass/objects/_faq.scss */
+/* line 6, ../sass/objects/_faq.scss */
+.faq a {
+  color: #2980B9;
+}
+
+/* line 11, ../sass/objects/_faq.scss */
+code {
+  padding: 3px;
+  padding-left: 6px;
+  padding-right: 6px;
+  background-color: #D8D8D8;
+  border-radius: 4px;
+}
+
+/* line 19, ../sass/objects/_faq.scss */
 .faq li {
   border-bottom: 1px solid rgba(33, 33, 33, 0.2);
   padding-bottom: 8px;
   padding-top: 20px;
 }
 
-/* line 11, ../sass/objects/_faq.scss */
+/* line 25, ../sass/objects/_faq.scss */
 .faq li .response {
   display: block;
   max-height: 0;
@@ -1627,35 +1666,48 @@ p {
   transition: all 0.2s ease-in-out;
 }
 
-/* line 19, ../sass/objects/_faq.scss */
+/* line 33, ../sass/objects/_faq.scss */
 .faq li .title {
   font-weight: 600;
   display: inline-block;
+  font-size: 20px;
 }
 
-/* line 24, ../sass/objects/_faq.scss */
+/* line 40, ../sass/objects/_faq.scss */
+.faq p {
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+/* line 45, ../sass/objects/_faq.scss */
+.faq ul li {
+  border-bottom: none;
+  padding-top: 6px;
+}
+
+/* line 51, ../sass/objects/_faq.scss */
 .faq li label {
   cursor: pointer;
   display: inline-block;
 }
 
-/* line 29, ../sass/objects/_faq.scss */
+/* line 56, ../sass/objects/_faq.scss */
 .faq li input[type=checkbox] {
   padding-top: 10px;
   padding-top: 20px;
   display: none;
 }
 
-/* line 36, ../sass/objects/_faq.scss */
+/* line 63, ../sass/objects/_faq.scss */
 .faq li input[type=checkbox]:after {
   background: white;
   display: none;
 }
 
-/* line 41, ../sass/objects/_faq.scss */
+/* line 68, ../sass/objects/_faq.scss */
 .faq li input[type=checkbox]:checked + .response {
   padding-top: 10px;
-  max-height: 100px;
+  max-height: 500px;
   padding-left: 20px;
 }
 
