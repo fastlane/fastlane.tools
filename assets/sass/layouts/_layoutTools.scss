@@ -1,3 +1,25 @@
 .layout__content--tools {
-  @include span(8 of 12);
+  @include span(isolate 8 of 12 at 3);
+  margin-right: 0;
+}
+
+.layout--tools {
+	background-color:#F7FBFC;
+}
+
+.tools__description {
+	text-align: right;
+}
+
+.tool__header {
+	font-weight: 600;
+}
+
+.tool__image {
+	margin-left: 40%;
+}
+
+.tool__last {
+	padding-bottom: 78px;
+	
 }

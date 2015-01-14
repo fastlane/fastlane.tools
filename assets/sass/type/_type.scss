@@ -24,6 +24,7 @@ h2 {
 
 p {
   @include adjust-font-size-to(18px);
+  margin-bottom: 6px;
   font-weight: 400;
   color: $text-grey;
 }

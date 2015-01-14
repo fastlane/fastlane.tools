@@ -21,6 +21,21 @@
   }
 }
 
+.content--padded-double-top {
+    padding-top: 24px;
+
+  @include mq($from:macro-small) {
+    padding-top: 78px;
+  }
+}
+
+.content--padded-top {
+    padding-top: 12px;
+
+  @include mq($from:macro-small) {
+    padding-top: 38px;
+  }
+}
 
 .content {
   ul {
