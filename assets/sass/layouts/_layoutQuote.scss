@@ -1,0 +1,8 @@
+.layout__content--quote {
+
+  padding-top: 38px;
+  padding-bottom: 38px;
+
+  @include span(isolate 8 of 12 at 3);
+  margin-right: 0;
+}

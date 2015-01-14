@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="57px" height="56px" viewBox="0 0 57 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Oval 3 + Imported Layers</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Flat-1" sketch:type="MSArtboardGroup" transform="translate(-112.000000, -1232.000000)">
+            <g id="Oval-3-+-Imported-Layers" sketch:type="MSLayerGroup" transform="translate(113.980469, 1232.500010)">
+                <circle id="Oval-3" stroke="#979797" stroke-width="2" sketch:type="MSShapeGroup" cx="27" cy="27.5019531" r="27"></circle>
+                <path d="M31.6666667,15.2519531 L23.1818182,24.0019531 L18.0909091,24.0019531 L13,31.0019531 C13,31.0019531 18.3938182,29.4540781 21.5391515,30.1803281 L13,41.5019531 L24.1864242,32.5288281 C25.7467879,36.2108281 23.1818182,41.5019531 23.1818182,41.5019531 L29.969697,36.2519531 L29.969697,31.0019531 L38.4545455,22.2519531 L40.1515152,13.5019531 L31.6666667,15.2519531" id="Imported-Layers" fill="#7E7E7E" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>
