@@ -21,6 +21,7 @@
   }
 }
 
+
 .content {
   ul {
     li {
@@ -34,6 +35,12 @@
 }
 
 .content--fastlane-features {
+  @include mq($from:macro-small) {
+    @include span(4 of 5 first);
+  }
+}
+
+.content--fastlane-features-padding {
   @include mq($from:macro-small) {
     padding-top: 145px;
   }

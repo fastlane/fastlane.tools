@@ -68,6 +68,12 @@ $susy: (
   gutters: $gutter-width / $column-width,
   column-width: $column-width,
   gutter-position: split,
+  debug: (
+    image: show,
+    color: rgba(#66f, .25),
+    output: overlay,
+    toggle: top right,
+  )
 );
 
 
