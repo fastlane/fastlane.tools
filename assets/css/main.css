@@ -1557,42 +1557,25 @@ p {
   line-height: 29px;
 }
 
-/* line 1, ../sass/objects/_blockquote.scss */
-blockquote {
-  color: #828282;
-  border-left: 4px solid #e8e8e8;
-  padding-left: 15px;
-  font-size: 18px;
-  letter-spacing: -1px;
-  font-style: italic;
-}
-/* line 8, ../sass/objects/_blockquote.scss */
-blockquote p {
-  font-style: normal;
-  color: #828282;
-  font-size: 18px;
-  letter-spacing: -1px;
-}
-
-/* line 17, ../sass/objects/_blockquote.scss */
+/* line 2, ../sass/objects/_blockquote.scss */
 .qoute-block {
   position: relative;
 }
-/* line 20, ../sass/objects/_blockquote.scss */
+/* line 5, ../sass/objects/_blockquote.scss */
 .qoute-block h2 {
   font-weight: 400;
   font-size: 32px;
   color: #535353;
   line-height: 48px;
 }
-/* line 27, ../sass/objects/_blockquote.scss */
+/* line 12, ../sass/objects/_blockquote.scss */
 .qoute-block p {
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
 }
 
-/* line 34, ../sass/objects/_blockquote.scss */
+/* line 19, ../sass/objects/_blockquote.scss */
 .marks {
   position: absolute;
   font-size: 120px;
@@ -1653,13 +1636,23 @@ blockquote p {
 }
 
 /* line 1, ../sass/objects/_faq.scss */
-.faq {
-  list-style: decimal;
-  padding: 0 0 0 20px;
-  padding-bottom: 38px;
+blockquote {
+  color: #828282;
+  border-left: 4px solid #e8e8e8;
+  padding-left: 15px;
+  font-size: 18px;
+  letter-spacing: -1px;
+  font-style: italic;
+}
+/* line 8, ../sass/objects/_faq.scss */
+blockquote p {
+  font-style: normal;
+  color: #828282;
+  font-size: 18px;
+  letter-spacing: -1px;
 }
 
-/* line 7, ../sass/objects/_faq.scss */
+/* line 17, ../sass/objects/_faq.scss */
 code {
   font-size: 15px;
   border: 1px solid #e8e8e8;
@@ -1669,75 +1662,14 @@ code {
   padding-right: 3px;
 }
 
-/* line 16, ../sass/objects/_faq.scss */
-.faq li {
-  border-bottom: 1px solid rgba(33, 33, 33, 0.2);
-  padding-bottom: 8px;
-  padding-top: 20px;
-}
-
-/* line 22, ../sass/objects/_faq.scss */
-.faq li .response {
-  display: block;
-  max-height: 0;
-  overflow: hidden;
-  clear: both;
-  transition: all 0.2s ease-in-out;
-}
-
-/* line 30, ../sass/objects/_faq.scss */
-.faq li .title {
-  font-weight: 600;
-  display: inline-block;
-  font-size: 20px;
-}
-
-/* line 37, ../sass/objects/_faq.scss */
-.faq p {
-  font-size: 16px;
-  margin-bottom: 18px;
-}
-
-/* line 42, ../sass/objects/_faq.scss */
-.faq ul li {
-  border-bottom: none;
-  padding-top: 6px;
-}
-
-/* line 48, ../sass/objects/_faq.scss */
-.faq li label {
-  cursor: pointer;
-  display: inline-block;
-}
-
-/* line 53, ../sass/objects/_faq.scss */
-.faq li input[type=checkbox] {
-  padding-top: 10px;
-  padding-top: 20px;
-  display: none;
-}
-
-/* line 61, ../sass/objects/_faq.scss */
-.faq li input[type=checkbox]:after {
-  background: white;
-  display: none;
-}
-
-/* line 66, ../sass/objects/_faq.scss */
-.faq li input[type=checkbox]:checked + .response {
-  padding-top: 10px;
-  max-height: 500px;
-  padding-left: 20px;
-}
-
-/* line 72, ../sass/objects/_faq.scss */
+/* line 26, ../sass/objects/_faq.scss */
 .post-content h3 {
   font-size: 26px;
   font-weight: 400;
   margin-bottom: 15px;
 }
 
-/* line 79, ../sass/objects/_faq.scss */
+/* line 33, ../sass/objects/_faq.scss */
 .post-content p {
   margin-bottom: 15px;
   font-size: 16px;
@@ -1745,12 +1677,12 @@ code {
   line-height: 1.5em;
 }
 
-/* line 86, ../sass/objects/_faq.scss */
+/* line 40, ../sass/objects/_faq.scss */
 .post-content ul {
   margin-left: 30px;
   margin-bottom: 15px;
 }
-/* line 89, ../sass/objects/_faq.scss */
+/* line 43, ../sass/objects/_faq.scss */
 .post-content ul li {
   display: list-item;
   text-align: -webkit-match-parent;
@@ -1758,7 +1690,7 @@ code {
   line-height: 1.5em;
 }
 
-/* line 97, ../sass/objects/_faq.scss */
+/* line 51, ../sass/objects/_faq.scss */
 .post-content a {
   color: #2980B9;
 }
@@ -1825,7 +1757,7 @@ head:hover ~ .feature:before, head:hover ~ body .feature:before {
   background-position: left top;
 }
 
-/* line 9, ../sass/objects/_feature.scss */
+/* line 7, ../sass/objects/_feature.scss */
 .feature__icon {
   width: 23%;
   float: left;
@@ -1833,12 +1765,12 @@ head:hover ~ .feature:before, head:hover ~ body .feature:before {
   margin-right: 1%;
 }
 
-/* line 13, ../sass/objects/_feature.scss */
+/* line 11, ../sass/objects/_feature.scss */
 .text--oneline {
   line-height: 48px;
 }
 
-/* line 18, ../sass/objects/_feature.scss */
+/* line 16, ../sass/objects/_feature.scss */
 .feature__text {
   width: 73.0%;
   float: right;
@@ -1847,16 +1779,10 @@ head:hover ~ .feature:before, head:hover ~ body .feature:before {
   font-size: 18px;
 }
 @media all and (max-width: 47.99em) {
-  /* line 18, ../sass/objects/_feature.scss */
+  /* line 16, ../sass/objects/_feature.scss */
   .feature__text {
     line-height: 18px;
   }
-}
-
-/* line 1, ../sass/objects/_featureList.scss */
-.feature-list li {
-  font-size: 1.5625em;
-  line-height: 1.92em;
 }
 
 /* line 1, ../sass/objects/_tool.scss */
@@ -1867,6 +1793,24 @@ head:hover ~ .feature:before, head:hover ~ body .feature:before {
 .tool:nth-of-type(3n+3) {
   margin-bottom: 0;
 }
+@media all and (max-width: 47.99em) {
+  /* line 1, ../sass/objects/_tool.scss */
+  .tool {
+    text-align: center;
+  }
+  /* line 13, ../sass/objects/_tool.scss */
+  .tool img {
+    height: 75px;
+    display: table;
+    margin-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* line 23, ../sass/objects/_tool.scss */
+  .tool:nth-of-type(3n+3) {
+    margin-bottom: 24px;
+  }
+}
 @media all and (min-width: 48em) {
   /* line 1, ../sass/objects/_tool.scss */
   .tool {
@@ -1875,83 +1819,60 @@ head:hover ~ .feature:before, head:hover ~ body .feature:before {
     margin-left: 1%;
     margin-right: 1%;
   }
-  /* line 11, ../sass/objects/_tool.scss */
+  /* line 30, ../sass/objects/_tool.scss */
   .tool:first-child {
     width: 31.33333%;
     float: left;
     margin-left: 1%;
     margin-right: 1%;
   }
-  /* line 18, ../sass/objects/_tool.scss */
+  /* line 37, ../sass/objects/_tool.scss */
   .tool:last-child {
     width: 31.33333%;
     float: right;
     margin-left: 1%;
     margin-right: 1%;
   }
-  /* line 24, ../sass/objects/_tool.scss */
-  .tool img {
-    display: table;
-    margin-bottom: 24px;
-    height: 75px;
-  }
-}
-@media all and (max-width: 47.99em) {
-  /* line 1, ../sass/objects/_tool.scss */
-  .tool {
-    width: 48.0%;
-    float: left;
-    margin-left: 1%;
-    margin-right: 1%;
-    text-align: center;
-  }
-  /* line 35, ../sass/objects/_tool.scss */
-  .tool img {
-    height: 75px;
-    display: table;
-    margin-bottom: 24px;
-    margin-left: auto;
-    margin-right: auto;
-  }
   /* line 43, ../sass/objects/_tool.scss */
-  .tool:nth-of-type(2n+2) {
-    margin-right: 0;
-  }
-  /* line 48, ../sass/objects/_tool.scss */
-  .tool:nth-of-type(3n+3) {
-    width: 98%;
-    float: left;
-    margin-left: 1%;
-    margin-right: 1%;
+  .tool img {
+    display: table;
     margin-bottom: 24px;
+    height: 75px;
   }
 }
 
-/* line 55, ../sass/objects/_tool.scss */
+/* line 52, ../sass/objects/_tool.scss */
 .tool-center {
-  width: 48.0%;
-  float: left;
-  margin-left: 26%;
-  margin-right: -100%;
   border-bottom: 1px solid rgba(151, 151, 151, 0.3);
 }
-
-/* line 60, ../sass/objects/_tool.scss */
-.tool-break {
-  width: 31.33333%;
-  float: left;
-  margin-left: 1%;
-  margin-right: 1%;
-}
-/* line 61, ../sass/objects/_tool.scss */
-.tool-break:last-child {
-  width: 31.33333%;
-  float: left;
-  margin-left: 1%;
-  margin-right: 1%;
+@media all and (min-width: 48em) {
+  /* line 52, ../sass/objects/_tool.scss */
+  .tool-center {
+    width: 48.0%;
+    float: left;
+    margin-left: 26%;
+    margin-right: -100%;
+  }
 }
 
-/* line 67, ../sass/objects/_tool.scss */
+@media all and (min-width: 48em) {
+  /* line 59, ../sass/objects/_tool.scss */
+  .tool-break {
+    width: 31.33333%;
+    float: left;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+  /* line 61, ../sass/objects/_tool.scss */
+  .tool-break:last-child {
+    width: 31.33333%;
+    float: left;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+}
+
+/* line 68, ../sass/objects/_tool.scss */
 .tools {
   max-width: 1200px;
   margin-left: auto;
@@ -1987,7 +1908,7 @@ head:hover ~ .tools:before, head:hover ~ body .tools:before {
   background-position: left top;
 }
 
-/* line 72, ../sass/objects/_tool.scss */
+/* line 73, ../sass/objects/_tool.scss */
 .tool-feature {
   padding-top: 68px;
   padding-bottom: 68px;
@@ -2025,33 +1946,52 @@ head:hover ~ .tool-feature:before, head:hover ~ body .tool-feature:before {
   background-position: left top;
 }
 
-/* line 78, ../sass/objects/_tool.scss */
-.tool-feature__icon {
-  width: 31.33333%;
-  float: left;
-  margin-left: 1%;
-  margin-right: 1%;
-}
 /* line 80, ../sass/objects/_tool.scss */
 .tool-feature__icon img {
   height: 75px;
 }
-
-/* line 85, ../sass/objects/_tool.scss */
-.tool-feature__text {
-  width: 56.33333%;
-  float: right;
-  margin-left: 1%;
-  margin-right: 1%;
+@media all and (max-width: 47.99em) {
+  /* line 80, ../sass/objects/_tool.scss */
+  .tool-feature__icon img {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
-/* line 87, ../sass/objects/_tool.scss */
+@media all and (min-width: 48em) {
+  /* line 79, ../sass/objects/_tool.scss */
+  .tool-feature__icon {
+    width: 31.33333%;
+    float: left;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+}
+
+/* line 94, ../sass/objects/_tool.scss */
 .tool-feature__text p {
   font-size: 18px;
 }
 @media all and (max-width: 47.99em) {
-  /* line 85, ../sass/objects/_tool.scss */
+  /* line 92, ../sass/objects/_tool.scss */
   .tool-feature__text {
     line-height: 18px;
+  }
+  /* line 100, ../sass/objects/_tool.scss */
+  .tool-feature__text h2, .tool-feature__text p {
+    text-align: center;
+  }
+  /* line 103, ../sass/objects/_tool.scss */
+  .tool-feature__text h2 {
+    padding-top: 24px;
+  }
+}
+@media all and (min-width: 48em) {
+  /* line 92, ../sass/objects/_tool.scss */
+  .tool-feature__text {
+    width: 56.33333%;
+    float: right;
+    margin-left: 1%;
+    margin-right: 1%;
   }
 }
 
@@ -2064,20 +2004,6 @@ head:hover ~ .tool-feature:before, head:hover ~ body .tool-feature:before {
   padding-top: 100px;
 }
 
-/* line 1, ../sass/layouts/_layoutFullScreen.scss */
-.layout--fullscreen {
-  height: 90%;
-}
-
-/* line 5, ../sass/layouts/_layoutFullScreen.scss */
-.layout__content--fullscreen {
-  height: 90%;
-  width: 81.33333%;
-  float: left;
-  margin-left: 9.33333%;
-  margin-right: -100%;
-}
-
 /* line 1, ../sass/layouts/_layoutHero.scss */
 .layout--hero {
   height: 100%;
@@ -2086,7 +2012,7 @@ head:hover ~ .tool-feature:before, head:hover ~ body .tool-feature:before {
   background-position: center;
 }
 
-/* line 9, ../sass/layouts/_layoutHero.scss */
+/* line 10, ../sass/layouts/_layoutHero.scss */
 .layout__content--hero {
   height: 100%;
   display: table;
@@ -2096,13 +2022,13 @@ head:hover ~ .tool-feature:before, head:hover ~ body .tool-feature:before {
   margin-right: 1%;
 }
 
-/* line 15, ../sass/layouts/_layoutHero.scss */
+/* line 16, ../sass/layouts/_layoutHero.scss */
 .hero__content {
   display: table-cell;
   vertical-align: middle;
 }
 
-/* line 20, ../sass/layouts/_layoutHero.scss */
+/* line 21, ../sass/layouts/_layoutHero.scss */
 .hero__title {
   font-size: 1.75em;
   line-height: 1.71429em;
@@ -2113,7 +2039,7 @@ head:hover ~ .tool-feature:before, head:hover ~ body .tool-feature:before {
   color: white;
 }
 @media all and (min-width: 30em) {
-  /* line 20, ../sass/layouts/_layoutHero.scss */
+  /* line 21, ../sass/layouts/_layoutHero.scss */
   .hero__title {
     margin-bottom: 18px;
     font-size: 4.125em;
@@ -2121,7 +2047,7 @@ head:hover ~ .tool-feature:before, head:hover ~ body .tool-feature:before {
   }
 }
 
-/* line 35, ../sass/layouts/_layoutHero.scss */
+/* line 36, ../sass/layouts/_layoutHero.scss */
 .hero__subtitle {
   font-size: 1.125em;
   line-height: 1.33333em;
@@ -2131,7 +2057,7 @@ head:hover ~ .tool-feature:before, head:hover ~ body .tool-feature:before {
   color: white;
 }
 @media all and (min-width: 30em) {
-  /* line 35, ../sass/layouts/_layoutHero.scss */
+  /* line 36, ../sass/layouts/_layoutHero.scss */
   .hero__subtitle {
     font-size: 2em;
     line-height: 1.5em;

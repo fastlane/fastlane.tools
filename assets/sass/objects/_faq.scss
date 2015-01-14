@@ -1,8 +1,18 @@
-.faq{
-  list-style: decimal; padding: 0 0 0 20px;
-  padding-bottom: 38px;
-}
+blockquote {
+  color: #828282;
+border-left: 4px solid #e8e8e8;
+padding-left: 15px;
+font-size: 18px;
+letter-spacing: -1px;
+font-style: italic;
+  p{
+    font-style: normal;
+    color: #828282;
+    font-size: 18px;
+    letter-spacing: -1px;
+  }
 
+}
 
 code {
   font-size: 15px;
@@ -11,62 +21,6 @@ code {
   background-color: #eef;
   padding-left: 3px;
   padding-right: 3px;
-}
-
-.faq li{
-  border-bottom: 1px solid rgba(33, 33, 33, 0.2);
-  padding-bottom: 8px;
-  padding-top: 20px;
-}
-
-.faq li .response {
-  display: block;
-  max-height: 0;
-  overflow: hidden;
-  clear: both;
-  transition: all 0.2s ease-in-out;
-}
-
-.faq li .title{
-  font-weight: 600;
-  display: inline-block;
-  font-size: 20px;
-}
-
-
-.faq p {
-  font-size: 16px;
-  margin-bottom: 18px;
-}
-
-.faq ul li {
-  border-bottom: none;
-  padding-top: 6px;
-
-}
-
-.faq li label{
-  cursor: pointer;
-  display: inline-block;
-}
-
-.faq li input[type=checkbox]{
-    padding-top: 10px;
-      padding-top: 20px;
-  display: none
-}
-
-
-
-.faq li input[type=checkbox]:after{
-  background: white;
-  display: none;
-}
-
-.faq li input[type=checkbox]:checked + .response{
-  padding-top: 10px;
-  max-height: 500px;
-  padding-left: 20px;
 }
 
 .post-content h3 {

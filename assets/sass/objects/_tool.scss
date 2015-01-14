@@ -6,6 +6,25 @@
   }
 
 
+
+
+  @include mq($to:macro-medium) {
+    text-align: center;
+    img {
+      height: 75px;
+      display:table;
+      margin-bottom: $flexdd-base-spacing-unit;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+
+
+    &:nth-of-type( 3n+3 ) {
+      margin-bottom: $flexdd-base-spacing-unit;
+    }
+  }
+
   @include mq($from:macro-medium) {
 
     &:first-child{
@@ -13,7 +32,7 @@
     }
 
 
-      @include span(4 of 12);
+    @include span(4 of 12);
 
     &:last-child{
       @include span(4 of 12 last);
@@ -28,40 +47,22 @@
     }
 
   }
-
-  @include mq($to:macro-medium) {
-    @include span(6 of 12);
-    text-align: center;
-    img {
-      height: 75px;
-      display:table;
-      margin-bottom: $flexdd-base-spacing-unit;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    &:nth-of-type( 2n+2 ) {
-      margin-right: 0;
-
-    }
-
-    &:nth-of-type( 3n+3 ) {
-      @include span(12 of 12);
-      margin-bottom: $flexdd-base-spacing-unit;
-    }
-  }
 }
 
 .tool-center {
-  @include span(isolate 6 of 12 at 4 last);
+  @include mq($from:macro-medium) {
+    @include span(isolate 6 of 12 at 4 last);
+  }
   border-bottom: 1px solid rgba(151,151,151,0.3);
 }
 
 .tool-break {
-  &:last-child{
+  @include mq($from:macro-medium) {
+    &:last-child{
       @include span(4 of 12);
+    }
+    @include span(4 of 12);
   }
-  @include span(4 of 12);
 }
 
 .tools {
@@ -76,21 +77,37 @@
 }
 
 .tool-feature__icon {
-  @include span(4 of 12 first);
-  img {
+    img {
     height:75px;
+    @include mq($to:macro-medium) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  @include mq($from:macro-medium) {
+  @include span(4 of 12 first);
   }
 }
 
 .tool-feature__text {
-  @include span(7 of 12 last);
+
   p{
     font-size: 18px;
   }
 
-    @include mq($to:macro-medium) {
-      line-height: 18px;
+  @include mq($to:macro-medium) {
+    line-height: 18px;
+      h2,p{
+    text-align: center;
     }
+    h2 {
+      padding-top: 24px;
+    }
+  }
+
+  @include mq($from:macro-medium) {
+    @include span(7 of 12 last);
+  }
 }
 
 
