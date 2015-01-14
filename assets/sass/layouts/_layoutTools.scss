@@ -8,7 +8,11 @@
 }
 
 .tools__description {
-	text-align: right;
+  text-align: left;
+  @include mq($from:macro-small) {
+    text-align: right;
+  }
+
 }
 
 .tool__header {
@@ -16,10 +20,16 @@
 }
 
 .tool__image {
-	margin-left: 40%;
+  margin-left: 0;
+
+  @include mq($from:macro-small) {
+    margin-left: 40%;
+  }
+
+
 }
 
 .tool__last {
 	padding-bottom: 78px;
-	
+
 }
