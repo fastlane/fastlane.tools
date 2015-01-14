@@ -1605,6 +1605,60 @@ p {
   }
 }
 
+/* line 1, ../sass/objects/_faq.scss */
+.faq {
+  list-style: decimal;
+  padding: 0 0 0 20px;
+}
+
+/* line 5, ../sass/objects/_faq.scss */
+.faq li {
+  border-bottom: 1px solid rgba(33, 33, 33, 0.2);
+  padding-bottom: 8px;
+  padding-top: 20px;
+}
+
+/* line 11, ../sass/objects/_faq.scss */
+.faq li .response {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  clear: both;
+  transition: all 0.2s ease-in-out;
+}
+
+/* line 19, ../sass/objects/_faq.scss */
+.faq li .title {
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* line 24, ../sass/objects/_faq.scss */
+.faq li label {
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* line 29, ../sass/objects/_faq.scss */
+.faq li input[type=checkbox] {
+  padding-top: 10px;
+  padding-top: 20px;
+  display: none;
+}
+
+/* line 36, ../sass/objects/_faq.scss */
+.faq li input[type=checkbox]:after {
+  background: white;
+  display: none;
+}
+
+/* line 41, ../sass/objects/_faq.scss */
+.faq li input[type=checkbox]:checked + .response {
+  padding-top: 10px;
+  max-height: 100px;
+  padding-left: 20px;
+}
+
 /* line 1, ../sass/objects/_feature.scss */
 .feature {
   padding-top: 12px;
@@ -1700,6 +1754,15 @@ head:hover ~ .feature:before, head:hover ~ body .feature:before {
 .feature-list li {
   font-size: 1.5625em;
   line-height: 1.92em;
+}
+
+/* line 1, ../sass/layouts/_layoutFaq.scss */
+.layout__content--faq {
+  width: 81.33333%;
+  float: left;
+  margin-left: 9.33333%;
+  margin-right: -100%;
+  padding-top: 100px;
 }
 
 /* line 1, ../sass/layouts/_layoutFullScreen.scss */

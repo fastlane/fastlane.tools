@@ -1,0 +1,45 @@
+.faq{
+  list-style: decimal; padding: 0 0 0 20px;
+}
+
+.faq li{
+  border-bottom: 1px solid rgba(33, 33, 33, 0.2);
+  padding-bottom: 8px;
+  padding-top: 20px;
+}
+
+.faq li .response {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  clear: both;
+  transition: all 0.2s ease-in-out;
+}
+
+.faq li .title{
+  font-weight: 600;
+  display: inline-block;
+}
+
+.faq li label{
+  cursor: pointer;
+  display: inline-block;
+}
+
+.faq li input[type=checkbox]{
+    padding-top: 10px;
+      padding-top: 20px;
+  display: none
+}
+
+
+.faq li input[type=checkbox]:after{
+  background: white;
+  display: none;
+}
+
+.faq li input[type=checkbox]:checked + .response{
+  padding-top: 10px;
+  max-height: 100px;
+  padding-left: 20px;
+}

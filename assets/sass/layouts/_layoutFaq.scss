@@ -1,0 +1,5 @@
+.layout__content--faq{
+
+  @include span(isolate 10 of 12 at 2);
+  padding-top: 100px;
+}
