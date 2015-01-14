@@ -3,17 +3,14 @@
   padding-bottom: 38px;
 }
 
-.faq a {
-  color: #2980B9;
-
-}
 
 code {
-  padding: 3px;
-  padding-left: 6px;
-  padding-right: 6px;
-  background-color: #D8D8D8;
-  border-radius: 4px;
+  font-size: 15px;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  background-color: #eef;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 .faq li{
@@ -60,6 +57,7 @@ code {
 }
 
 
+
 .faq li input[type=checkbox]:after{
   background: white;
   display: none;
@@ -70,3 +68,34 @@ code {
   max-height: 500px;
   padding-left: 20px;
 }
+
+.post-content h3 {
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 15px;
+
+}
+
+.post-content p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+.post-content ul {
+  margin-left: 30px;
+  margin-bottom: 15px;
+   li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    font-weight: 300;
+    line-height: 1.5em;
+   }
+}
+
+.post-content a {
+  color: #2980B9;
+
+}
+

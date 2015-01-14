@@ -1557,26 +1557,19 @@ p {
 
 /* line 1, ../sass/objects/_blockquote.scss */
 blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
-  quotes: "“" "”" "‘" "’";
+  color: #828282;
+  border-left: 4px solid #e8e8e8;
+  padding-left: 15px;
+  font-size: 18px;
+  letter-spacing: -1px;
+  font-style: italic;
 }
-
 /* line 8, ../sass/objects/_blockquote.scss */
-blockquote:before {
-  color: #ccc;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-
-/* line 16, ../sass/objects/_blockquote.scss */
 blockquote p {
-  display: inline;
+  font-style: normal;
+  color: #828282;
+  font-size: 18px;
+  letter-spacing: -1px;
 }
 
 /* line 1, ../sass/objects/_button.scss */
@@ -1636,28 +1629,24 @@ blockquote p {
   padding-bottom: 38px;
 }
 
-/* line 6, ../sass/objects/_faq.scss */
-.faq a {
-  color: #2980B9;
-}
-
-/* line 11, ../sass/objects/_faq.scss */
+/* line 7, ../sass/objects/_faq.scss */
 code {
-  padding: 3px;
-  padding-left: 6px;
-  padding-right: 6px;
-  background-color: #D8D8D8;
-  border-radius: 4px;
+  font-size: 15px;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  background-color: #eef;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
-/* line 19, ../sass/objects/_faq.scss */
+/* line 16, ../sass/objects/_faq.scss */
 .faq li {
   border-bottom: 1px solid rgba(33, 33, 33, 0.2);
   padding-bottom: 8px;
   padding-top: 20px;
 }
 
-/* line 25, ../sass/objects/_faq.scss */
+/* line 22, ../sass/objects/_faq.scss */
 .faq li .response {
   display: block;
   max-height: 0;
@@ -1666,49 +1655,82 @@ code {
   transition: all 0.2s ease-in-out;
 }
 
-/* line 33, ../sass/objects/_faq.scss */
+/* line 30, ../sass/objects/_faq.scss */
 .faq li .title {
   font-weight: 600;
   display: inline-block;
   font-size: 20px;
 }
 
-/* line 40, ../sass/objects/_faq.scss */
+/* line 37, ../sass/objects/_faq.scss */
 .faq p {
   font-size: 16px;
   margin-bottom: 18px;
 }
 
-/* line 45, ../sass/objects/_faq.scss */
+/* line 42, ../sass/objects/_faq.scss */
 .faq ul li {
   border-bottom: none;
   padding-top: 6px;
 }
 
-/* line 51, ../sass/objects/_faq.scss */
+/* line 48, ../sass/objects/_faq.scss */
 .faq li label {
   cursor: pointer;
   display: inline-block;
 }
 
-/* line 56, ../sass/objects/_faq.scss */
+/* line 53, ../sass/objects/_faq.scss */
 .faq li input[type=checkbox] {
   padding-top: 10px;
   padding-top: 20px;
   display: none;
 }
 
-/* line 63, ../sass/objects/_faq.scss */
+/* line 61, ../sass/objects/_faq.scss */
 .faq li input[type=checkbox]:after {
   background: white;
   display: none;
 }
 
-/* line 68, ../sass/objects/_faq.scss */
+/* line 66, ../sass/objects/_faq.scss */
 .faq li input[type=checkbox]:checked + .response {
   padding-top: 10px;
   max-height: 500px;
   padding-left: 20px;
+}
+
+/* line 72, ../sass/objects/_faq.scss */
+.post-content h3 {
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+/* line 79, ../sass/objects/_faq.scss */
+.post-content p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+/* line 86, ../sass/objects/_faq.scss */
+.post-content ul {
+  margin-left: 30px;
+  margin-bottom: 15px;
+}
+/* line 89, ../sass/objects/_faq.scss */
+.post-content ul li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+/* line 97, ../sass/objects/_faq.scss */
+.post-content a {
+  color: #2980B9;
 }
 
 /* line 1, ../sass/objects/_feature.scss */
