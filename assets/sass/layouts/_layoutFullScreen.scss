@@ -1,0 +1,8 @@
+.layout--fullscreen {
+  height:90%;
+}
+
+.layout__content--fullscreen{
+  height:90%;
+  @include span(isolate 10 of 12 at 2);
+}
