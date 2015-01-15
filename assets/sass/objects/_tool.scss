@@ -51,7 +51,7 @@
 
 .tool-center {
   @include mq($from:macro-medium) {
-    @include span(isolate 6 of 12 at 4 last);
+    @include span(isolate 8 of 12 at 3 last);
   }
   border-bottom: 1px solid rgba(151,151,151,0.3);
 }
@@ -85,7 +85,7 @@
     }
   }
   @include mq($from:macro-medium) {
-  @include span(4 of 12 first);
+  @include span(5 of 12 first);
   }
 }
 

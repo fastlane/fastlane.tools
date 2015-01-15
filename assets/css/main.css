@@ -1969,9 +1969,9 @@ code {
 @media all and (min-width: 48em) {
   /* line 52, ../sass/objects/_tool.scss */
   .tool-center {
-    width: 48.0%;
+    width: 64.66667%;
     float: left;
-    margin-left: 26%;
+    margin-left: 17.66667%;
     margin-right: -100%;
   }
 }
@@ -2035,7 +2035,7 @@ code {
 @media all and (min-width: 48em) {
   /* line 79, ../sass/objects/_tool.scss */
   .tool-feature__icon {
-    width: 31.33333%;
+    width: 39.66667%;
     float: left;
     margin-left: 1%;
     margin-right: 1%;
