@@ -78,3 +78,10 @@
 .content--no-bottom-padding {
   padding-bottom:0;
 }
+@include mq($to:macro-medium) {
+
+  td {
+    display:block;
+  }
+
+}
