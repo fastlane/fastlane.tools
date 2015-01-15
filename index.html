@@ -107,12 +107,29 @@
   <div class="layout layout--tools">
     <div class="wrap">
       <div class="layout__content--quote">
-        <h2> Benefits of Continuous Deployment</h2>
+        <h2>Why use Continuous Deployment?</h2>
         <ul id="benefitsList" style="margin-left: 30px; margin-top: 15px">
           <li>Save days of preparing app submission, uploading screenshots and releasing the app</li>
           <li>Colleague on vacation and a critical bugfix needs to be released? Don’t rely on one person releasing updates</li>
           <li>Increase software quality and reaction time with more frequent and smaller releases</li>
-        <ul>
+        </ul>
+
+        <h3 style="margin-top: 30px; margin-bottom: -20px;">Example fastlane configuration</h3>
+
+        <div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .3em;padding:.2em .6em; margin-top: 50px"><pre style="margin: 0; line-height: 125%">lane <span style="color: #0084b4">:appstore</span> <span style="color: #008000; font-weight: bold">do</span>
+  increment_build_number
+  cocoapods
+  xctool
+  snapshot
+  sigh
+  deliver
+  frameit
+  sh <span style="color: #BA2121">&quot;./customScript.sh&quot;</span>
+
+  slack
+<span style="color: #008000; font-weight: bold">end</span>
+        </pre></div>
+
       </div>
     </div>
   </div>
