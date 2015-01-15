@@ -2404,6 +2404,12 @@ code {
   padding-bottom: 0;
 }
 
+@media all and (max-width: 47.99em) {
+  /* line 83, ../sass/partials/_content.scss */
+  td {
+    display: block;
+  }
+}
 /* line 1, ../sass/partials/_shared.scss */
 .wrap {
   max-width: 1200px;
