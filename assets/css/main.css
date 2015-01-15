@@ -2380,6 +2380,11 @@ code {
   }
 }
 
+/* line 78, ../sass/partials/_content.scss */
+.content--no-bottom-padding {
+  padding-bottom: 0;
+}
+
 /* line 1, ../sass/partials/_shared.scss */
 .wrap {
   max-width: 1200px;
