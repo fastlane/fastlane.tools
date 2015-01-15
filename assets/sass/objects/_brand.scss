@@ -61,6 +61,10 @@
   margin-bottom: $flexdd-double-spacing-unit;
   margin-top: $flexdd-double-spacing-unit * 1.5;
 
+  img {
+    height: 50px;
+  }
+
   &:nth-of-type( 4n+4 ) {
     margin-bottom: 0;
   }
@@ -100,4 +104,17 @@
     }
   }
 
+}
+
+
+.iftt{
+  height: 78px;
+}
+
+.panic {
+  height: 83px;
+}
+
+.xing {
+  height: 55px;
 }
