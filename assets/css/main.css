@@ -1557,6 +1557,13 @@ p {
   line-height: 29px;
 }
 
+/* line 34, ../sass/type/_type.scss */
+.fastlane-intro {
+  text-align: center;
+  font-weight: 300;
+  margin-top: -8px;
+}
+
 /* line 2, ../sass/objects/_blockquote.scss */
 .qoute-block {
   position: relative;
