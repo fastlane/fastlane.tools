@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="57px" height="57px" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
     <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
-    <title>Oval 3 + Imported Layers</title>
+    <title>Oval 3 + Imported Layers + Imported Layers</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Flat-1" sketch:type="MSArtboardGroup" transform="translate(-112.000000, -1314.000000)">
-            <g id="Oval-3-+-Imported-Layers" sketch:type="MSLayerGroup" transform="translate(113.980469, 1315.500010)">
-                <circle id="Oval-3" stroke="#979797" stroke-width="2" sketch:type="MSShapeGroup" cx="27" cy="27" r="27"></circle>
-                <path d="M34.5454545,32.625 C33.2627273,32.625 32.1045455,33.174375 31.2781818,34.0546875 L19.0345455,27.7415625 C19.0718182,27.500625 19.0909091,27.2521875 19.0909091,27 C19.0909091,26.746875 19.0718182,26.499375 19.0345455,26.2584375 L31.2781818,19.9453125 C32.1045455,20.825625 33.2627273,21.375 34.5454545,21.375 C37.0554545,21.375 39.0909091,19.276875 39.0909091,16.6875 C39.0909091,14.098125 37.0554545,12 34.5454545,12 C32.0354545,12 30,14.098125 30,16.6875 C30,16.940625 30.0190909,17.188125 30.0572727,17.4290625 L17.8127273,23.7421875 C16.9863636,22.861875 15.8281818,22.3125 14.5454545,22.3125 C12.0354545,22.3125 10,24.410625 10,27 C10,29.589375 12.0354545,31.6875 14.5454545,31.6875 C15.8281818,31.6875 16.9863636,31.138125 17.8127273,30.2578125 L30.0572727,36.57 C30.0190909,36.811875 30,37.0603125 30,37.3125 C30,39.901875 32.0354545,42 34.5454545,42 C37.0554545,42 39.0909091,39.901875 39.0909091,37.3125 C39.0909091,34.723125 37.0554545,32.625 34.5454545,32.625" id="Imported-Layers" fill="#7E7E7E" sketch:type="MSShapeGroup"></path>
+        <g id="Flat-1" sketch:type="MSArtboardGroup" transform="translate(-112.000000, -1401.000000)">
+            <g id="Oval-3-+-Imported-Layers-+-Imported-Layers" sketch:type="MSLayerGroup" transform="translate(113.000000, 1402.000000)">
+                <g id="Oval-3-+-Imported-Layers" transform="translate(0.980469, 0.500010)" stroke="#979797" stroke-width="2" sketch:type="MSShapeGroup">
+                    <circle id="Oval-3" cx="27" cy="27" r="27"></circle>
+                </g>
+                <path d="M25.5757576,28 L29.4545455,28 L29.4545455,20 L35.2727273,20 L27.5151515,12 L19.7575758,20 L25.5757576,20 L25.5757576,28 L25.5757576,28 Z M31.3939394,23.5 L31.3939394,26.585 L40.2744242,30 L27.5151515,34.907 L14.7558788,30 L23.6363636,26.585 L23.6363636,23.5 L12,28 L12,36 L27.5151515,42 L43.030303,36 L43.030303,28 L31.3939394,23.5 L31.3939394,23.5 Z" id="Imported-Layers" fill="#7E7E7E" sketch:type="MSShapeGroup"></path>
             </g>
         </g>
     </g>
