@@ -1547,7 +1547,12 @@ h2 {
   line-height: 29px;
 }
 
-/* line 26, ../sass/type/_type.scss */
+/* line 25, ../sass/type/_type.scss */
+a {
+  color: #0084b4;
+}
+
+/* line 28, ../sass/type/_type.scss */
 p {
   font-size: 1.125em;
   line-height: 1.33333em;
@@ -1557,7 +1562,7 @@ p {
   line-height: 29px;
 }
 
-/* line 34, ../sass/type/_type.scss */
+/* line 36, ../sass/type/_type.scss */
 .fastlane-intro {
   text-align: center;
   font-weight: 300;
