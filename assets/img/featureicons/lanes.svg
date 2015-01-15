@@ -5,16 +5,10 @@
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Flat-1" sketch:type="MSArtboardGroup" transform="translate(-112.000000, -980.000000)">
-            <g id="Oval-3-+-Define-Lanes-Icon" sketch:type="MSLayerGroup" transform="translate(113.980469, 981.500010)">
+        <g id="Flat-1" sketch:type="MSArtboardGroup" transform="translate(-112.000000, -1067.000000)">
+            <g id="Oval-3-+-Define-Lanes-Icon" sketch:type="MSLayerGroup" transform="translate(113.980469, 1068.500010)">
                 <circle id="Oval-3" stroke="#979797" stroke-width="2" sketch:type="MSShapeGroup" cx="27" cy="27" r="27"></circle>
-                <g id="Define-Lanes-Icon" transform="translate(12.000000, 12.000000)" stroke="#7E7E7E" stroke-width="2.5" sketch:type="MSShapeGroup">
-                    <circle id="Oval-9" cx="15" cy="15" r="11.25"></circle>
-                    <path d="M15.25,22.5 L15.25,30" id="Line" stroke-linecap="square"></path>
-                    <path d="M22.5,15 L30,15" id="Line" stroke-linecap="square"></path>
-                    <path d="M0,15 L7.5,15" id="Line" stroke-linecap="square"></path>
-                    <path d="M15.25,0 L15.25,7.5" id="Line" stroke-linecap="square"></path>
-                </g>
+                <path d="M31.8333333,40 L40.6212121,40 L33.5909091,11 L28.3181818,11 L29.1969697,18.25 L23.9242424,18.25 L24.8030303,11 L19.530303,11 L12.5,40 L21.2878788,40 L22.1666667,32.75 L30.9545455,32.75 L31.8333333,40 L31.8333333,40 Z M22.6060606,29.125 L23.4848485,21.875 L29.6363636,21.875 L30.5151515,29.125 L22.6060606,29.125 L22.6060606,29.125 Z" id="Imported-Layers" fill="#7E7E7E" sketch:type="MSShapeGroup"></path>
             </g>
         </g>
     </g>

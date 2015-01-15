@@ -1654,7 +1654,7 @@ p {
 @media all and (max-width: 47.99em) {
   /* line 4, ../sass/objects/_brand.scss */
   .brand-third {
-    width: 48.0%;
+    width: 98%;
     float: left;
     margin-left: 1%;
     margin-right: 1%;
@@ -1717,7 +1717,7 @@ p {
   /* line 60, ../sass/objects/_brand.scss */
   .brand-fourth {
     margin-top: 0;
-    width: 48.0%;
+    width: 98%;
     float: left;
     margin-left: 1%;
     margin-right: 1%;
@@ -1974,9 +1974,9 @@ code {
 @media all and (min-width: 48em) {
   /* line 52, ../sass/objects/_tool.scss */
   .tool-center {
-    width: 64.66667%;
+    width: 81.33333%;
     float: left;
-    margin-left: 17.66667%;
+    margin-left: 9.33333%;
     margin-right: -100%;
   }
 }
@@ -2075,6 +2075,14 @@ code {
   }
 }
 
+@media all and (min-width: 48em) {
+  /* line 113, ../sass/objects/_tool.scss */
+  .fastlane-feature {
+    height: 93px !important;
+    margin-top: -5px;
+  }
+}
+
 /* line 1, ../sass/layouts/_layoutBrands.scss */
 .layout__content--brands {
   padding-top: 38px;
@@ -2153,6 +2161,12 @@ code {
     font-size: 2em;
     line-height: 1.5em;
   }
+}
+
+/* line 48, ../sass/layouts/_layoutHero.scss */
+.title--companies {
+  font-size: 28px !important;
+  margin-bottom: 18px !important;
 }
 
 /* line 1, ../sass/layouts/_layoutQuote.scss */

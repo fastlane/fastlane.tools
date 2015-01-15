@@ -35,7 +35,7 @@
   }
 
   @include mq($to:macro-medium) {
-    @include span(6 of 12);
+    @include span(12 of 12);
 
     img {
       display:table;
@@ -88,7 +88,7 @@
 
   @include mq($to:macro-medium) {
     margin-top: 0;
-    @include span(6 of 12);
+    @include span(12 of 12);
 
     img {
       display:table;

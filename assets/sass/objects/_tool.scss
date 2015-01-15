@@ -51,7 +51,7 @@
 
 .tool-center {
   @include mq($from:macro-medium) {
-    @include span(isolate 8 of 12 at 3 last);
+    @include span(isolate 10 of 12 at 2 last);
   }
   border-bottom: 1px solid rgba(151,151,151,0.3);
 }
@@ -107,6 +107,13 @@
 
   @include mq($from:macro-medium) {
     @include span(7 of 12 last);
+  }
+}
+
+.fastlane-feature {
+  @include mq($from:macro-medium) {
+    height: 93px !important;
+    margin-top: -5px;
   }
 }
 
