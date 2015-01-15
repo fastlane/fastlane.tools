@@ -1739,6 +1739,13 @@ p {
   height: 55px;
 }
 
+/* line 122, ../sass/objects/_brand.scss */
+.fast-lane-logo {
+  margin-left: auto;
+  height: 150px;
+  margin-right: auto;
+}
+
 /* line 1, ../sass/objects/_button.scss */
 .btn--white {
   margin-top: 28px;
@@ -2354,8 +2361,13 @@ code {
   }
 }
 
+/* line 68, ../sass/partials/_content.scss */
+.features-padding {
+  padding-bottom: 38px;
+}
+
 @media all and (min-width: 30em) {
-  /* line 68, ../sass/partials/_content.scss */
+  /* line 72, ../sass/partials/_content.scss */
   .content--fastlane-features-padding {
     padding-top: 190px;
   }

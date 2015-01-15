@@ -65,6 +65,10 @@
   }
 }
 
+.features-padding {
+  padding-bottom: 38px;
+}
+
 .content--fastlane-features-padding {
   @include mq($from:macro-small) {
     padding-top: 190px;
