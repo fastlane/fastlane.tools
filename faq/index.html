@@ -41,44 +41,40 @@
       <div class="layout__content--faq">
 
         <article class="post-content">
-    <h3 id="why-should-i-automate-the-release-process">Why should I automate the release process?</h3>
-<ul>
-  <li>Save <strong>days</strong> of preparing app submission, uploading screenshots and releasing the app</li>
-  <li>Colleague on vacation and a critical bugfix needs to be released? Don’t rely on one person releasing updates</li>
-</ul>
 
+
+          <h3 id="why-should-i-automate-the-release-process">Why should I automate the release process?</h3>
+<ul>
+<li>Save days of preparing app submission, uploading screenshots and releasing the app</li>
+<li>Colleague on vacation and a critical bugfix needs to be released? Don’t rely on one person releasing updates</li>
+<li>Increase software quality and reaction time with more frequent and smaller releases</li>
+<li>Deploy from any computer, even your remote server</li>
+<li>Start with <strong>Continuous Deployment</strong>. Just trigger <code>fastlane</code> and you’re good to go</li>
+<li>Store <strong>everything</strong> in git. Never look up build commands again</li>
+</ul>
 <h3 id="where-should-i-start">Where should I start?</h3>
-<ul>
-  <li>Take a look at the project page of each project to get an overview over their functionality</li>
-  <li>Install the gems you want to use</li>
-  <li>Run <code>fastlane init</code> to get up and running</li>
-  <li>Follow the steps</li>
-</ul>
-
+<p>There is a <a href="https://github.com/KrauseFx/fastlane/blob/master/GUIDE.md">guide</a> which describes how to get from zero.
+If you need more details about a specific tool, open the corresponding GitHub page, which is linked on the <a href="https://github.com/KrauseFx/fastlane">fastlane repository</a></p>
 <h3 id="what-is-continuous-deployment">What is Continuous Deployment?</h3>
 <blockquote>
-  <p>Continuous Delivery (CD) is a design practice used in software development to automate and improve the process of software delivery</p>
-
-  <p><a href="https://en.wikipedia.org/wiki/Continuous_delivery">Continuous Delivery on Wikipedia</a></p>
+<p>Continuous Delivery (CD) is a design practice used in software development to automate and improve the process of software delivery</p>
+<p><a href="https://en.wikipedia.org/wiki/Continuous_delivery">Continuous Delivery on Wikipedia</a></p>
 </blockquote>
-
 <p>Basically you want to deploy updates more often to the App Store to make it less painful and increase the quality of your app.</p>
-
 <p>The more steps we developers have to do manually each release, the more mistakes we make. It’s a tedious, repeating task.</p>
-
 <p>Using <code>fastlane</code> and its tools, you run one command to deploy an update of your app to the App Store.</p>
-
 <h3 id="how-does-a-continuous-deployment-setup-look-like">How does a Continuous Deployment setup look like?</h3>
-<p>Most projects make use of <a href="http://jenkins-ci.org/">Jenkins</a> on a Mac to automatically generate new test builds for every commit.
+<p>Most projects make use of <a href="http://jenkins-ci.org/">Jenkins</a> on a Mac to automatically generate new test builds for every commit. 
 When integrating the <code>fastlane</code> tools you extend its functionality to also create new screenshots, release new app updates and send emails with the latest screenshots to the marketing team.</p>
-
 <p>Basically your Jenkins build script will now only contain one line, which looks like <code>fastlane beta</code>. <code>fastlane</code> will generate a <code>JUnit Report</code> which Jenkins then displays in the project page.</p>
+<p>More information about the Jenkins integration can be found in the <a href="https://github.com/krausefx/fastlane#jenkins-integration">fastlane REAMDE</a>.</p>
+<p>For a project with a fully working <code>fastlane</code> setup, checkout the <a href="https://github.com/KrauseFx/fastlane-example">fastlane example project.</a></p>
+<h3 id="my-question-is-not-listed">My question is not listed</h3>
+<p>You can ask anything on <a href="https://twitter.com/KrauseFx">Twitter: @KrauseFx</a> or drop me an email: <a href="mailto:fastlane@krausefx.com">fastlane@krausefx.com</a></p>
 
-<p>More information about the Jenkins integration can be found in the <a href="https://github.com/krausefx/fastlane#jenkins-integration">fastlane REAMDE</a></p>
-
-  </article>
 
 
+        </article>
       </div>
 
           </div>
