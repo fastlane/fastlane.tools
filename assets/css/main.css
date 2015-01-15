@@ -1603,7 +1603,7 @@ p {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 12, ../../../../../../.rvm/gems/ruby-2.1.3/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../.rvm/gems/ruby-2.1.4/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
 .brands:after {
   content: " ";
   display: block;
@@ -1876,7 +1876,7 @@ code {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 12, ../../../../../../.rvm/gems/ruby-2.1.3/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../.rvm/gems/ruby-2.1.4/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
 .feature:after {
   content: " ";
   display: block;
@@ -2004,7 +2004,7 @@ code {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 12, ../../../../../../.rvm/gems/ruby-2.1.3/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../.rvm/gems/ruby-2.1.4/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
 .tools:after {
   content: " ";
   display: block;
@@ -2019,7 +2019,7 @@ code {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 12, ../../../../../../.rvm/gems/ruby-2.1.3/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../.rvm/gems/ruby-2.1.4/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
 .tool-feature:after {
   content: " ";
   display: block;
@@ -2410,13 +2410,26 @@ code {
     display: block;
   }
 }
+/* line 1, ../sass/partials/_footer.scss */
+.made-by {
+  margin-top: 0px;
+  text-align: center;
+}
+@media all and (min-width: 30em) {
+  /* line 1, ../sass/partials/_footer.scss */
+  .made-by {
+    margin-top: 170px;
+    text-align: right;
+  }
+}
+
 /* line 1, ../sass/partials/_shared.scss */
 .wrap {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 12, ../../../../../../.rvm/gems/ruby-2.1.3/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../.rvm/gems/ruby-2.1.4/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
 .wrap:after {
   content: " ";
   display: block;
