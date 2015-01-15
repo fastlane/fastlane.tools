@@ -1974,9 +1974,9 @@ code {
 @media all and (min-width: 48em) {
   /* line 52, ../sass/objects/_tool.scss */
   .tool-center {
-    width: 64.66667%;
+    width: 81.33333%;
     float: left;
-    margin-left: 17.66667%;
+    margin-left: 9.33333%;
     margin-right: -100%;
   }
 }
@@ -2072,6 +2072,14 @@ code {
     float: right;
     margin-left: 1%;
     margin-right: 1%;
+  }
+}
+
+@media all and (min-width: 48em) {
+  /* line 113, ../sass/objects/_tool.scss */
+  .fastlane-feature {
+    height: 93px !important;
+    margin-top: -5px;
   }
 }
 
