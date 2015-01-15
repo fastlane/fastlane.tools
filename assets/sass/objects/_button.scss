@@ -1,0 +1,42 @@
+.btn--white {
+  margin-top: 28px;
+  margin-left: auto;
+  margin-right: auto;
+  display:table;
+  text-align: center;
+  width: 150px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  background: transparent;
+  z-index: 1;
+  border: 3px solid white;
+  padding:10px;
+  padding-left: 48px;
+  padding-right: 48px;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  @include adjust-font-size-to(14px);
+
+  @include mq($from:macro-small) {
+  margin-top: 48px;
+  padding:8px;
+  padding-left: 64px;
+  padding-right: 64px;
+  width: auto;
+  @include adjust-font-size-to(22px);
+  }
+
+  @include mq($from:macro-large) {
+
+    @include transition(all 0.2s ease-in-out);
+      &:hover,
+      &:active {
+        color: $grey;
+        background-color: white;
+      }
+  }
+
+
+}

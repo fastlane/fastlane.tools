@@ -1,0 +1,30 @@
+/**
+ *
+ * FILE: Flexdd.scss
+ *
+ * AUTHOR: Adam Bulmer (http://www.mintuz.com)
+ * DATE: 2014
+ * VERSION 1.0
+ *
+ */
+
+// Spacing
+$flexdd-base-spacing-unit: 24 !default;
+$flexdd-half-spacing-unit: $flexdd-base-spacing-unit / 2 !default;
+$flexdd-double-spacing-unit: $flexdd-base-spacing-unit * 2 !default;
+
+// Type Setup
+$base-font-size: 16px !default;
+$base-line-height: 24px !default;
+$base-face: sans-serif !default;
+$flexdd-h1-size: 36px !default;
+$flexdd-h2-size: 28px !default;
+$flexdd-h3-size: 20px !default;
+$flexdd-h4-size: 18px !default;
+$flexdd-h5-size: 16px !default;
+$flexdd-h6-size: 16px !default;
+
+@import "bower_components/flexdd-base-reset/base.reset";
+@import "bower_components/flexdd-base-functions/base.functions";
+@import "bower_components/flexdd-base-mixins/base.mixins";
+@import "bower_components/flexdd-base-objects/base.objects";

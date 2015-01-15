@@ -1,0 +1,36 @@
+/**
+ * Fonts File
+ *
+ * Used to define any font faces
+ * or font based mixins.
+ */
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(fonts/OpenSans-Light.woff) format('woff'), url(fonts/OpenSans-Light.ttf) format('ttf'), url(fonts/OpenSans-Light.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(fonts/OpenSans-Regular.woff) format('woff'), url(fonts/OpenSans-Regular.ttf) format('ttf'), url(fonts/OpenSans-Regular.woff2) format('woff2');
+}
+
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(fonts/OpenSans-Semibold.woff) format('woff'), url(fonts/OpenSans-Semibold.ttf) format('ttf'), url(fonts/OpenSans-Semibold.woff2) format('woff2');
+}
+
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(fonts/OpenSans-Bold.woff) format('woff'), url(fonts/OpenSans-Bold.ttf) format('ttf'), url(fonts/OpenSans-Bold.woff2) format('woff2');
+}

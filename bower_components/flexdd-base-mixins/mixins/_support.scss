@@ -1,0 +1,34 @@
+/*------------------------------------*\
+    $MODERNIZR SUPPORT MIXINS
+\*------------------------------------*/
+
+/**
+ * Modernizr support mixins taken from 
+ * http://hugogiraudel.com/2014/05/12/modernizr-sass-mixin/
+ *
+ * makes it easier to maintain fallbacks for specific CSS features not supported
+ * in older browsers. 
+ */
+
+/**
+ * used when a feature is supported
+ */
+@mixin yep( $feature ){
+
+	.#{$feature} & { 
+    @content;
+  }
+
+}
+
+/**
+ * fallback for when a feature is not supported.
+ */
+@mixin nope( $feature ) {
+
+	.no-js &,
+  .no-#{$feature} & {
+    @content;
+  }
+
+}

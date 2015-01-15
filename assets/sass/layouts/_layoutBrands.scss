@@ -1,0 +1,9 @@
+.layout__content--brands {
+
+  padding-top: 38px;
+  padding-bottom: 38px;
+
+  @include span(isolate 12 of 12);
+  margin-right: 0;
+
+}

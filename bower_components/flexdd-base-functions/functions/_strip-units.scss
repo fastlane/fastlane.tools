@@ -1,0 +1,11 @@
+/*------------------------------------*\
+    $REM
+\*------------------------------------*/
+
+/*
+ * Remove any unit from a supplied number
+ * 
+ */
+@function strip-unit( $num ){
+	@return $num / ( $num * 0 + 1 );
+}

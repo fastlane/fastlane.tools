@@ -1,0 +1,29 @@
+/*------------------------------------*\
+    $HOVER
+\*------------------------------------*/
+
+/**
+ * Apply hover and focus states for the current element
+ *
+ * Optional pass an $additional_sector to be included e.g.:
+ *
+ * e.g. @include hover( '.is-active' );
+ * 
+ */
+@mixin hover( $additional_selector: false ) {
+
+	@if $additional_selector != false {
+		
+		&#{$additional_selector},
+		&:hover,
+		&:focus {
+			@content;
+		}
+		
+	} @else {
+		&:hover,
+		&:focus {
+			@content;
+		}
+	}	        
+}

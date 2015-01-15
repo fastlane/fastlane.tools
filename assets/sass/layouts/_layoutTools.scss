@@ -1,0 +1,40 @@
+.layout__content--tools {
+  @include span(isolate 10 of 12 at 2);
+  margin-right: 0;
+}
+
+.layout--tools {
+	background-color:#F7FBFC;
+}
+
+.layout--tools-collection {
+  padding-top:100px
+}
+
+
+.tools__description {
+  text-align: left;
+  @include mq($from:macro-small) {
+    text-align: right;
+  }
+
+}
+
+.tool__header {
+	font-weight: 600;
+}
+
+.tool__image {
+  margin-left: 0;
+
+  @include mq($from:macro-small) {
+    margin-left: 40%;
+  }
+
+
+}
+
+.tool__last {
+	padding-bottom: 78px;
+
+}

@@ -1,0 +1,32 @@
+/**
+ * Type File
+ *
+ * Used to setup the type configuration
+ * Custom type styles and sizes belong in here.
+ */
+
+/**
+ *
+ * Open sans 300,400,600,700
+ */
+
+html,body {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  color: $text-grey;
+}
+
+h2 {
+  @include adjust-font-size-to(20px);
+  font-weight: 600;
+  color: $text-grey;
+  line-height: 29px;
+}
+
+p {
+  @include adjust-font-size-to(18px);
+  margin-bottom: 6px;
+  font-weight: 400;
+  color: $text-grey;
+  line-height: 29px;
+}

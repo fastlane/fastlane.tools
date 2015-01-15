@@ -1,0 +1,29 @@
+{
+  "name": "Fastlane",
+  "version": "1.0.0",
+  "description": "A project scaffolded by flexdd framework",
+  "main": "index.html",
+  "keywords": [
+    "flexdd",
+    "framework",
+    "sass",
+    "javascript",
+    "yeoman",
+    "generator"
+  ],
+  "license": "MIT",
+  "homepage": "http://github.com/flexdd/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "flexdd-framework": "~1.0.1",
+    "compass-mixins": "~1.0.2",
+    "jquery": "~2.1.3",
+    "modernizr": "~2.8.3"
+  }
+}

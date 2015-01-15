@@ -1,0 +1,20 @@
+/*------------------------------------*\
+    $REM
+\*------------------------------------*/
+
+/*
+ * 'rem' is a Sass function that converts pixel values to rem values for whatever property is passed to it.
+ * 
+ */
+@function rem($value, $baseline: $base-font-size) {
+    @if $value == 0 { @return 0; } // 0rem -> 0
+    @if type-of($value) == list {
+        $result: ();
+        @each $e in $value {
+            $result: append($result, rem($e));
+        }
+        @return $result;
+    } @else {
+        @return if(type-of($value) == number and unit($value) == px, $value / $baseline * 1rem, $value);
+    }
+}

@@ -1,0 +1,27 @@
+
+.qoute-block {
+  position:relative;
+
+  h2 {
+    font-weight: 400;
+    font-size: 32px;
+    color:#535353;
+    line-height: 48px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+  }
+}
+
+.marks {
+  position:absolute;
+  font-size: 120px;
+  color:#D0CFCF;
+  left: -58px;
+  top: 21px;
+  line-height: 0;
+}
+

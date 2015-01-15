@@ -1,0 +1,172 @@
+/*------------------------------------*\
+    $TABLES
+\*------------------------------------*/
+ 
+table {
+	width: 100%;
+  margin-bottom: $flexdd-base-spacing-unit;
+	border-collapse: collapse;
+	border-spacing: 0;
+	background-color: transparent;
+}
+
+th,
+td { 
+  padding: 8px;
+  line-height: 20px;
+	text-align: left;
+	vertical-align: top;
+	border-top: 1px solid rgb(221,221,221);
+}
+
+table th {
+	font-weight: bold;
+}
+
+table thead th {
+  vertical-align: bottom;
+}
+
+table caption + thead tr:first-child th,
+table caption + thead tr:first-child td,
+table colgroup + thead tr:first-child th,
+table colgroup + thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+  border-top: 0;
+}
+
+table tbody + tbody {
+	border-top: 2px solid rgb(221,221,221);
+}
+
+.table-condensed th,
+.table-condensed td {
+    padding: 4px 5px;
+}
+
+.table-bordered {
+	border: 1px solid rgb(221,221,221);
+	border-collapse: separate;
+	*border-collapse: collapse;
+	border-left: 0;
+	border-radius: 4px;
+}
+
+.table-bordered th,
+.table-bordered td {
+	border-left: 1px solid rgb(221,221,221);
+}
+
+.table-bordered caption + thead tr:first-child th,
+.table-bordered caption + tbody tr:first-child th,
+.table-bordered caption + tbody tr:first-child td,
+.table-bordered colgroup + thead tr:first-child th,
+.table-bordered colgroup + tbody tr:first-child th,
+.table-bordered colgroup + tbody tr:first-child td,
+.table-bordered thead:first-child tr:first-child th,
+.table-bordered tbody:first-child tr:first-child th,
+.table-bordered tbody:first-child tr:first-child td {
+	border-top: 0;
+}
+
+.table-bordered thead:first-child tr:first-child th:first-child,
+.table-bordered tbody:first-child tr:first-child td:first-child {
+	border-radius: 4px 0 0 0;
+}
+
+.table-bordered thead:first-child tr:first-child th:last-child,
+.table-bordered tbody:first-child tr:first-child td:last-child {
+	border-radius: 0 4px 0 0;
+}
+
+.table-bordered thead:last-child tr:last-child th:first-child,
+.table-bordered tbody:last-child tr:last-child td:first-child,
+.table-bordered tfoot:last-child tr:last-child td:first-child {
+  border-radius: 0 0 0 4px;
+}
+
+.table-bordered thead:last-child tr:last-child th:last-child,
+.table-bordered tbody:last-child tr:last-child td:last-child,
+.table-bordered tfoot:last-child tr:last-child td:last-child {
+  border-radius: 0 0 4px 0;
+}
+
+.table-bordered caption + thead tr:first-child th:first-child,
+.table-bordered caption + tbody tr:first-child td:first-child,
+.table-bordered colgroup + thead tr:first-child th:first-child,
+.table-bordered colgroup + tbody tr:first-child td:first-child {
+	border-radius: 4px 0 0 0;
+}
+
+.table-bordered caption + thead tr:first-child th:last-child,
+.table-bordered caption + tbody tr:first-child td:last-child,
+.table-bordered colgroup + thead tr:first-child th:last-child,
+.table-bordered colgroup + tbody tr:first-child td:last-child {
+	border-radius: 0 4px 0 0;
+}
+
+.table-striped tbody tr:nth-child(odd) td,
+.table-striped tbody tr:nth-child(odd) th {
+  background-color: rgb(249,249,249);
+}
+
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+  background-color: rgb(245,245,245);
+}
+
+
+/**
+ * Cell alignments
+ */
+[colspan]{
+    text-align:center;
+}
+
+[colspan="1"]{
+    text-align:left;
+}
+
+[rowspan]{
+    vertical-align:middle;
+}
+
+[rowspan="1"]{
+    vertical-align: top;
+}
+
+/**
+ * Table colours
+ */
+table tbody tr.success td {
+	background-color: rgb(223,240,216);
+}
+
+table tbody tr.error td {
+	background-color: rgb(232,222,222);
+}
+
+table tbody tr.warning td {
+	background-color: rgb(252,248,227);
+}
+
+table tbody tr.info td {
+	background-color: rgb(217,237,247);
+}
+
+table-hover tbody tr.success:hover td {
+	background-color: rgb(208,233,198);
+}
+
+table-hover tbody tr.error:hover td {
+	background-color: rgb(235,204,204);
+}
+
+table-hover tbody tr.warning:hover td {
+	background-color: rgb(250,242,204);
+}
+
+table-hover tbody tr.info:hover td {
+	background-color: rgb(196,227,243);
+}

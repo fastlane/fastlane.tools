@@ -1,0 +1,7 @@
+.wrap {
+  @include container;
+}
+
+.wrap--full {
+  height:100%;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<head>
+
+  <meta charset="utf-8" />
+  <title>Fastlane</title>
+
+  <meta name="description" content="Fastlane tools, a collection of high performance continuous deployment tools" />
+  <meta name="author" content="Felix Krause" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../assets/css/main.css?v=1" />
+
+
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+
+      <div class="navigation">
+        <div class="logo-desktop">
+          <a href="../"><img src="../assets/img/logo-desktop.svg" alt=""></a>
+        </div>
+
+        <div class="logo-mobile">
+          <a href="../"><img src="../assets/img/logo-mobile.svg" alt=""></a>
+        </div>
+
+        <div class="nav-links">
+          <ul>
+            <li><a class="faqlink" href="#">FAQ</a></li>
+            <li><a class="githublink" href="http://github.com">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <div class="layout">
+    <div class="wrap">
+      <div class="layout__content--faq">
+
+        <article class="post-content">
+    <h3 id="why-should-i-automate-the-release-process">Why should I automate the release process?</h3>
+<ul>
+  <li>Save <strong>days</strong> of preparing app submission, uploading screenshots and releasing the app</li>
+  <li>Colleague on vacation and a critical bugfix needs to be released? Don’t rely on one person releasing updates</li>
+</ul>
+
+<h3 id="where-should-i-start">Where should I start?</h3>
+<ul>
+  <li>Take a look at the project page of each project to get an overview over their functionality</li>
+  <li>Install the gems you want to use</li>
+  <li>Run <code>fastlane init</code> to get up and running</li>
+  <li>Follow the steps</li>
+</ul>
+
+<h3 id="what-is-continuous-deployment">What is Continuous Deployment?</h3>
+<blockquote>
+  <p>Continuous Delivery (CD) is a design practice used in software development to automate and improve the process of software delivery</p>
+
+  <p><a href="https://en.wikipedia.org/wiki/Continuous_delivery">Continuous Delivery on Wikipedia</a></p>
+</blockquote>
+
+<p>Basically you want to deploy updates more often to the App Store to make it less painful and increase the quality of your app.</p>
+
+<p>The more steps we developers have to do manually each release, the more mistakes we make. It’s a tedious, repeating task.</p>
+
+<p>Using <code>fastlane</code> and its tools, you run one command to deploy an update of your app to the App Store.</p>
+
+<h3 id="how-does-a-continuous-deployment-setup-look-like">How does a Continuous Deployment setup look like?</h3>
+<p>Most projects make use of <a href="http://jenkins-ci.org/">Jenkins</a> on a Mac to automatically generate new test builds for every commit.
+When integrating the <code>fastlane</code> tools you extend its functionality to also create new screenshots, release new app updates and send emails with the latest screenshots to the marketing team.</p>
+
+<p>Basically your Jenkins build script will now only contain one line, which looks like <code>fastlane beta</code>. <code>fastlane</code> will generate a <code>JUnit Report</code> which Jenkins then displays in the project page.</p>
+
+<p>More information about the Jenkins integration can be found in the <a href="https://github.com/krausefx/fastlane#jenkins-integration">fastlane REAMDE</a></p>
+
+  </article>
+
+
+      </div>
+
+          </div>
+
+        </div>
+
+        <div class="spacer"></div>
+
+        <script src="assets/js/main.js"></script>
+        <script>
+          (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+          e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+          e.src='//www.google-analytics.com/analytics.js';
+          r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+          ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+      </body>
+      </html>
