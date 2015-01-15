@@ -129,7 +129,8 @@
 
         <h2 style="margin-top: 30px; margin-bottom: -20px;">Example fastlane configuration</h2>
 
-        <div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .3em;padding:.2em .6em; margin-top: 50px"><pre style="margin: 0; line-height: 125%">lane <span style="color: #0084b4">:appstore</span> <span style="color: #008000; font-weight: bold">do</span>
+        <div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:0 0 0 4px;padding:.5em .6em; margin-top: 50px">
+         <pre style="margin: 0; line-height: 125%">lane <span style="color: #0084b4">:appstore</span> <span style="color: #008000; font-weight: bold">do</span>
   increment_build_number
   cocoapods
   xctool
@@ -140,9 +141,7 @@
   sh <span style="color: #BA2121">&quot;./customScript.sh&quot;</span>
 
   slack
-<span style="color: #008000; font-weight: bold">end</span>
-        </pre></div>
-
+<span style="color: #008000; font-weight: bold">end</span></pre></div>
       </div>
     </div>
   </div>
