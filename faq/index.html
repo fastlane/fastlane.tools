@@ -62,6 +62,19 @@ If you need more details about a specific tool, open the corresponding GitHub pa
 <p>Basically you want to deploy updates more often to the App Store to make it less painful and increase the quality of your app.</p>
 <p>The more steps we developers have to do manually each release, the more mistakes we make. It’s a tedious, repeating task.</p>
 <p>Using <code>fastlane</code> and its tools, you run one command to deploy an update of your app to the App Store.</p>
+
+<h3 id="stable">How stable is this? Will it break if Apple changes something?</h3>
+
+<p><code>fastlane</code> uses a combination of official Apple API and frontend scripting using a headless JavaScript browser.</p>
+
+<h4>What happens if Apple changes some minor things?</h4>
+
+<p>Fortunately, Apple usually only updates iTunes Connect and the Apple Developer Portal two times a year. Most of the times, little things like button names will be changed. Those things are very easy and fast to fix.</p>
+
+<p>In case Apple decides to completely change the way we submit iOS apps, there will probably still be the "old" way of submitting apps. <code>fastlane</code> is used by lots of companies already, therefore there will be someone (this might be me) who will update the tools. They are fully open source, that means developers can easily install hotfixes themselves.</p>
+
+
+
 <h3 id="how-does-a-continuous-deployment-setup-look-like">How does a Continuous Deployment setup look like?</h3>
 <p>Most projects make use of <a href="http://jenkins-ci.org/">Jenkins</a> on a Mac to automatically generate new test builds for every commit. 
 When integrating the <code>fastlane</code> tools you extend its functionality to also create new screenshots, release new app updates and send emails with the latest screenshots to the marketing team.</p>
