@@ -1,0 +1,16 @@
+.layout__content--form {
+  @include span(isolate 10 of 12 at 2);
+  margin-right: 0;
+  text-align:center;
+
+padding-top: 30px;
+padding-bottom: 20px;
+background-color: #F7FBFC;
+border-radius: 8px;
+
+}
+
+.layout--form {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
