@@ -2460,7 +2460,7 @@ input {
   padding: 12px;
   border: 1px solid rgba(0, 0, 0, 0.15);
   margin-bottom: 18px;
-  cursor: default;
+  cursor: text;
 }
 
 /* line 24, ../sass/partials/_form.scss */
