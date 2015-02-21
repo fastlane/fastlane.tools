@@ -17,13 +17,17 @@ border: none;
 padding: 12px;
 border: 1px solid rgba(0,0,0,0.15);
 margin-bottom: 18px;
+cursor: default;
+
 }
 
 input[type="submit"] {
-  background-color: #32E2A6;
+  background-color: #29C590;
   width: 30%;
-  border: 2px solid rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(0, 0, 0, 0.05);
   color: white;
   font-weight: 600;
   margin-bottom: 4px;
+  cursor: pointer;
+
 }
