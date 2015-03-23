@@ -62,7 +62,7 @@
   margin-top: $flexdd-double-spacing-unit * 1.5;
 
   img {
-    height: 50px;
+    height: 33px;
   }
 
   &:nth-of-type( 4n+4 ) {
@@ -117,6 +117,10 @@
 
 .xing {
   height: 55px;
+  @include mq($from:macro-medium) {
+    margin-left: 0px !important;
+  }
+
 }
 
 .fast-lane-logo {

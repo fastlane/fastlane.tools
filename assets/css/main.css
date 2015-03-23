@@ -1687,7 +1687,7 @@ p {
 }
 /* line 64, ../sass/objects/_brand.scss */
 .brand-fourth img {
-  height: 50px;
+  height: 33px;
 }
 /* line 68, ../sass/objects/_brand.scss */
 .brand-fourth:nth-of-type(4n+4) {
@@ -1750,8 +1750,14 @@ p {
 .xing {
   height: 55px;
 }
+@media all and (min-width: 48em) {
+  /* line 118, ../sass/objects/_brand.scss */
+  .xing {
+    margin-left: 0px !important;
+  }
+}
 
-/* line 122, ../sass/objects/_brand.scss */
+/* line 126, ../sass/objects/_brand.scss */
 .fast-lane-logo {
   margin-left: auto;
   height: 150px;
