@@ -1,0 +1,18 @@
+.layout__content--video {
+	  @include span(isolate 10 of 12 at 2);
+  margin-right: 0;
+  text-align:center;
+
+
+  	height:150px; 
+
+   @include mq($from:macro-medium) {
+  	height:350px; 
+  }
+
+  @include mq($from:macro-large) {
+  	height:600px; 
+  }
+
+
+}

@@ -1780,8 +1780,15 @@ p {
 /* line 140, ../sass/objects/_brand.scss */
 .fast-lane-logo {
   margin-left: auto;
-  height: 150px;
   margin-right: auto;
+  width: 330px;
+}
+@media all and (min-width: 30em) {
+  /* line 140, ../sass/objects/_brand.scss */
+  .fast-lane-logo {
+    width: auto;
+    height: 150px;
+  }
 }
 
 /* line 1, ../sass/objects/_button.scss */
@@ -2335,6 +2342,29 @@ code {
 /* line 37, ../sass/layouts/_layoutTools.scss */
 .tool__last {
   padding-bottom: 78px;
+}
+
+/* line 1, ../sass/layouts/_layoutVideo.scss */
+.layout__content--video {
+  width: 81.33333%;
+  float: left;
+  margin-left: 9.33333%;
+  margin-right: -100%;
+  margin-right: 0;
+  text-align: center;
+  height: 150px;
+}
+@media all and (min-width: 48em) {
+  /* line 1, ../sass/layouts/_layoutVideo.scss */
+  .layout__content--video {
+    height: 350px;
+  }
+}
+@media all and (min-width: 64.0625em) {
+  /* line 1, ../sass/layouts/_layoutVideo.scss */
+  .layout__content--video {
+    height: 600px;
+  }
 }
 
 /* line 1, ../sass/layouts/_layouts.scss */
