@@ -1780,8 +1780,15 @@ p {
 /* line 140, ../sass/objects/_brand.scss */
 .fast-lane-logo {
   margin-left: auto;
-  height: 150px;
   margin-right: auto;
+  width: 330px;
+}
+@media all and (min-width: 30em) {
+  /* line 140, ../sass/objects/_brand.scss */
+  .fast-lane-logo {
+    width: auto;
+    height: 150px;
+  }
 }
 
 /* line 1, ../sass/objects/_button.scss */

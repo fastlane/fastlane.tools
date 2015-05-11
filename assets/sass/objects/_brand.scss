@@ -139,6 +139,11 @@
 
 .fast-lane-logo {
   margin-left: auto;
-  height: 150px;
   margin-right: auto;
+  width:330px;
+
+   @include mq($from:macro-small) {
+      width:auto;
+      height: 150px;  
+   }
 }
