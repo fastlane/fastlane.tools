@@ -2337,6 +2337,29 @@ code {
   padding-bottom: 78px;
 }
 
+/* line 1, ../sass/layouts/_layoutVideo.scss */
+.layout__content--video {
+  width: 81.33333%;
+  float: left;
+  margin-left: 9.33333%;
+  margin-right: -100%;
+  margin-right: 0;
+  text-align: center;
+  height: 150px;
+}
+@media all and (min-width: 48em) {
+  /* line 1, ../sass/layouts/_layoutVideo.scss */
+  .layout__content--video {
+    height: 350px;
+  }
+}
+@media all and (min-width: 64.0625em) {
+  /* line 1, ../sass/layouts/_layoutVideo.scss */
+  .layout__content--video {
+    height: 600px;
+  }
+}
+
 /* line 1, ../sass/layouts/_layouts.scss */
 .layout__content {
   width: 81.33333%;
