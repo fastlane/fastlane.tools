@@ -14,17 +14,6 @@ module.exports = function( grunt ) {
     grunt.log.subhead( 'Running Grunt in `Production` mode' );
 
     grunt.loadNpmTasks( 'grunt-contrib-uglify' );
-    grunt.loadNpmTasks( 'grunt-contrib-imagemin' );
-
-  } else if( mode == 'icons' ) {
-
-    grunt.log.subhead( 'Generating icons...' );
-    grunt.loadNpmTasks('grunt-fontsmith');
-
-  } else if( mode == 'img' ) {
-
-    grunt.log.subhead( 'Compressing images...' );
-    grunt.loadNpmTasks( 'grunt-contrib-imagemin' );
 
   } else {
 
@@ -76,39 +65,6 @@ module.exports = function( grunt ) {
         }
     },
 
-    // Imagemin
-    imagemin: {
-      files: {
-        expand: true,
-        cwd: 'assets/img/',
-        src: [ '**/*.{png,gif,jpg}' ],
-        dest: 'assets/img/'
-      }
-    },
-
-    // build icon font
-    font: {
-        all: {
-
-            // SVG files to read in
-            src: ['assets/icons/*.svg'],
-
-            // Location to output CSS variables
-            destCss: 'assets/sass/type/_icons.{scss,json}',
-
-            // Location to output fonts (expanded via brace expansion)
-            destFonts: 'assets/css/fonts/icons.{svg,woff,eot,ttf}',
-
-            // Optional: Custom naming of font families for multi-task support
-            fontFamily: 'icons',
-
-            // Optional: Custom routing of font filepaths for CSS
-            cssRouter: function ( filepath ) {
-                return filepath.replace( 'assets/css/', '' );
-            }
-
-        }
-    },
 
     // watch our project for changes
     watch: {
@@ -140,17 +96,8 @@ module.exports = function( grunt ) {
       grunt.task.run([
         'compass',
         'concat',
-        'uglify',
-        'imagemin'
+        'uglify'
       ]);
-
-    } else if( mode == 'icons' ) {
-
-        grunt.task.run( [ 'font' ] );
-
-    } else if( mode == 'img' ) {
-
-        grunt.task.run( [ 'imagemin' ] );
 
     } else {
 
