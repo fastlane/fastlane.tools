@@ -1,4 +1,6 @@
-# Fastlane.tools website
+# fastlane.tools
+
+The website, powering fastlane.tools
 
 ## Setup
 
