@@ -60,6 +60,7 @@
         </div>
         <script type="text/javascript">
           url = "https://refresher.fastlane.tools/duration"
+          var startedWithMinutes = null
           function reloadThis() {
             xmlhttp = new XMLHttpRequest();
             xmlhttp.open("GET", url, true);
@@ -72,8 +73,16 @@
                   seconds += results[key]
                 }
                 minutes = seconds / 60 // to minutes
+                if (startedWithMinutes == null) { startedWithMinutes = minutes }
                 hours = minutes / 60 // to hours
                 document.getElementById("currentCount").innerHTML = parseInt(hours).toLocaleString()
+
+                var diff = minutes - startedWithMinutes
+                if (diff > 1) {
+                  // document.getElementById("pageMinutes").innerHTML = diff
+                  // document.getElementById("divTransparentMinutes").style.opacity = 1
+                }
+
 
                 // show everything
                 document.getElementById('counter').style.opacity = 1
@@ -519,6 +528,16 @@
           <a class="btn btn--white" href="http://krausefx.com/about" target="_blank">Work with me</a>
         </div>
 
+      </div>
+    </div>
+  </div>
+  <div class="layout">
+    <div class="wrap">
+      <div class="layout__content--brands" style="text-align: center; margin-bottom: -100px; opacity: 0;" id="divTransparentMinutes">
+        <h1>
+          <span id="pageMinutes" style="font-size: 110%;"></span>
+          <span style="font-size: 80%">minutes saved</span> 
+          <span style="font-size: 60%">since you opened this page</span></h1>
       </div>
     </div>
   </div>
