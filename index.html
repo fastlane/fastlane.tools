@@ -56,7 +56,7 @@
       <!-- 5px to be aligned with the fastlane logo -->
         <div style="opacity: 0" id="counter">
           <h1><span id="currentCount" style="font-size: 130%"></span> Developer Hours saved</h1>
-          <p style="color: #444">Within the last <span id="since"></span> days</p>
+          <p style="color: #444">Within the last <span id="since"></span> month</p>
         </div>
         <script type="text/javascript">
           url = "https://refresher.fastlane.tools/duration"
@@ -93,7 +93,7 @@
           setInterval(reloadThis, 10000)
 
           var since = new Date().getTime() - new Date(Date.parse("2015-07-14"))
-          since = parseInt(since / 1000 / 60 / 60 / 24)
+          since = parseInt(since / 1000 / 60 / 60 / 24 / 30)
           document.getElementById('since').innerHTML = since
         </script>
       </div>
