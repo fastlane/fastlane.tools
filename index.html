@@ -10,6 +10,12 @@
 
   <link rel="stylesheet" href="assets/css/main.css?v=4" />
   <link rel="icon" stype="image/png" href="assets/img/favicon.ico">
+  <style type="text/css">
+    /* Temporary */
+    .tool img {
+      height: 50px !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -27,7 +33,7 @@
 
         <div class="nav-links">
           <ul>
-            <li><a href="faq/">FAQ</a></li>
+            <!-- <li><a href="faq/">FAQ</a></li> -->
             <li><a target="_blank" href="https://github.com/krausefx/fastlane">GitHub</a></li>
           </ul>
         </div>
@@ -42,7 +48,7 @@
 
         <div class="hero__content">
           <h1 class="hero__title">Automation done right</h1>
-          <h2 class="hero__subtitle">Used by thousands of iOS Developers</h2>
+          <h2 class="hero__subtitle">Used by thousands of mobile Developers</h2>
           <a class="btn btn--white" href="https://github.com/KrauseFx/fastlane" target="_blank">Open on GitHub</a>
         </div>
 
@@ -104,7 +110,7 @@
   <div class="wrap">
     <div class="layout__content--brands">
          <img class="fast-lane-logo" src="assets/img/logo-desktop-large.png" alt="">
-         <h2 class="fastlane-intro">fastlane lets you define and run your deployment pipelines for different environments. It helps you unify your app’s release process and automate the whole process. fastlane connects all fastlane tools and third party tools, like <a href="http://cocoapods.org">CocoaPods</a> and <a href="https://github.com/facebook/xctool">xctool</a>.</h2>
+         <h2 class="fastlane-intro">fastlane lets you define and run your deployment pipelines for different environments. It helps you unify your app’s release process and automate the whole process. fastlane connects all fastlane tools and third party tools, like <a href="https://cocoapods.org">CocoaPods</a> and <a href="http://gradle.org/">Gradle</a>.</h2>
     </div>
   </div>
 </div>
@@ -174,7 +180,7 @@
                 <div class="tool-feature__icon"><img class="fastlane-feature" src="assets/img/logo-desktop.png" alt=""></div>
                 <div class="tool-feature__text">
                   <h2>fastlane</h2>
-                  <p>Connect all iOS deployment tools into one streamlined workflow</p>
+                  <p>Connect all deployment tools into one streamlined workflow for iOS and Android</p>
                   <iframe src="https://ghbtns.com/github-btn.html?user=KrauseFx&repo=fastlane&type=watch&count=true"
   allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
                 </div>
@@ -191,7 +197,7 @@
     <div class="wrap">
       <div class="layout__content--tools">
         <div class="tools">
-          <h2 style="margin-bottom: 30px; margin-top: -60px; font-size: 25px;">Meet the fastlane family</h2>
+          <h2 style="margin-bottom: 30px; margin-top: -60px; font-size: 25px;">Meet the fastlane family (iOS)</h2>
           <div class="tool">
             <style type="text/css">
               .githubButton {
@@ -277,17 +283,6 @@
           </div>
 
           <div class="tool tool-break">
-            <a href="https://github.com/fastlane/codes" target="_blank">
-              <img src="assets/img/tools/codes.png" alt="">
-              <h2>codes</h2>
-            </a>
-            <span class="product__text">Create promo codes for iOS Apps using the command line</span>
-            <br />
-            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=codes&type=watch&count=true"
-  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
-          </div>
-
-          <div class="tool tool-break">
             <a href="https://github.com/fastlane/gym" target="_blank">
               <img src="assets/img/tools/gym.png" alt="">
               <h2>gym</h2>
@@ -295,6 +290,17 @@
             <span class="product__text">Building your iOS app has never been easier</span>
             <br />
             <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=gym&type=watch&count=true"
+  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+          </div>
+
+          <div class="tool tool-break">
+            <a href="https://github.com/fastlane/scan" target="_blank">
+              <img src="assets/img/tools/scan.png" alt="">
+              <h2>scan</h2>
+            </a>
+            <span class="product__text">The easiest way to run tests of your iOS and Mac app</span>
+            <br />
+            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=scan&type=watch&count=true"
   allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
           </div>
         </div>
@@ -306,10 +312,10 @@
     <div class="wrap">
       <div class="layout__content--tools">
         <div class="tools">
-          <h2 style="margin-bottom: 30px; margin-top: -110px; font-size: 25px;">Extra fastlane tools</h2>
+          <h2 style="margin-bottom: 30px; margin-top: -110px; font-size: 25px;">iOS TestFlight Tools</h2>
           <div class="tool tool-break">
             <a href="https://github.com/fastlane/pilot" target="_blank">
-              <img src="assets/img/tools/pilot.png" alt="">
+              <img src="assets/img/tools/pilot.png" alt="" style="height: 75px !important;">
               <h2>pilot</h2>
             </a>
             <span class="product__text">The best way to manage your TestFlight testers and builds from your terminal</span>
@@ -319,7 +325,7 @@
           </div>
           <div class="tool tool-break">
             <a href="https://github.com/fastlane/boarding" target="_blank">
-              <img src="assets/img/tools/boarding.png" alt="">
+              <img src="assets/img/tools/boarding.png" alt="" style="height: 75px !important;">
               <h2>boarding</h2>
             </a>
             <span class="product__text">Instantly create a simple signup page for TestFlight beta testers</span>
@@ -332,7 +338,25 @@
     </div>
   </div>
 
-
+<div class="layout layout--tools-collection">
+    <div class="wrap">
+      <div class="layout__content--tools">
+        <div class="tools">
+          <h2 style="margin-bottom: 30px; margin-top: -110px; font-size: 25px;">Meet the new fastlane for Android tools</h2>
+          <div class="tool tool-break">
+            <a href="https://github.com/fastlane/supply" target="_blank">
+              <img src="assets/img/tools/supply.png" alt="">
+              <h2>supply</h2>
+            </a>
+            <span class="product__text">Command line tool for updating Android apps and their metadata on the Google Play Store</span>
+            <br />
+            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=supply&type=watch&count=true"
+  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
     
 
@@ -427,11 +451,10 @@
          <pre style="margin: 0; line-height: 125%">lane <span style="color: #0084b4">:appstore</span> <span style="color: #008000; font-weight: bold">do</span>
   increment_build_number
   cocoapods
-  xctool
+  scan
   snapshot
   sigh
   deliver
-  frameit
   sh <span style="color: #BA2121">&quot;./customScript.sh&quot;</span>
 
   slack
@@ -541,7 +564,6 @@
         <div class="hero__content">
           <h2 class="hero__subtitle">Get started with fastlane today</h2>
           <a class="btn btn--white" href="https://github.com/KrauseFx/fastlane" target="_blank">Open on GitHub</a>
-          <a class="btn btn--white" href="http://krausefx.com/about" target="_blank">Work with me</a>
         </div>
 
       </div>
@@ -602,7 +624,6 @@
                   <li>
                     <a href="http://krausefx.com" target="_blank" style="color: #0084b4">krausefx.com</a>
                   </li>
-                  <li style="margin-top: 50px; font-size: 14px"><a href="imprint/">Imprint</a></li>
                 </ul>
               </td>
             </tr>
@@ -610,8 +631,7 @@
 
         </div>
         <div class="content content__half content--padded-top content--no-bottom-padding made-by" >
-         <p>website designed by - <a style="color: #0084b4" href="https://twitter.com/lee_moonan" target="_blank">Lee Moonan</a></p>
-         <p>built by - <a style="color: #0084b4" href="https://twitter.com/aaronjiwa" target="_blank">Aaron Jiwa</a></p>
+         
         </div>
       </div>
     </div>
