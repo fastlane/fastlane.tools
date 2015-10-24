@@ -60,47 +60,47 @@
     <div class="wrap">
       <div class="layout__content--brands" style="text-align: center; margin-bottom: -60px; padding-left: 5px">
       <!-- 5px to be aligned with the fastlane logo -->
-        <div style="" id="counter">
-          <h1><span id="currentCount" style="font-size: 130%">72,706</span> Developer Hours saved</h1>
+        <div style="opacity: 0" id="counter">
+          <h1><span id="currentCount" style="font-size: 130%"></span> Developer Hours saved</h1>
           <p style="color: #444">Within the last <span id="since"></span> months</p>
         </div>
         <script type="text/javascript">
-          // url = "https://refresher.fastlane.tools/duration"
-          // var startedWithMinutes = null
-          // function reloadThis() {
-          //   xmlhttp = new XMLHttpRequest();
-          //   xmlhttp.open("GET", url, true);
-          //   xmlhttp.send();
-          //   xmlhttp.onreadystatechange=function() {
-          //     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-          //       var results = JSON.parse(xmlhttp.responseText)
-          //       var seconds = 0
-          //       for (var key in results) {
-          //         seconds += results[key]
-          //       }
-          //       minutes = seconds / 60 // to minutes
-          //       if (startedWithMinutes == null) { startedWithMinutes = minutes }
-          //       hours = minutes / 60 // to hours
-          //       document.getElementById("currentCount").innerHTML = parseInt(hours).toLocaleString()
+          url = "https://refresher.fastlane.tools/duration"
+          var startedWithMinutes = null
+          function reloadThis() {
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+            xmlhttp.onreadystatechange=function() {
+              if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                var results = JSON.parse(xmlhttp.responseText)
+                var seconds = 0
+                for (var key in results) {
+                  seconds += results[key]
+                }
+                minutes = seconds / 60 // to minutes
+                if (startedWithMinutes == null) { startedWithMinutes = minutes }
+                hours = minutes / 60 // to hours
+                document.getElementById("currentCount").innerHTML = parseInt(hours).toLocaleString()
 
-          //       var diff = minutes - startedWithMinutes
-          //       if (diff > 1) {
-          //         // document.getElementById("pageMinutes").innerHTML = diff
-          //         // document.getElementById("divTransparentMinutes").style.opacity = 1
-          //       }
+                var diff = minutes - startedWithMinutes
+                if (diff > 1) {
+                  // document.getElementById("pageMinutes").innerHTML = diff
+                  // document.getElementById("divTransparentMinutes").style.opacity = 1
+                }
 
 
-          //       // show everything
-          //       document.getElementById('counter').style.opacity = 1
-          //     }
-          //   }
-          // }
-          // reloadThis()
-          // setInterval(reloadThis, 10000)
+                // show everything
+                document.getElementById('counter').style.opacity = 1
+              }
+            }
+          }
+          reloadThis()
+          setInterval(reloadThis, 10000)
 
-          // var since = new Date().getTime() - new Date(Date.parse("2015-07-14"))
-          // since = parseInt(since / 1000 / 60 / 60 / 24 / 30)
-          // document.getElementById('since').innerHTML = since
+          var since = new Date().getTime() - new Date(Date.parse("2015-07-14"))
+          since = parseInt(since / 1000 / 60 / 60 / 24 / 30)
+          document.getElementById('since').innerHTML = since
         </script>
       </div>
     </div>
