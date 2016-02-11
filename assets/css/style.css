@@ -23,6 +23,9 @@
   font-size: 20px;
   color: #000;
 }
+.open-git {
+  max-width: 215px;
+}
 .section-hero {
   min-height: 506px;
   color: #fff;
@@ -111,9 +114,6 @@
 .section-hero a {
   position: relative;
   z-index: 2;
-}
-.section-hero .open-git {
-  max-width: 215px;
 }
 .section-intro {
   padding-top: 80px;
@@ -236,6 +236,11 @@ _:future,
 .section-tools .ios_tools p {
   min-height: 80px;
 }
+@media (max-width: 1080px) {
+  .section-tools .ios_tools p {
+    min-height: 50px;
+  }
+}
 .section-tools .ios_tools.fastlane_tool {
   border: none!important;
 }
@@ -259,11 +264,37 @@ _:future,
 .section-tools .ios_tools.fastlane_tool iframe {
   margin-top: 25px;
 }
+.section-tools .ios_tools.test_tools {
+  padding: 39px 35px 38px 20px;
+}
 .section-tools .ios_tools.test_tools img {
   max-height: none;
 }
+.section-tools .ios_tools.android_tools {
+  margin-bottom: 15px;
+  padding: 15px 20px 15px 20px;
+}
+@media (max-width: 1080px) {
+  .section-tools .ios_tools.android_tools {
+    margin-bottom: 25px;
+    padding: 20px 35px 20px 20px;
+  }
+}
 .section-tools .ios_tools.android_tools p {
-  min-height: 176px;
+  min-height: 40px;
+}
+.section-tools .ios_tools.android_tools p.italic {
+  font-size: 17px;
+  line-height: 18px;
+}
+.section-tools .ios_tools.android_tools img {
+  max-height: 45px;
+  margin-bottom: 10px;
+}
+@media (max-width: 1080px) {
+  .section-tools .ios_tools.android_tools img {
+    margin-bottom: 15px;
+  }
 }
 .section-tools .ios_tools.spaceship_tools p {
   min-height: auto;

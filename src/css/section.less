@@ -26,6 +26,9 @@
 
     p {
       min-height: 80px;
+      @media (max-width: 1080px) {
+          min-height: 50px;
+      }
     }
 
     &.fastlane_tool {
@@ -55,14 +58,34 @@
     }    
 
     &.test_tools {
+      padding: 39px 35px 38px 20px;
       img {
         max-height: none;
       }
     }
 
     &.android_tools {
+     @media (max-width: 1080px) {
+        margin-bottom: 25px;
+        padding: 20px 35px 20px 20px;
+      }
+
+      margin-bottom: 15px;
+      padding: 15px 20px 15px 20px;
       p {
-        min-height: 176px;
+        min-height: 40px;
+        
+        &.italic {
+          font-size: 17px;
+          line-height: 18px;
+        }
+      }
+      img{
+        max-height: 45px;
+        margin-bottom: 10px;
+        @media (max-width: 1080px) {
+          margin-bottom: 15px;
+        }
       }
     }
 
