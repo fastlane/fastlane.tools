@@ -1,114 +1,87 @@
-module.exports = function( grunt ) {
+module.exports = function(grunt) {
 
-  var mode = grunt.option( 'mode' ) || 'dev';
+  // ===========================================================================
+  // CONFIGURE GRUNT ===========================================================
+  // ===========================================================================
+  grunt.initConfig({
 
-  // load tasks
-  grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-concat');
+    // get the configuration info from package.json ----------------------------
+    // this way we can use things like name and version (pkg.name)
+    pkg: grunt.file.readJSON('package.json'),
 
-
-  if ( mode == 'prod' ) {
-
-    grunt.log.subhead( 'Running Grunt in `Production` mode' );
-
-    grunt.loadNpmTasks( 'grunt-contrib-uglify' );
-
-  } else {
-
-    grunt.log.subhead( 'Running Grunt in `Development` mode' );
-
-  }
-
-    grunt.initConfig({
-
-    // compass dev does expanded else compressed
-    compass: {
-      dist: {
-        options: {
-          config: 'config.rb',
-          outputStyle: ( mode == 'dev' ) ? 'expanded' : 'compressed',
-          force: true
-        }
-      }
+    // configure jshint to validate js files -----------------------------------
+    jshint: {
+      options: {
+        reporter: require('jshint-stylish')
+      },
+      all: ['Grunfile.js', 'src/**/*.js']
     },
-    //minify main.js
+
+    // configure uglify to minify js files -------------------------------------
     uglify: {
-      dist: {
+      options: {
+        banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
+      },
+      build: {
         files: {
-          'assets/js/main.js': [ 'assets/js/main.js' ]
+          'assets/js/main.min.js': 'src/js/main.js'
         }
-      },
-    },
-
-    // concatenation
-    concat: {
-        options: {
-            separator: '\n'
-        },
-        dist: {
-            src: [
-                'bower_components/jquery/dist/jquery.min.js',
-                'bower_components/gsap/src/minified/TimelineMax.min.js',
-                'bower_components/gsap/src/minified/TweenMax.min.js',
-                'bower_components/jquery.transit/jquery.transit.js',
-                'bower_components/gsap/src/minified/jquery.gasp.min.js',
-                'bower_components/stickyjs/stickyjs.js',
-                'bower_components/ScrollMagic/js/jquery.scrollmagic.js',
-                'assets/js/src/plugins/*.js',
-                'assets/js/src/core/Global.js',
-                'assets/js/src/classes/*.js',
-                'assets/js/src/main.dev.js'
-            ],
-            dest: 'assets/js/main.js'
-        }
-    },
-
-
-    // watch our project for changes
-    watch: {
-      compass: {
-        files: [
-          'assets/sass/*.scss',
-          'assets/sass/**/*.scss'
-        ],
-        tasks: [ 'compass' ]
-      },
-      js: {
-        files: [
-          'assets/js/src/plugins/*.js',
-          'assets/js/src/classes/*.js',
-          'assets/js/src/main.dev.js'
-        ],
-        tasks: ['concat']
       }
     },
 
-  });
+    // compile less stylesheets to css -----------------------------------------
+    less: {
+      build: {
+        files: {
+          'assets/css/style.css': 'src/css/style.less'
+        }
+      }
+    },
 
-  // register task default task
-  grunt.registerTask( 'default', function() {
+    // configure cssmin to minify css files ------------------------------------
+    cssmin: {
+      options: {
+        banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
+      },
+      build: {
+        files: {
+          'assets/css/style.min.css': 'assets/css/style.css'
+        }
+      }
+    },
 
-    // some tasks we only want to run in production mode
-    if ( mode == 'prod' ) {
-
-      grunt.task.run([
-        'compass',
-        'concat',
-        'uglify'
-      ]);
-
-    } else {
-
-       grunt.task.run([
-        'compass',
-        'concat',
-        'watch'
-      ]);
-
+    // configure watch to auto update ------------------------------------------
+    watch: {
+      stylesheets: {
+        files: ['src/**/*.css', 'src/**/*.less'],
+        tasks: ['less', 'cssmin']
+      },
+      scripts: {
+        files: 'src/**/*.js',
+        tasks: ['jshint', 'uglify']
+      },
+      options: {
+        livereload: {
+          host: 'localhost',
+          port: 8080
+        }
+      }
     }
 
   });
+
+  // ===========================================================================
+  // LOAD GRUNT PLUGINS ========================================================
+  // ===========================================================================
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+
+  // ===========================================================================
+  // CREATE TASKS ==============================================================
+  // ===========================================================================
+  grunt.registerTask('default', ['jshint', 'uglify', 'cssmin', 'less']);
 
 };

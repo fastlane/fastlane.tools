@@ -1,671 +1,506 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<html>
+
 <head>
-
+  <title>fastlane - iOS Automation for Continuous Delivery</title>
   <meta charset="utf-8" />
-  <title>fastlane - iOS and Android Automation for Continuous Delivery</title>
-
-  <meta name="description" content="fastlane tools, a collection of iOS and Android continuous deployment and integration tools" />
-  <meta name="author" content="Felix Krause" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="stylesheet" href="assets/css/main.css?v=4" />
-  <link rel="icon" stype="image/png" href="assets/img/favicon.ico">
-  <style type="text/css">
-    /* Temporary */
-    .tool img {
-      height: 50px !important;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/vendor/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/animate.css" />
+  <link rel="stylesheet" href="assets/css/extra_simil_bootstrap.css" />
+  <link rel="stylesheet" href="assets/css/style.min.css" />
 </head>
 <body>
-
-  <header class="site-header">
-    <div class="wrap">
-
-      <div class="navigation">
-        <div class="logo-desktop">
-          <a href="#"><img src="assets/img/logo-desktop.png" alt=""></a>
-        </div>
-
-        <div class="logo-mobile">
-          <a href="#"><img src="assets/img/logo-mobile.svg" alt=""></a>
-        </div>
-
-        <div class="nav-links">
-          <ul>
-            <!-- <li><a href="faq/">FAQ</a></li> -->
-            <li><a target="_blank" href="https://github.com/fastlane/fastlane">GitHub</a></li>
-          </ul>
-        </div>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <span class="navbar-brand">
+          <img src="assets/img/logo-desktop.png" width="153" alt="Fastlane Logo">
+        </span>
       </div>
-    </div>
 
-  </header>
-
-  <div class="layout layout--hero">
-    <div class="wrap wrap--full">
-      <div class="layout__content--hero">
-
-        <div class="hero__content">
-          <h1 class="hero__title">Automation done right</h1>
-          <h2 class="hero__subtitle">Used by thousands of mobile Developers</h2>
-          <a class="btn btn--white" href="https://github.com/fastlane/fastlane" target="_blank">Open on GitHub</a>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="layout">
-    <div class="wrap">
-      <div class="layout__content--brands" style="text-align: center; margin-bottom: -60px; padding-left: 5px">
-      <!-- 5px to be aligned with the fastlane logo -->
-        <div style="opacity: 0" id="counter">
-          <h1><span id="currentCount" style="font-size: 130%"></span> Developer Hours saved</h1>
-          <p style="color: #444">Within the last <span id="since"></span> months</p>
-        </div>
-        <script type="text/javascript">
-          url = "https://refresher.fastlane.tools/duration"
-          var startedWithMinutes = null
-          function reloadThis() {
-            xmlhttp = new XMLHttpRequest();
-            xmlhttp.open("GET", url, true);
-            xmlhttp.send();
-            xmlhttp.onreadystatechange=function() {
-              if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                var results = JSON.parse(xmlhttp.responseText)
-                var seconds = 0
-                for (var key in results) {
-                  seconds += results[key]
-                }
-                minutes = seconds / 60 // to minutes
-                if (startedWithMinutes == null) { startedWithMinutes = minutes }
-                hours = minutes / 60 // to hours
-                document.getElementById("currentCount").innerHTML = parseInt(hours).toLocaleString()
-
-                var diff = minutes - startedWithMinutes
-                if (diff > 1) {
-                  // document.getElementById("pageMinutes").innerHTML = diff
-                  // document.getElementById("divTransparentMinutes").style.opacity = 1
-                }
-
-
-                // show everything
-                document.getElementById('counter').style.opacity = 1
-              }
-            }
-          }
-          reloadThis()
-          setInterval(reloadThis, 10000)
-
-          var since = new Date().getTime() - new Date(Date.parse("2015-07-14"))
-          since = parseInt(since / 1000 / 60 / 60 / 24 / 30)
-          document.getElementById('since').innerHTML = since
-        </script>
-      </div>
-    </div>
-  </div>
-
-   <div class="layout">
-  <div class="wrap">
-    <div class="layout__content--brands">
-         <img class="fast-lane-logo" src="assets/img/logo-desktop-large.png" alt="">
-         <h2 class="fastlane-intro">fastlane lets you define and run your deployment pipelines for different environments. It helps you unify your app’s release process and automate the whole process. fastlane connects all fastlane tools and third party tools, like <a href="https://cocoapods.org">CocoaPods</a> and <a href="http://gradle.org/">Gradle</a>.</h2>
-    </div>
-  </div>
-</div>
-
-  <div class="layout">
-    <div class="wrap">
-      <div class="layout__content features-padding">
-        <div class="content content__half content--padded-double ">
-          <div class="content--fastlane-features">
-
-            <div class="feature">
-              <div class="feature__icon"><img src="assets/img/featureicons/connect.svg" height="48" width="48" alt=""></div>
-
-              <div class="feature__text">Connect all build tools together</div>
-            </div>
-
-            <div class="feature">
-              <div class="feature__icon"><img src="assets/img/featureicons/lanes.svg" height="48" width="48" alt=""></div>
-              <div class="feature__text">Define multiple lanes for different needs</div>
-            </div>
-
-            <div class="feature">
-              <div class="feature__icon"><img src="assets/img/featureicons/jenkins.svg" height="48" width="48" alt=""></div>
-              <div class="feature__text text--oneline">Jenkins Integration</div>
-            </div>
-
-            <div class="feature">
-              <div class="feature__icon"><img src="assets/img/featureicons/extend.svg" height="48" width="48" alt=""></div>
-              <div class="feature__text">Extend by adding your own build steps</div>
-            </div>
-
-            <div class="feature">
-              <div class="feature__icon"><img src="assets/img/featureicons/deploy.svg" height="48" width="48" alt=""></div>
-              <div class="feature__text text--oneline">Deploy from any computer</div>
-            </div>
-
-            <div class="feature">
-              <div class="feature__icon"><img src="assets/img/featureicons/share.svg" height="48" width="48" alt=""></div>
-              <div class="feature__text">Release new app updates with the push of a button</div>
-            </div>
-
-            <div class="feature">
-              <div class="feature__icon"><img src="assets/img/featureicons/github.svg" height="48" width="48" alt=""></div>
-              <div class="feature__text" style="line-height:47px;">100% open source</div>
-            </div>
-          </div>
-
-        </div>
-        <div class="content content__half ">
-          <a href="#tools">
-            <img src="assets/img/diagram.png" alt="Fastlanes 'lanes' workflow">
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="layout">
-    <div class="wrap">
-      <div class="layout__content--tools">
-        <div class="tools">
-          <div class="tool-center">
-            <div class="tool-feature">
-              <a  href="https://github.com/fastlane/fastlane" target="_blank">
-                <div class="tool-feature__icon"><img class="fastlane-feature" src="assets/img/logo-desktop.png" alt=""></div>
-                <div class="tool-feature__text">
-                  <h2>fastlane</h2>
-                  <p>Connect all deployment tools into one streamlined workflow for iOS and Android</p>
-                  <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=fastlane&type=watch&count=true"
-  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
-                </div>
-                <span id="tools" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="layout layout--tools-collection">
-    <div class="wrap">
-      <div class="layout__content--tools">
-        <div class="tools">
-          <h2 style="margin-bottom: 30px; margin-top: -60px; font-size: 25px;">Meet the fastlane family (iOS)</h2>
-          <div class="tool">
-            <style type="text/css">
-              .githubButton {
-                margin-top: 15px;
-              }
-            </style>
-            <a href="https://github.com/fastlane/deliver" target="_blank">
-              <img src="assets/img/tools/deliver.png" alt="">
-              <h2>deliver</h2>
-            </a>
-            <span class="product__text">Upload screenshots, metadata and your app to the App Store using a single command</span>
-            <br />
-            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=deliver&type=watch&count=true"
-  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
-          </div>
-
-          <div class="tool">
-            <a href="https://github.com/fastlane/snapshot" target="_blank">
-              <img src="assets/img/tools/snapshot.png" alt="">
-              <h2>snapshot</h2>
-            </a>
-            <span class="product__text">Automate taking localized screenshots of your iOS app on every device</span>
-            <br />
-            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=snapshot&type=watch&count=true"
-  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
-          </div>
-
-          <div class="tool">
-            <a href="https://github.com/fastlane/frameit" target="_blank">
-              <img src="assets/img/tools/frameit.png" alt="">
-              <h2>frameit</h2>
-            </a>
-            <span class="product__text">Quickly put your screenshots into the right device frames</span>
-            <br />
-            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=frameit&type=watch&count=true"
-  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
-          </div>
-        </div>
-
-        <div class="tools">
-          <div class="tool">
-            <a href="https://github.com/fastlane/pem" target="_blank">
-              <img src="assets/img/tools/pem.png" alt="">
-              <h2>pem</h2>
-            </a>
-            <span class="product__text">Automatically generate and renew your push notification profiles</span>
-            <br />
-            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=pem&type=watch&count=true"
-  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
-          </div>
-          <div class="tool tool-break">
-            <a href="https://github.com/fastlane/sigh" target="_blank">
-              <img src="assets/img/tools/sigh.png" alt="">
-              <h2>sigh</h2>
-            </a>
-            <span class="product__text">Because you would rather spend your time building stuff than fighting provisioning</span>
-            <br />
-            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=sigh&type=watch&count=true"
-  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
-          </div>
-          <div class="tool tool-break">
-            <a href="https://github.com/fastlane/produce" target="_blank">
-              <img src="assets/img/tools/produce.png" alt="">
-              <h2>produce</h2>
-            </a>
-            <span class="product__text">Create new iOS apps on iTunes Connect and Developer Portal using the command line</span>
-            <br />
-            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=produce&type=watch&count=true"
-  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
-          </div>
-        </div>
-
-        <div class="tools">
-          <div class="tool tool-break">
-            <a href="https://github.com/fastlane/cert" target="_blank">
-              <img src="assets/img/tools/cert.png" alt="">
-              <h2>cert</h2>
-            </a>
-            <span class="product__text">Automatically create and maintain iOS code signing certificates</span>
-            <br />
-            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=cert&type=watch&count=true"
-  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
-          </div>
-
-          <div class="tool tool-break">
-            <a href="https://github.com/fastlane/gym" target="_blank">
-              <img src="assets/img/tools/gym.png" alt="">
-              <h2>gym</h2>
-            </a>
-            <span class="product__text">Building your iOS app has never been easier</span>
-            <br />
-            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=gym&type=watch&count=true"
-  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
-          </div>
-
-          <div class="tool tool-break">
-            <a href="https://github.com/fastlane/scan" target="_blank">
-              <img src="assets/img/tools/scan.png" alt="">
-              <h2>scan</h2>
-            </a>
-            <span class="product__text">The easiest way to run tests of your iOS and Mac app</span>
-            <br />
-            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=scan&type=watch&count=true"
-  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
-          </div>
-        </div>
-
-        <div class="tools">
-          <div class="tool tool-break">
-            <a href="https://github.com/fastlane/match" target="_blank">
-              <img src="assets/img/tools/match.png" alt="">
-              <h2>match</h2>
-            </a>
-            <span class="product__text">Easily sync your certificates and profiles across your team using git</span>
-            <br />
-            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=match&type=watch&count=true"
-  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="layout layout--tools-collection">
-    <div class="wrap">
-      <div class="layout__content--tools">
-        <div class="tools">
-          <h2 style="margin-bottom: 30px; margin-top: -110px; font-size: 25px;">iOS TestFlight Tools</h2>
-          <div class="tool tool-break">
-            <a href="https://github.com/fastlane/pilot" target="_blank">
-              <img src="assets/img/tools/pilot.png" alt="" style="height: 75px !important;">
-              <h2>pilot</h2>
-            </a>
-            <span class="product__text">The best way to manage your TestFlight testers and builds from your terminal</span>
-            <br />
-            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=pilot&type=watch&count=true"
-  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
-          </div>
-          <div class="tool tool-break">
-            <a href="https://github.com/fastlane/boarding" target="_blank">
-              <img src="assets/img/tools/boarding.png" alt="" style="height: 75px !important;">
-              <h2>boarding</h2>
-            </a>
-            <span class="product__text">Instantly create a simple signup page for TestFlight beta testers</span>
-            <br />
-            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=boarding&type=watch&count=true"
-  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div class="layout layout--tools-collection">
-    <div class="wrap">
-      <div class="layout__content--tools">
-        <div class="tools">
-          <h2 style="margin-bottom: 30px; margin-top: -110px; font-size: 25px;">Meet the new fastlane for Android tools</h2>
-          <div class="tool tool-break">
-            <a href="https://github.com/fastlane/supply" target="_blank">
-              <img src="assets/img/tools/supply.png" alt="">
-              <h2>supply</h2>
-            </a>
-            <span class="product__text">Command line tool for updating Android apps and their metadata on the Google Play Store</span>
-            <br />
-            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=supply&type=watch&count=true"
-  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-    
-
-
-    <div class="layout">
-    <div class="wrap">
-      <div class="layout__content--tools">
-        <div class="tools">
-          <h2 style="margin-bottom: 30px; font-size: 25px;">Powered by</h2>
-          <div class="tool-center" style="border-bottom: none;">
-            <div class="tool-feature">
-              <a  href="https://github.com/fastlane/spaceship" target="_blank">
-                <div class="tool-feature__icon"><img class="fastlane-feature" src="assets/img/tools/spaceship.png" alt=""></div>
-                <div class="tool-feature__text">
-                  <h2>Spaceship</h2>
-                  <p>A Ruby library that exposes the Apple Developer Center API.</p>
-                  <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=spaceship&type=watch&count=true"
-  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
-                </div>
-                <span id="tools" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-    <div style="margin-bottom: 48px;" class="layout layout--tools">
-    <div class="wrap">
-      <div class="layout__content--quote">
-       <div class="qoute-block">
-         <div class="marks">“</div>
-         <h2>
-            fastlane was instrumental in helping our mobile team reduce their release time from 3 weeks to 3 hours
-         </h2>
-         <p style="color: #777">Todd Edwards, Build Engineer, McClatchy Interactive</p>
-       </div>
-     </div>
-   </div>
- </div>
-
-
-
-  <div class="wrap" >
-    <div class="layout__content--video">
-      <iframe src="https://player.vimeo.com/video/124317399" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    </div>
-  </div>
-
-
-
-  <div class="layout layout--form">
-    <div class="wrap" style="margin-bottom: 50px">
-      <div class="layout__content--form">
-
-        <p>Be the first to try new tools, new features and hear about fastlane related announcements.</br> Only relevant information will be sent to you and you can unsubscribe any time.</p>
-
-        <form action="https://tinyletter.com/KrauseFx" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/KrauseFx', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
-          <label for="tlemail"></label>
-          <input type="text" placeholder="Email Address"  name="email" id="tlemail" />
-          <input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe" />
-        </form>
-
-    </div>
-  </div>
-
-
-  <div class="layout layout--tools">
-    <div class="wrap">
-      <div class="layout__content--quote">
-        <h2>Why use Continuous Deployment?</h2>
-        <ul id="benefitsList" style="margin-left: 30px; margin-top: 15px">
-          <li>Save days of preparing app submission, uploading screenshots and releasing the app</li>
-          <li>Colleague on vacation and a critical bugfix needs to be released? Don’t rely on one person releasing updates</li>
-          <li>Increase software quality and reaction time with more frequent and smaller releases</li>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="https://github.com/fastlane/fastlane" target="_blank">GitHub</a></li>
         </ul>
       </div>
     </div>
+  </nav>
+
+  <div class="section-hero">
+    
+    <div class="layers">
+      <div data-wow-delay="2.0s" class="wow fadeIn layer layer-green"></div>
+      <div data-wow-delay="0.6s" class="wow fadeIn layer layer-magenta"></div>
+      <div data-wow-delay="0.8s" class="wow fadeIn layer layer-cyan"></div>
+      <div data-wow-delay="1.0s" class="wow fadeIn layer layer-blue"></div>
+      <div data-wow-delay="1.3s" class="wow fadeIn layer layer-red"></div>
+      <div data-wow-delay="1.6s" class="wow fadeIn layer layer-orange"></div>
+      <div data-wow-delay="0.4s" class="wow fadeIn layer layer-yellow"></div>
+    </div>
+
+    <h1 class="wow fadeIn" data-wow-delay="0.1s">
+      Automation done right
+    </h1>
+    <h2 class="wow fadeIn" data-wow-delay="0.1s">
+      Used by thousands of mobile developers
+    </h2>
+    <a class="wow fadeIn" data-wow-delay="0.1s" href="https://github.com/fastlane/fastlane" target="_blank">
+      <img src="assets/img/hero-open-in-github-white.png" alt="Open In Github" class="open-git">
+    </a>
   </div>
 
+  <div class="container section-intro text-center">
+    <div id="timeCounter">
+      <span id="currentCount" class="safari_only">
+        <span>-</span>
+        <span>-</span>
+        <span>-</span>
+        <span>-</span>
+        <span>-</span>
+        <span>-</span>
+      </span>
+      <h2 class="wow fadeIn" data-wow-delay="0.1s">
+        Developer Hours Saved
+      </h2>
+      <h3 class="wow fadeIn" data-wow-delay="0.1s">
+        Within the last <span id="since"></span> months
+      </h3>
+    </div>
 
-  <div class="layout">
-    <div class="wrap">
-      <div class="layout__content--quote">
+    <p class="wow fadeIn" data-wow-delay="0.1s">
+      fastlane lets you define and run your deployment pipelines for different environments. It helps you unify your app’s release process and automate the whole process. fastlane connects all fastlane tools and third party tools, like <a href="https://cocoapods.org/" target="_blank">CocoaPods</a> and <a href="http://gradle.org/" target="_blank">Gradle</a>.
+    </p>
 
-        <h2 style=" margin-bottom: -20px;">Example fastlane configuration</h2>
+    <img src="assets/img/intro-fastlane-tree.png" alt="Fastlane Tools" class="img-responsive fastlane-tree wow fadeIn" data-wow-delay="0.1s">
+  </div>
 
-        <div style="background: #f8f8f8; overflow:auto;width:auto;border:solid #CCC;border-width:0 0 0 5px;padding:.5em .6em; margin-top: 50px">
-         <pre style="margin: 0; line-height: 125%">lane <span style="color: #0084b4">:appstore</span> <span style="color: #008000; font-weight: bold">do</span>
-  increment_build_number
-  cocoapods
-  scan
-  snapshot
-  sigh
-  deliver
-  sh <span style="color: #BA2121">&quot;./customScript.sh&quot;</span>
+  <hr>
 
-  slack
-<span style="color: #008000; font-weight: bold">end</span></pre></div>
+  <div class="section-process container">
+    <div class="row">
+      <div class="col-sm-3 text-center">
+        <img src="assets/img/process-github.svg" alt="" class="github-logo wow fadeIn" data-wow-delay="0.1s">
+        <div class="one-hundred-os wow fadeIn" data-wow-delay="0.1s">100% Open Source</div>
+      </div>
+      <div class="col-sm-9 process-steps">
+        <div class="row">
+          <div class="col-md-6">
+            <ul class="list-unstyled">
+              <li>
+                <img class="wow fadeIn" data-wow-delay="0.1s" src="assets/img/process-connect.svg" alt="Connect tools">
+                <span class="wow fadeIn" data-wow-delay="0.1s">Connect all build tools together</span>
+              </li>
+              <li>
+                <img class="wow fadeIn" data-wow-delay="0.1s" src="assets/img/process-lanes.svg" alt="Multiple lanes">
+                <span class="wow fadeIn" data-wow-delay="0.1s">Define multiple lanes for different needs</span>
+              </li>
+              <li>
+                <img class="wow fadeIn" data-wow-delay="0.1s" src="assets/img/process-jenkins.svg" alt="Jenkins">
+                <span class="wow fadeIn" data-wow-delay="0.1s">Jenkins Integration</span>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="list-unstyled">
+              <li>
+                <img class="wow fadeIn" data-wow-delay="0.1s" src="assets/img/process-extend.svg" alt="Extend">
+                <span class="wow fadeIn" data-wow-delay="0.1s">Extend by adding your own build steps</span>
+              </li>
+              <li>
+                <img class="wow fadeIn" data-wow-delay="0.1s" src="assets/img/process-deploy.svg" alt="Deploy">
+                <span class="wow fadeIn" data-wow-delay="0.1s">Deploy from any computer</span>
+              </li>
+              <li>
+                <img class="wow fadeIn" data-wow-delay="0.1s" src="assets/img/process-share.svg" alt="Release">
+                <span class="wow fadeIn" data-wow-delay="0.1s">Release new app updates with the push of a button</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
+  <hr>
 
-    <div class="layout layout--tools">
-    <div class="wrap">
-      <div class="layout__content--quote">
-       <div class="qoute-block">
-         <div class="marks">“</div>
-         <h2>
-          Since I've started using fastlane it has saved me countless hours of manual work, I love it!
-         </h2>
-         <p style="color: #777"><a href="https://twitter.com/myell0w" style="color: #0084b4" target="_blank">Matthias Tretter</a>, creator of Biscuit for reddit and iOS/Mac developer at MindNode</p>
-       </div>
-     </div>
-   </div>
- </div>
-
-
-
-
-
-
-
-
- <div class="layout">
-  <div class="wrap">
-    <div style="padding-bottom: 0;" class="layout__content--brands">
-     
-    </div>
-  </div>
-</div>
-
-
-  <div class="layout layout--tools">
-    <div class="wrap">
-      <div class="layout__content">
-            <style type="text/css">
-      .noBorderTable > tbody > tr > td {
-        border: none !important;
-      }
-    </style>
-    <table border="0" class="noBorderTable" style="margin-top: 15px">
-      <tr>
-        <td>
-          <blockquote class="twitter-tweet" data-cards="hidden" lang="en"><p>Kudos to <a href="https://twitter.com/KrauseFx">@KrauseFx</a>’s snapshot project for saving me a little time today and a lot in the future.&#10;<a href="https://t.co/an02Vvi8Tl">https://t.co/an02Vvi8Tl</a></p>&mdash; Paul Haddad (@tapbot_paul) <a href="https://twitter.com/tapbot_paul/status/565276729498148868">February 10, 2015</a></blockquote>
-        </td>
-        <td>
-          <blockquote class="twitter-tweet" lang="en"><p>Snapshot from <a href="https://twitter.com/KrauseFx">@KrauseFx</a> is AMAZING. Automated 75 screen shots in 15 minutes and now will never have to do it again for any new release!</p>&mdash; Bouncing Ball Games (@Gary_BBGames) <a href="https://twitter.com/Gary_BBGames/status/568784421450588160">February 20, 2015</a></blockquote>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <blockquote class="twitter-tweet" data-conversation="none" lang="en"><p><a href="https://twitter.com/KrauseFx">@KrauseFx</a> OMG! Your tools and I need nothing else to submit my apps :D THANKS! &lt;3</p>&mdash; lks. (@HerbstLukas) <a href="https://twitter.com/HerbstLukas/status/532608151649263616">November 12, 2014</a></blockquote>
-        </td>
-        <td>
-          <blockquote class="twitter-tweet" data-conversation="none" lang="en"><p><a href="https://twitter.com/KrauseFx">@KrauseFx</a> this is the greatest thing ever made!</p>&mdash; komocode (@komocode) <a href="https://twitter.com/komocode/status/537695938698285056">November 26, 2014</a></blockquote>
-        </td>
-      </tr>
-      <tr>
-        <td>
-              <blockquote class="twitter-tweet" lang="de"><p>I just used <a href="https://twitter.com/KrauseFx">@KrauseFx</a>&#39;s Deliver to submit a new build to the App Store while I was walking around the office doing absolutely nothing ❤️</p>&mdash; #AggressivelyPassive (@joshdholtz) <a href="https://twitter.com/joshdholtz/status/558308919911542784">22. Januar 2015</a></blockquote>
-        </td>
-        <td>
-          <blockquote class="twitter-tweet" data-cards="hidden" lang="en"><p>If you&#39;re building for iOS: check out <a href="https://twitter.com/KrauseFx">@KrauseFx</a>&#39;s suite of deployment tools. Saving me dozens of hours so far.&#10;&#10;<a href="https://t.co/8OSxRtjogQ">https://t.co/8OSxRtjogQ</a></p>&mdash; Justin Duke (@justinmduke) <a href="https://twitter.com/justinmduke/status/541448303632592896">December 7, 2014</a></blockquote>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <blockquote data-conversation="none" class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Was skeptical that a few words could generate certificates, provisioning files, etc. But <a href="https://twitter.com/KrauseFx">@KrauseFx</a>&#39;s <a href="https://twitter.com/FastlaneTools">@FastlaneTools</a> have blown me away...</p>&mdash; Rudd Fawcett (@ruddfawcett) <a href="https://twitter.com/ruddfawcett/status/639099608212369408">September 2, 2015</a></blockquote>
-        </td>
-        <td>
-          <blockquote class="twitter-tweet" data-cards="hidden" lang="en"><p>Just tried this tool to setup screenshot automation for my iOS application - AMAZING! <a href="https://t.co/3hRhrgFuJR">https://t.co/3hRhrgFuJR</a></p>&mdash; Jason Jarrett (@staxmanade) <a href="https://twitter.com/staxmanade/status/541274883033161728">December 6, 2014</a></blockquote>
-        </td>
-      </tr>
-    </table>
-    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <div class="section-tools">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="ios_tools fastlane_tool text-center-not-lg text-center-not-md wow fadeIn">
+            <div class="row">
+              <div class="col-md-3">
+                <img src="assets/img/fastlane_logo.png" alt="" />
+              </div>
+              <div class="col-md-7">
+                <p>
+                  connects all deployment tools into one streamlined workflow for iOS and Android
+                </p>
+              </div>
+              <div class="col-md-2">
+                <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=fastlane&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="layout layout--form">
-    <div class="wrap">
-      <div class="layout__content--form">
+  <hr>
 
-        <p>Be the first to try new tools, new features and hear about fastlane related announcements.</br> Only relevant information will be sent to you and you can unsubscribe any time.</p>
-
-        <form action="https://tinyletter.com/KrauseFx" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/KrauseFx', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+  <div class="section-tools">
+    <div class="container">
+      <h2 class="wow fadeIn text-center">Meet the fastlane family</h2>
+      <h4 class="wow fadeIn text-center" data-wow-delay="0.1s">Our iOS Tools</h4>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="ios_tools text-center-not-lg text-center-not-md wow fadeInwow fadeIn">
+            <img src="assets/img/tools-deliver.png" alt="" />
+            <p>
+              Upload screenshots, metadata and your app to the App Store using a single command.
+            </p>
+            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=deliver&type=watch&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="ios_tools text-center-not-lg text-center-not-md wow fadeIn">
+            <img src="assets/img/tools-snapshot.png" alt="" />
+            <p>
+              Automate taking localized screenshots of your iOS app on every device
+            </p>
+            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=snapshot&type=watch&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="ios_tools text-center-not-lg text-center-not-md wow fadeIn">
+            <img src="assets/img/tools-frameit.png" alt="" />
+            <p>
+              Quickly put your screenshots into the right device frames 
+            </p>
+            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=frameit&type=watch&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="ios_tools text-center-not-lg text-center-not-md wow fadeIn">
+            <img src="assets/img/tools-pem.png" alt="" />
+            <p>
+              Automatically generate and renew your push notification profiles 
+            </p>
+            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=PEM&type=watch&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="ios_tools text-center-not-lg text-center-not-md wow fadeIn">
+            <img src="assets/img/tools-sigh.png" alt="" />
+            <p>
+              Because you would rather spend your time building stuff than fighting provisioning 
+            </p>
+            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=sigh&type=watch&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="ios_tools text-center-not-lg text-center-not-md wow fadeIn">
+            <img src="assets/img/tools-produce.png" alt="" />
+            <p>
+              Create new iOS apps on iTunes Connect and Developer Portal using the command line 
+            </p>
+            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=produce&type=watch&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="ios_tools text-center-not-lg text-center-not-md wow fadeIn">
+            <img src="assets/img/tools-cert.png" alt="" />
+            <p>
+              Automatically create and maintain iOS code signing certificates
+            </p>
+            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=cert&type=watch&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="ios_tools text-center-not-lg text-center-not-md wow fadeIn">
+            <img src="assets/img/tools-scan.png" alt="" />
+            <p>
+              The easiest way to run tests of your iOS and Mac app 
+            </p>
+            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=scan&type=watch&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="ios_tools text-center-not-lg text-center-not-md wow fadeIn">
+            <img src="assets/img/tools-gym.png" alt="" />
+            <p>
+              Building your iOS app has never been easier 
+            </p>
+            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=gym&type=watch&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="ios_tools text-center-not-lg text-center-not-md wow fadeIn">
+            <img src="assets/img/tools-match.png" alt="" />
+            <p>
+              Easily sync your certificates and profiles across your team using Git 
+            </p> 
+            <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=match&type=watch&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <h4 class="text-center text-center-not-lg text-center-not-md wow fadeIn">iOS TestFlight Tools</h4>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="ios_tools test_tools text-center-not-lg text-center-not-md wow fadeIn">
+                <img src="assets/img/tools-pilot.png" alt="" />
+                <p>
+                  The best way to manage your TestFlight testers and builds from your terminal 
+                </p>
+                <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=pilot&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="ios_tools test_tools text-center-not-lg text-center-not-md wow fadeIn">
+                <img src="assets/img/tools-boarding.png" alt="" />
+                <p>
+                  Instantly create a simple signup page for TestFlight beta testers 
+                </p>
+                <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=boarding&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-center wow fadeIn">
+            Our Android Tools
+            <img src="assets/img/beta-tooltip.png" class="beta-img" alt="" />
+          </h4>
+          <div class="col-md-12">
+            <div class="ios_tools android_tools  text-center-not-lg text-center-not-md wow fadeIn">
+              <img src="assets/img/tools-supply.png" alt="" />
+              <p>
+                Building your iOS app has never been easier 
+              </p>
+              <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=supply&type=watch&count=true"
+              allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="ios_tools spaceship_tools text-center-not-lg text-center-not-md wow fadeIn">
+            <div class="row">
+              <div class="col-md-3">
+                <img src="assets/img/tools-spaceship.png" alt="" />
+              </div>
+              <div class="col-md-7">
+                <p>
+                  <span>Powered by Spaceship</span>, a Ruby library to access the Apple Developer Center and iTunes Connect
+                </p>
+              </div>
+              <div class="col-md-2">
+                <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=spaceship&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-footer">
+      <div class="text-center">
+        <p class="title">
+          Be the first to try new tools, new features and hear about fastlane related announcements.
+        </p>
+        <p class="italic">
+          Only relevant information will be sent to you and you can unsubscribe any time.
+        </p>
+        <form class="subscribe-form" action="https://tinyletter.com/KrauseFx" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/KrauseFx', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
           <label for="tlemail"></label>
-          <input type="text" placeholder="Email Address"  name="email" id="tlemail" />
-          <input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe" />
+          <input type="text" placeholder="Email Address" name="email" id="tlemail">
+          <input type="hidden" value="1" name="embed">
+          <button type="submit">
+            Subscribe
+          </button>
         </form>
-
-</div>
-</div>
-</div>
-
-  <div class="layout layout--start">
-    <div class="wrap ">
-      <div class="layout__content--start">
-
-        <div class="hero__content">
-          <h2 class="hero__subtitle">Get started with fastlane today</h2>
-          <a class="btn btn--white" href="https://github.com/fastlane/fastlane" target="_blank">Open on GitHub</a>
-        </div>
-
-      </div>
-    </div>
-  </div>
-  <div class="layout">
-    <div class="wrap">
-      <div class="layout__content--brands" style="text-align: center; margin-bottom: -100px; opacity: 0;" id="divTransparentMinutes">
-        <h1>
-          <span id="pageMinutes" style="font-size: 110%;"></span>
-          <span style="font-size: 80%">minutes saved</span> 
-          <span style="font-size: 60%">since you opened this page</span></h1>
       </div>
     </div>
   </div>
 
-  <footer>
-      <div class="layout">
-    <div class="wrap">
-      <div class="layout__content">
-
-        <div class="content content__half content--padded-double content--no-bottom-padding">
-          <h2 class=""><a href="https://krausefx.com/" target="_blank">Felix Krause</a></h2>
-
-          <table border="0" class="noBorderTable">
-            <tr>
-              <td style="padding-left: 0px">
-                <a href="http://krausefx.com" target="_blank">
-                  <img src="assets/img/KrauseFx.jpg" width="150" />
-                </a>
-              </td>
-              <td>
-                <ul>
-                  <li>
-                    <a href="https://github.com/KrauseFx" target="_blank" style="color: #0084b4">
-                      <span class="icon icon--github" >
-                        <svg viewBox="0 0 16 16" style="width: 18px;">
-                          <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
-                        </svg>
-                      </span>
-
-                      <span class="username">KrauseFx</span>
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="https://twitter.com/KrauseFx" target="_blank" style="color: #0084b4">
-                      <span class="icon  icon--twitter">
-                        <svg viewBox="0 0 16 16" style="width: 18px">
-                          <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
-                          c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
-                        </svg>
-                      </span>
-
-                      <span class="username">KrauseFx</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://krausefx.com/" target="_blank" style="color: #0084b4">krausefx.com</a>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </table>
-
+  <div class="section-media">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6  text-center-not-lg text-center-not-md">
+          <h4>
+            Fully Automate The Release Process of iOS Apps
+          </h4>
+          <div class="embed-responsive embed-responsive-16by9">
+            <video width="450"height="280" controls="controls">
+              <source src="https://embed-ssl.wistia.com/deliveries/68cb0bf13ad71dea513512f3dcc903534828bea7/file.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
-        <div class="content content__half content--padded-top content--no-bottom-padding made-by" >
-         
+        <div class="col-md-6  text-center-not-lg text-center-not-md">
+          <h4>
+            Twitter Flight 2015 fastlane by Felix Krause
+          </h4>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="450" height="280" src="https://www.youtube.com/embed/ZAnHxP5dnuc" frameborder="0" allowfullscreen></iframe>
+          </div>
         </div>
       </div>
+      <div class="row margin-top-40">
+        <div class="col-md-6 ">
+          <h4 class="wow fadeIn">
+            Why use Continuous Deployment?
+          </h4>
+          <div class="block">
+            <ul>
+              <li class="wow fadeIn" data-wow-delay="0.1s">
+                Save days of preparing app submission, uploading screenshots and releasing the app
+              </li>
+              <li class="wow fadeIn" data-wow-delay="0.1s">
+                Colleague on vacation and a critical bugfix needs to be released? Don’t rely on one person releasing updates
+              </li>
+              <li class="wow fadeIn" data-wow-delay="0.1s">
+                Increase software quality and reaction time with more frequent and smaller releases
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h4>
+            Example fastlane configuration
+          </h4>
+          <div class="block code">
+            <p class="code wow fadeIn" data-wow-delay="0.1s">
+              lane <span class="blue-code">:appstore</span> <span class="green-code">do</span>
+            </p>
+            <p class="code wow fadeIn margin-left-10" data-wow-delay="0.1s">
+              increment_build_number <br>
+              cocoapods <br>
+              scan <br>
+              snapshot <br>
+              sigh <br>
+              deliver <br>
+              sh <span class="red-code">"./customScript.sh"</span><br>
+              <br>
+              slack<br>
+            </p>
+            <p class="code wow fadeIn" data-wow-delay="0.1s">
+              <span class="green-code">end</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <p class="text-center see-examples wow fadeIn">
+        Need more on how to get started? <a href="https://github.com/fastlane/examples" target="_BLANK">See examples here.</a>
+      </p>
     </div>
   </div>
-  </footer>
 
-</div>
+  <div class="section-trusted">
+    <div class="container">
+      <h2 class="text-center wow fadeIn">
+        Trusted by Developers
+      </h2>
 
-</div>
+      <div class="tweets-container">
+        <div class="row">
+          <div class="col-md-6">
+            <blockquote class="twitter-tweet" data-cards="hidden" lang="en"><p lang="en" dir="ltr">Kudos to <a href="https://twitter.com/KrauseFx">@KrauseFx</a>’s snapshot project for saving me a little time today and a lot in the future.&#10;<a href="https://t.co/an02Vvi8Tl">https://t.co/an02Vvi8Tl</a></p>&mdash; Paul Haddad (@tapbot_paul) <a href="https://twitter.com/tapbot_paul/status/565276729498148868">february 10, 2015</a></blockquote>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+          <div class="col-md-6">
+            <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Snapshot from <a href="https://twitter.com/KrauseFx">@KrauseFx</a> is AMAZING. Automated 75 screen shots in 15 minutes and now will never have to do it again for any new release!</p>&mdash; Bouncing Ball Games (@Gary_BBGames) <a href="https://twitter.com/Gary_BBGames/status/568784421450588160">february 20, 2015</a></blockquote>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <blockquote class="twitter-tweet" data-conversation="none" lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/KrauseFx">@krausefx</a> OMG! Your tools and I need nothing else to submit my apps :D THANKS! &lt;3</p>&mdash; lks. (@HerbstLukas) <a href="https://twitter.com/HerbstLukas/status/532608151649263616">november 12, 2014</a></blockquote>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+          <div class="col-md-6">
+            <blockquote class="twitter-tweet" data-conversation="none" lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/KrauseFx">@KrauseFx</a> this is the greatest thing ever made</p>&mdash; komocode (@komocode) <a href="https://twitter.com/komocode/status/537695938698285056">november 26, 2014</a></blockquote>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">I just used <a href="https://twitter.com/KrauseFx">@KrauseFx</a>&#39;s Deliver to submit a new build to the App Store while I was walking around the office doing absolutely nothing ❤️</p>&mdash; #KeepOffMyLawn (@joshdholtz) <a href="https://twitter.com/joshdholtz/status/558308919911542784">january 22, 2015</a></blockquote>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+          <div class="col-md-6">
+            <blockquote class="twitter-tweet" data-cards="hidden" lang="en"><p lang="en" dir="ltr">If you&#39;re building for iOS: check out <a href="https://twitter.com/KrauseFx">@KrauseFx</a>&#39;s suite of deployment QoL tools. Saving me dozens of hours so far.&#10;&#10;<a href="https://t.co/8OSxRtjogQ">https://t.co/8OSxRtjogQ</a></p>&mdash; Justin Duke (@justinmduke) <a href="https://twitter.com/justinmduke/status/541448303632592896">december 7, 2014</a></blockquote>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Was skeptical that a few words could generate certificates, provisioning files, etc. But <a href="https://twitter.com/KrauseFx">@KrauseFx</a>&#39;s <a href="https://twitter.com/FastlaneTools">@FastlaneTools</a> have blown me away...</p>&mdash; Rudd Fawcett (@ruddfawcett) <a href="https://twitter.com/ruddfawcett/status/639099608212369408">september 2, 2015</a></blockquote>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+          <div class="col-md-6">
+            <blockquote class="twitter-tweet" data-cards="hidden" lang="en"><p lang="en" dir="ltr">Just tried this tool to setup screenshot automation on a Cordova iOS application - AMAZING! <a href="https://t.co/3hRhrgFuJR">https://t.co/3hRhrgFuJR</a></p>&mdash; Jason Jarrett (@staxmanade) <a href="https://twitter.com/staxmanade/status/541274883033161728">december 6, 2014</a></blockquote>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </div>
+      </div>
 
+      <hr>
 
+      <div class="section-bottom">
+        <a class="wow fadeIn" data-wow-delay="0.1s" href="https://github.com/fastlane/fastlane" target="_blank">
+          <img src="assets/img/hero-open-in-github-black.png" alt="Open In Github" class="open-git">
+        </a>
+      </div>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      <p class="italic closing">
+        <a href="https://krausefx.com/blog/fastlane-is-now-part-of-fabric" target="_BLANK" style="text-decoration: none; color: #979797">
+          <img class="fastlane-logo-footer" src="assets/img/fastlane_logo.png" alt="Fastlane" /> is now part of 
+          <img src="assets/img/fabric_logo.png" alt="Fabric" />
+        </a>
+      </p>
+    </div>
+  </div>
 
-  ga('create', 'UA-18658848-9', 'auto');
-  ga('set', 'anonymizeIp', true);
-  ga('send', 'pageview');
-</script>
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-11">
+          Copyright 2016 Twitter, Inc. All Rights Reserved | <a href="https://fabric.io/terms?locale=en-us">Terms of Service</a>
+        </div>
+        <div class="col-xs-12 col-md-1">
+          <img src="assets/img/twitter-logo.png" class="pull-rigth" alt="Twitter Inc." />
+        </div>
+      </div>      
+    </div>
+  </div>
+
+  <script src="assets/js/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+  <script src="assets/js/main.min.js"></script>
+  <script src="//localhost:8080/livereload.js" charset="utf-8"></script>
 </body>
-</html>
