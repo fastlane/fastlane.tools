@@ -234,7 +234,8 @@ _:future,
   margin-bottom: 15px;
 }
 .section-tools .ios_tools p {
-  min-height: 80px;
+  min-height: 70px;
+  margin-bottom: 0px;
 }
 @media (max-width: 1080px) {
   .section-tools .ios_tools p {
