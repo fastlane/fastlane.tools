@@ -1,0 +1,19 @@
+lane :generate do
+  require 'fileutils'
+  tools = %w(fastlane fastlane_core deliver snapshot frameit pem sigh produce cert gym pilot credentials_manager spaceship scan supply watchbuild match screengrab)
+  puts "Generating short links for: \n#{tools.join(', ')}"
+
+  Dir.chdir("..") do
+    tools.each do |current|
+      FileUtils.mkdir(current) unless File.directory?(current)
+
+      index = <<-eos
+  <script type=\"text/javascript\">
+    location.href = \"https://github.com/fastlane/fastlane/tree/master/#{current}\"
+  </script>
+  eos
+
+      File.write(File.join(current, "index.html"), index)
+    end
+  end
+end
