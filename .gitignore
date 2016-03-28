@@ -8,3 +8,5 @@ node_modules
 *.css.map
 npm-debug.log
 ._*
+
+fastlane/report.xml
