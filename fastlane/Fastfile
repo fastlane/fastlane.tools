@@ -9,7 +9,7 @@ lane :generate do
 
       index = <<-eos
   <script type=\"text/javascript\">
-    location.href = \"https://github.com/fastlane/fastlane/tree/master/#{current}\"
+    location.href = \"https://github.com/fastlane/fastlane/tree/master/#{current}#readme\"
   </script>
   eos
 
