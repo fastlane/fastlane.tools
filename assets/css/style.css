@@ -118,6 +118,11 @@
 .section-intro {
   padding-top: 80px;
 }
+@media (max-width: 480px) {
+  .section-intro {
+    padding-top: 40px;
+  }
+}
 .section-intro p {
   color: #636363;
   font-size: 19px;
@@ -157,15 +162,16 @@
 }
 @media (max-width: 979px) {
   .section-intro #timeCounter #currentCount span {
-    font-size: 19vw;
-    margin: 0 3px;
+    font-size: 15vw;
+    margin: 0 2px;
     padding: 18px 3px 0 3px;
     border-width: 1px;
   }
 }
 @media (max-width: 480px) {
   .section-intro #timeCounter #currentCount span {
-    font-size: 15vw;
+    font-size: 13vw;
+    padding: 3px 2px 0 2px;
   }
 }
 .section-intro p {

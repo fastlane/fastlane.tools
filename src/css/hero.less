@@ -113,6 +113,10 @@
 
 .section-intro {
   padding-top: 80px;
+  
+  @media (max-width: 480px) {
+    padding-top:40px;
+  }
 
   p{
     color: #636363;
@@ -155,14 +159,15 @@
         color: #000000;
 
         @media (max-width: 979px) {
-          font-size: 19vw;
-          margin: 0 3px;
+          font-size: 15vw;
+          margin: 0 2px;
           padding: 18px 3px 0 3px;
           border-width: 1px;
         }
 
         @media (max-width: 480px) {
-          font-size: 15vw;
+          font-size: 13vw;
+          padding: 3px 2px 0 2px;
         }
       }
     }
