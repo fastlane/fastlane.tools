@@ -14,6 +14,7 @@
         for (var key in results) {
           seconds += results[key];
         }
+
         minutes = seconds / 60; // to minutes
         if (startedWithMinutes === null) {
           startedWithMinutes = minutes;
@@ -22,9 +23,20 @@
 
         var hoursAsArray = parseInt(hours).toString().split('');
         var outputHtml = '';
-
+        var hoursOutput = [];
+        hoursAsArray.reverse();
+        
         for (var i = 0; i < hoursAsArray.length; i++) {
-          outputHtml += '<span>'+ hoursAsArray[i] +'</span>';
+          if ((i !== 0) && (i % 3 === 0)) {
+            hoursOutput[i] = '<span>'+ hoursAsArray[i] +'</span><span>,</span>';
+          }else{
+            hoursOutput[i] = '<span>'+ hoursAsArray[i] +'</span>';
+          }
+        }
+
+        hoursOutput.reverse();
+        for (var a = 0; a < hoursOutput.length; a++) {
+          outputHtml += hoursOutput[a] ;
         }
 
         //document.getElementById("currentCount").innerHTML = parseInt(hours); // .toLocaleString()
