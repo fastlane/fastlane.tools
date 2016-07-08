@@ -28,7 +28,7 @@
         
         for (var i = 0; i < hoursAsArray.length; i++) {
           if ((i !== 0) && (i % 3 === 0)) {
-            hoursOutput[i] = '<span>'+ hoursAsArray[i] +'</span><span>,</span>';
+            hoursOutput[i] = '<span>'+ hoursAsArray[i] +'</span><span class="comma">,</span>'; 
           }else{
             hoursOutput[i] = '<span>'+ hoursAsArray[i] +'</span>';
           }
