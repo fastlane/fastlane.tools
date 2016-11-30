@@ -56,11 +56,6 @@
   reloadThis();
   setInterval(reloadThis, 10000);
 
-  var since = new Date().getTime() - new Date(Date.parse("2015-07-14"));
-  since = parseInt(since / 1000 / 60 / 60 / 24 / 30);
-  document.getElementById('since').innerHTML = since;
-
-
   new WOW().init();
   
 })();
