@@ -1,5 +1,6 @@
 {
-  "name": "grunt-getting-started",
+  "name": "fastlane.tools",
+  "private": true,
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "~0.4.4",
