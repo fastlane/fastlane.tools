@@ -20,7 +20,7 @@ module.exports = function(grunt) {
     // configure uglify to minify js files -------------------------------------
     uglify: {
       options: {
-        banner: '/*\n © Copyright <%= grunt.template.today("yyyy") %> Google, Inc. Open source licenses: https://fabric.io/licenses/javascript \n*/\n'
+        banner: '/*\n © Copyright <%= grunt.template.today("yyyy") %> Google Inc. Open source licenses: https://fabric.io/licenses/javascript \n*/\n'
       },
       build: {
         files: {
