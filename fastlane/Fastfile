@@ -1,6 +1,6 @@
 lane :generate do
   require 'fileutils'
-  tools = %w(fastlane fastlane_core deliver snapshot frameit pem sigh produce cert gym pilot credentials_manager spaceship scan supply watchbuild match screengrab)
+  tools = %w(fastlane fastlane_core deliver snapshot frameit pem sigh produce cert gym pilot credentials_manager spaceship scan supply watchbuild match screengrab precheck)
   puts "Generating short links for: \n#{tools.join(', ')}"
 
   Dir.chdir("..") do
