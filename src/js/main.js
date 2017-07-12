@@ -1,8 +1,8 @@
 (function(){
 
-  var url = "https://refresher.fastlane.tools/duration";
+  var url = "https://fastlane-refresher.herokuapp.com/duration";
   var startedWithMinutes = null;
-  
+
   function reloadThis() {
     xmlhttp = new XMLHttpRequest();
     xmlhttp.open("GET", url, true);
@@ -25,10 +25,10 @@
         var outputHtml = '';
         var hoursOutput = [];
         hoursAsArray.reverse();
-        
+
         for (var i = 0; i < hoursAsArray.length; i++) {
           if ((i !== 0) && (i % 3 === 0)) {
-            hoursOutput[i] = '<span>'+ hoursAsArray[i] +'</span><span class="comma">,</span>'; 
+            hoursOutput[i] = '<span>'+ hoursAsArray[i] +'</span><span class="comma">,</span>';
           }else{
             hoursOutput[i] = '<span>'+ hoursAsArray[i] +'</span>';
           }
@@ -57,5 +57,5 @@
   setInterval(reloadThis, 10000);
 
   new WOW().init();
-  
+
 })();
