@@ -1,6 +1,6 @@
 (function(){
 
-  var url = "http://fastlane-refresher.herokuapp.com/duration";
+  var url = "https://fastlane-refresher.herokuapp.com/duration";
   var startedWithMinutes = null;
 
   function reloadThis() {
