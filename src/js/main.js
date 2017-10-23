@@ -5,9 +5,9 @@
   var developerSecondsSavedBeforeAnalyticIngester = 26304323354;
 
   // These numbers are taken from our SQL query
-  var developerSecondsSavedAfterAnalyticIngester = 4292012226;
-  var developerSecondsSavedPerSecond = 560;
-  var timeUpdated = 1499885116;
+  var developerSecondsSavedAfterAnalyticIngester = 8558750963;
+  var developerSecondsSavedPerSecond = 1039;
+  var timeUpdated = 1504812058;
 
   function reloadThis() {
     // get current time
