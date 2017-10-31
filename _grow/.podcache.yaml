@@ -1,0 +1,9 @@
+dependencies:
+  /content/pages/index.html:
+  - /content/pages/index.html
+  - /dist/css/main.min.css
+  - /dist/js/main.min.js
+  - /source/images/favicon.ico
+  - /views/partials/_footer.html
+  - /views/partials/_header.html
+objects: {}
