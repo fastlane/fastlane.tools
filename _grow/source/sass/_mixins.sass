@@ -1,0 +1,12 @@
+=breakpoint($width)
+  @media all and (min-width: $width)
+    @content
+
+=breakpoint-under($width)
+  @media all and (max-width: $width)
+    @content
+
+=light-text()
+  color: $color-white
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale

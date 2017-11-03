@@ -1,0 +1,38 @@
+.hero
+  +light-text
+  align-items: center
+  justify-content: center
+  background-color: $color-blue-28
+  display: flex
+  height: calc(100vh - #{$layout-nav-height})
+  max-height: 600px
+  padding: 0 $layout-side-padding / 2
+  text-align: center
+
+  .section__headline
+    margin: 0 0 20px
+    +breakpoint($bp-medium)
+      margin-bottom: 30px
+
+  .hero__summary
+    font-size: 20px
+    margin: 0 0 40px
+    opacity: .8
+    +breakpoint($bp-medium)
+      font-size: 25px
+      margin-bottom: 60px
+
+  .hero__hours-counter
+    border-bottom: 1px solid $color-blue-48
+    border-top: 1px solid $color-blue-48
+    margin: 0 auto
+    max-width: 400px
+    padding: 20px 0
+
+    .hero__hours-counter__headline
+      margin: 0 0 20px
+
+    .hero__hours-counter__counter
+      font: $font-h1
+      +breakpoint($bp-medium)
+        font-size: 80px

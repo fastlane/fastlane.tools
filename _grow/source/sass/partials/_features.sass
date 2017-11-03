@@ -1,0 +1,79 @@
+.features
+  padding-bottom: 60px
+  padding-top: 60px
+  text-align: center
+
+  .section__headline
+    color: $color-text-headlines
+    margin-bottom: 20px
+
+  .section__summary
+    color: $color-text-body
+
+  .features__divider
+    background: $color-green-95
+    height: 4px
+    margin-bottom: 30px
+    width: 100px
+
+  .features__cards
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+    max-width: 1000px
+    margin: 60px auto 0
+
+    .features__cards__card
+      +light-text
+      background: $color-blue-28
+      box-sizing: border-box
+      margin-bottom: 20px
+      max-width: 250px
+      padding: 20px
+      width: calc(50% - 10px)
+      +breakpoint($bp-medium)
+        width: calc(25% - 10px)
+
+      &.features__cards__card--screenshots
+        .features__cards__card__icon,
+        .features__cards__card__cta
+          border-color: $color-feature-screenshots
+
+      &.features__cards__card--beta
+        .features__cards__card__icon,
+        .features__cards__card__cta
+          border-color: $color-feature-beta
+
+      &.features__cards__card--appstore
+        .features__cards__card__icon,
+        .features__cards__card__cta
+          border-color: $color-feature-appstore
+
+      &.features__cards__card--codesigning
+        .features__cards__card__icon,
+        .features__cards__card__cta
+          border-color: $color-feature-codesigning
+
+      .features__cards__card__icon
+        border: 4px solid $color-white
+        border-radius: 50%
+        display: inline-block
+        height: 60px
+        margin-bottom: 20px
+        width: 60px
+
+      .features__cards__card__headline
+        margin-bottom: 20px
+
+      .features__cards__card__summary
+        margin-bottom: 20px
+        min-height: 80px
+
+      .features__cards__card__cta
+        +light-text
+        border: 2px solid $color-white
+        display: inline-block
+        font: $font-h4
+        letter-spacing: 2px
+        padding: 10px 20px
+        text-transform: uppercase
