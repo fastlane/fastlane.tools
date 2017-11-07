@@ -30,7 +30,6 @@
         ga('send', 'pageview');
       </script>
     {% endif %}
-
     {# styles and links #}
     {% if podspec.meta.favicon_path %}
       <link rel="shortcut icon" href="{{ g.static(podspec.meta.favicon_path).url.path }}">
@@ -56,6 +55,9 @@
     {% include 'views/partials/_footer.html' %}
 
     {# scripts #}
+    <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.4.2/intersection-observer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TimelineMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
     <script type="text/javascript" src="{{ g.static('/dist/js/main.min.js').url.path }}"></script>
   </body>
 </html>
