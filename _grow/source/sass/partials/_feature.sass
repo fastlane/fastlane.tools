@@ -26,6 +26,8 @@
       background: $color-feature-appstore
     .feature__cta a
       border-color: $color-feature-appstore
+    .feature__flex .feature__content-wrapper
+      order: 1
 
   &.feature--codesigning
     background-color: $color-bg-codesigning
@@ -33,12 +35,11 @@
       background: $color-feature-codesigning
     .feature__cta a
       border-color: $color-feature-codesigning
+    .feature__flex .feature__content-wrapper
+      order: 1
 
   a
     color: $color-white
-
-  h2
-    margin-bottom: 40px
 
   h5
     margin-bottom: 20px
@@ -63,28 +64,46 @@
       top: 5px
       width: 12px
 
-  .feature-icon
+  .feature__header
     margin-bottom: 40px
+    text-align: center
+    +breakpoint($bp-large)
+      text-align: left
+
+    .feature-icon
+      margin-bottom: 40px
+      +breakpoint($bp-large)
+        display: inline-block
+        margin-bottom: 0
+        margin-right: 20px
+        vertical-align: middle
+
+    .section__headline
+      text-align: center
+      +breakpoint($bp-large)
+        display: inline-block
+        text-align: left
+        vertical-align: middle
 
   .feature__flex
     +breakpoint($bp-large)
       display: flex
       justify-content: space-between
-
-  .feature__icon-wrapper
-    text-align: center
+      padding-left: 94px
 
   .feature__content-wrapper
-    flex-basis: 50%
-
-    .section__headline
-      text-align: center
-      +breakpoint($bp-large)
-        text-align: left
-        margin-top: 12px
+    flex-basis: 55%
 
   .feature__image-wrapper
     flex-basis: 40%
+    margin-top: 80px
+    +breakpoint($bp-large)
+      margin-top: 0
+
+    .feature__image-wrapper__image
+      display: block
+      height: auto
+      width: 100%
 
   .feature__cta
     display: block
