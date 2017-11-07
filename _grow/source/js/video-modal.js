@@ -49,6 +49,7 @@ window.$fastlaneYT = (function() {
     var modalContainer = document.querySelector('.video-modal');
     var vMedia = document.querySelector('.video-modal__media');
     var ytDom = document.getElementById('yt-player');
+    var backdrop = createBackdrop_();
 
     var modalWidth = modalContainer.offsetWidth;
     var modalHeight = modalContainer.offsetHeight;
@@ -74,6 +75,7 @@ window.$fastlaneYT = (function() {
       vMedia.style.display = 'block';
       vMedia.style.left = x + 'px';
       vMedia.style.top = y + 'px';
+      backdrop.style.display = 'block';
 
       var END_WIDTH_ = maxWidth + 'px';
       var END_HEIGHT_ = maxWidth / ratio + 'px';
@@ -87,6 +89,10 @@ window.$fastlaneYT = (function() {
         ease: Power2.easeInOut,
         onComplete: onModalOpen
       });
+
+      TweenMax.to(backdrop, EXPAND_DURATION_, {
+        opacity: 1
+      })
     }
 
     /**
@@ -95,12 +101,13 @@ window.$fastlaneYT = (function() {
        * @param {Event} e
        */
     function closeModal(e) {
-      player.pauseVideo();
-
-      var pos = modalContainer.getBoundingClientRect();
-      var x = pos.left;
-      var y = pos.top;
       if (e.keyCode == 27) {
+        player.pauseVideo();
+
+        var pos = modalContainer.getBoundingClientRect();
+        var x = pos.left;
+        var y = pos.top;
+
         TweenMax.to(vMedia, EXPAND_DURATION_, {
           width: modalWidth + 'px',
           height: modalHeight + 'px',
@@ -110,6 +117,13 @@ window.$fastlaneYT = (function() {
           ease: Power2.easeInOut,
           onComplete: onModalClose
         });
+
+        TweenMax.to(backdrop, EXPAND_DURATION_, {
+          opacity: 0,
+          onComplete: function() {
+            backdrop.style.display = 'none';
+          }
+        })
       }
     }
 
@@ -141,6 +155,13 @@ window.$fastlaneYT = (function() {
           vMedia.style.display = 'none'
         }
       });
+    }
+
+    function createBackdrop_() {
+      var div = document.createElement('div');
+      div.classList.add('video-modal__backdrop');
+      document.body.appendChild(div);
+      return div;
     }
   }
 })();

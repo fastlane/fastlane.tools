@@ -1,7 +1,7 @@
 .video-modal
-  width: 340px
   margin: auto
   position: relative
+  width: 340px
 
   img
     max-width: 100%
@@ -11,18 +11,29 @@
     box-sizing: border-box
 
   &__media
+    background: #000
     position: fixed
-    width: 340px
     display: none
     height: 200px
-    top: 0
-    opacity: 0
     left: 0
-    background: #000
+    opacity: 0
+    top: 0
     will-change: width, height, opacity
+    width: 340px
     z-index: 10
     &.open
       border-color: blue
+
+  &__backdrop
+    background: rgba(0, 0, 0, 0.5)
+    bottom: 0
+    display: none
+    left: 0
+    opacity: 0
+    position: fixed
+    right: 0
+    top: 0
+    z-index: 9
 
 #yt-player
   opacity: 0
