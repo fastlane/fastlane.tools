@@ -1,0 +1,26 @@
+.video-modal
+  width: 340px
+  border: 1px solid red
+  margin: auto
+  position: relative
+
+  &,
+  &__media
+    box-sizing: border-box
+
+  &__media
+    position: fixed
+    width: 340px
+    display: none
+    height: 200px
+    top: 0
+    opacity: 0
+    left: 0
+    background: #000
+    will-change: width, height, opacity
+    z-index: 10
+    &.open
+      border-color: blue
+
+#yt-player
+  opacity: 0
