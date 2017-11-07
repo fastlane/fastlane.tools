@@ -1,45 +1,72 @@
 var player;
-var $fastlaneYT = (function() {
+// Kicks off the process.
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('yt-player', {
+    width: '100%',
+    height: '100%',
+    videoId: 'seoY2-hm7lQ',
+    events: {
+      onReady: $fastlaneYT.onPlayerReady,
+      onStateChange: $fastlaneYT.onPlayerStateChange
+    }
+  });
+}
+window.$fastlaneYT = (function() {
 
   // Constants
   var MAX_WIDTH_PERC_ = 0.25;
   var EXPAND_DURATION_ = 0.45; // seconds
+  // @todo(sgeer): Better mobile detection
+  var PLATFORM_MOBILE_ = /ipad|iphone|android/.test(window.navigator.userAgent);
   var ratio = 16 / 9;
 
   return {
-    onPlayerReady: onPlayerReady
+    onPlayerReady: initModal
   };
-
-  /**
-     * Callback for YouTube.onReady
-     * @param {Event} e
-     */
-  function onPlayerReady(e) {
-    initModal(e);
-  }
 
   /**
    * Sets up event listeners, etc for modal interaction.
    */
-  function initModal(e) {
-    var modalContainer = document.querySelector('.video-modal');
+  function initModal(player) {
+    return PLATFORM_MOBILE_ ? setupMobilePlayer() : setupModalPlayer(player.target);
+  }
 
+  /**
+   * Don't interrupt the normal mobile YouTube player flow if the user is
+   * on a device.
+   */
+  function setupMobilePlayer() {
+    console.info('Setting up mobile player.')
+  }
+
+  /**
+   * If we have an idea the user isn't on a mobile device, set up the
+   * modal functionality.
+   */
+  function setupModalPlayer(player) {
+    player.setPlaybackQuality('hd720');
+
+    var modalContainer = document.querySelector('.video-modal');
     var vMedia = document.querySelector('.video-modal__media');
     var ytDom = document.getElementById('yt-player');
 
-    var modalWidth, modalHeight;
-    var winWidth, winHeight, maxWidth, maxHeight;
-    setDimensions();
+    var modalWidth = modalContainer.offsetWidth;
+    var modalHeight = modalContainer.offsetHeight;
 
-    modalContainer.addEventListener('click', onVideoClick);
+    var winWidth = window.innerWidth;
+    var winHeight = window.innerHeight;
+    var maxWidth = winWidth - winWidth * MAX_WIDTH_PERC_;
+    var maxHeight = maxWidth / ratio;
+
+    modalContainer.addEventListener('click', openModal);
     document.addEventListener('click', checkModalClose);
     window.addEventListener('keyup', closeModal);
 
     /**
-       * Open the video modal.
-       * @param {MouseEvent} e
-       */
-    function onVideoClick(e) {
+     * Open the video modal.
+     * @param {MouseEvent} e
+     */
+    function openModal(e) {
       var pos = modalContainer.getBoundingClientRect();
       var x = pos.left;
       var y = pos.top;
@@ -68,6 +95,8 @@ var $fastlaneYT = (function() {
        * @param {Event} e
        */
     function closeModal(e) {
+      player.pauseVideo();
+
       var pos = modalContainer.getBoundingClientRect();
       var x = pos.left;
       var y = pos.top;
@@ -85,32 +114,20 @@ var $fastlaneYT = (function() {
     }
 
     /**
-       * Get the necessary dimensions for calculating the modal size/dim.
-       */
-    function setDimensions() {
-      modalWidth = modalContainer.offsetWidth;
-      modalHeight = modalContainer.offsetHeight;
-
-      winWidth = window.innerWidth;
-      winHeight = window.innerHeight;
-      maxWidth = winWidth - winWidth * MAX_WIDTH_PERC_;
-      maxHeight = maxWidth / ratio;
-    }
-
-    /**
-       * Callback for clicking elsewhere on the document to close the modal.
-       * @todo(sgeer)
-       */
+     * Callback for clicking elsewhere on the document to close the modal.
+     * @todo(sgeer)
+     */
     function checkModalClose() {
       return false;
     }
 
     /**
-       * 
-       */
+     *
+     */
     function onModalOpen() {
       ytDom.style.display = 'block';
       vMedia.style.display = 'block'
+      player.playVideo();
       return TweenMax.to(ytDom, EXPAND_DURATION_, {
         opacity: 1
       });
@@ -127,14 +144,3 @@ var $fastlaneYT = (function() {
     }
   }
 })();
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('yt-player', {
-    width: '100%',
-    height: '100%',
-    videoId: 'seoY2-hm7lQ',
-    events: {
-      onReady: $fastlaneYT.onPlayerReady,
-      onStateChange: $fastlaneYT.onPlayerStateChange
-    }
-  });
-}
