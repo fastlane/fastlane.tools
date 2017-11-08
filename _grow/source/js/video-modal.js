@@ -24,7 +24,7 @@ window.$fastlaneYT = (function() {
   var MAX_WIDTH_PERC_ = 0.25;
   var EXPAND_DURATION_ = 0.45; // seconds
   // @todo(sgeer): Better mobile detection
-  var PLATFORM_MOBILE_ = /ipad|iphone|android/i.test(window.navigator.userAgent);
+  var PLATFORM_MOBILE_ = /ip(ad|hone|od)|android/i.test(window.navigator.userAgent);
   var ratio = 16 / 9;
 
   if(PLATFORM_MOBILE_) {
@@ -107,10 +107,10 @@ window.$fastlaneYT = (function() {
     }
 
     /**
-       * Close the modal and return to natural position.
-       * Callback from ESC keypress
-       * @param {KeyboardEvent} e
-       */
+     * Close the modal and return to natural position.
+     * Callback from ESC keypress
+     * @param {KeyboardEvent} e
+     */
     function closeModal(e) {
       if (e.keyCode == 27) {
         player.pauseVideo();
@@ -142,12 +142,13 @@ window.$fastlaneYT = (function() {
      * Callback for clicking elsewhere on the document to close the modal.
      * @todo(sgeer)
      */
-    function checkModalClose() {
+    function checkModalClose(e) {
+      console.log(e, e.currentTarget);
       return false;
     }
 
     /**
-     *
+     * onComplete callback for opening the modal.
      */
     function onModalOpen() {
       ytDom.style.display = 'block';
