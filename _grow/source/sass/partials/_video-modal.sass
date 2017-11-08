@@ -35,5 +35,16 @@
     top: 0
     z-index: 9
 
-#yt-player
-  opacity: 0
+body.mobile
+  .video-modal
+    display: none
+
+  .video-modal__media
+    display: block
+    margin: 20px auto
+    position: static
+    opacity: 1
+
+body:not(.mobile)
+  #yt-player
+    opacity: 0

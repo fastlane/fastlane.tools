@@ -1,3 +1,10 @@
+/**
+ * @fileoverview
+ * This connects modal functionality and YouTube embedding for the
+ * "how it works" section.  On non-mobile devices, the video will open in
+ * a modal window.  For mobile devices, it will act as every other YT embed
+ * as to not interfere with the normal UX.
+ */
 var player;
 // Kicks off the process.
 function onYouTubeIframeAPIReady() {
@@ -17,8 +24,12 @@ window.$fastlaneYT = (function() {
   var MAX_WIDTH_PERC_ = 0.25;
   var EXPAND_DURATION_ = 0.45; // seconds
   // @todo(sgeer): Better mobile detection
-  var PLATFORM_MOBILE_ = /ipad|iphone|android/.test(window.navigator.userAgent);
+  var PLATFORM_MOBILE_ = /ipad|iphone|android/i.test(window.navigator.userAgent);
   var ratio = 16 / 9;
+
+  if(PLATFORM_MOBILE_) {
+    document.body.classList.add('mobile');
+  }
 
   return {
     onPlayerReady: initModal
@@ -28,14 +39,14 @@ window.$fastlaneYT = (function() {
    * Sets up event listeners, etc for modal interaction.
    */
   function initModal(player) {
-    return PLATFORM_MOBILE_ ? setupMobilePlayer() : setupModalPlayer(player.target);
+    return PLATFORM_MOBILE_ ? setupMobilePlayer(player.target) : setupModalPlayer(player.target);
   }
 
   /**
    * Don't interrupt the normal mobile YouTube player flow if the user is
    * on a device.
    */
-  function setupMobilePlayer() {
+  function setupMobilePlayer(player) {
     console.info('Setting up mobile player.')
   }
 
@@ -98,7 +109,7 @@ window.$fastlaneYT = (function() {
     /**
        * Close the modal and return to natural position.
        * Callback from ESC keypress
-       * @param {Event} e
+       * @param {KeyboardEvent} e
        */
     function closeModal(e) {
       if (e.keyCode == 27) {
