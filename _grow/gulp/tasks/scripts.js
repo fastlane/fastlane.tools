@@ -11,7 +11,7 @@ var concat = require('gulp-concat')
 gulp.task('build_js', function() {
   return gulp
     .src(config.Path.JS_SOURCES)
-    .pipe(debug())
+    // .pipe(debug())
     .pipe(plumber())
     .pipe(concat('main.js'))
     // .pipe(uglify())

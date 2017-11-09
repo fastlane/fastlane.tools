@@ -155,6 +155,20 @@ integration:
     and <a href="https://docs.fastlane.tools/plugins/available-plugins/">plugins
     </a>.
 
+tweets:
+  - quote@: 1  Was skeptical that a few words could generate certificates
+    author@: ruddfawcett
+    time_and_location@: 1136AM 2 Sep 2015 from Manhattan, NY
+  - quote@: 2  Was skeptical that a few words could generate certificates
+    author@: ruddfawcett
+    time_and_location@: 1136AM 2 Sep 2015 from Manhattan, NY
+  - quote@: 3  Was skeptical that a few words could generate certificates
+    author@: ruddfawcett
+    time_and_location@: 1136AM 2 Sep 2015 from Manhattan, NY
+  - quote@: 4  Was skeptical that a few words could generate certificates
+    author@: ruddfawcett
+    time_and_location@: 1136AM 2 Sep 2015 from Manhattan, NY
+
 contribute:
   headline@: Become a fastlane contributor
   summary@: |
@@ -254,6 +268,19 @@ contribute:
       {{ doc.integration.summary_2 | safe }}
     </div>
   </div>
+</section>
+
+<section class="section tweets">
+  <div class="tweets__carousel slick" data-arrows="true" data-dots="true" data-autoplay="true" data-carousel-name="intro">
+      {% for tweet in doc.tweets %}
+        <div class="tweets__item">
+          <span class="tweets__begin-quote">"</span>
+          <h4>{{ tweet.quote }}</h4>
+          <span class="tweets__end-quote">"</span>
+          <p>{{ tweet.author }}. {{ tweet.time_and_location }}</p>
+        </div>
+      {% endfor %}
+    </div>
 </section>
 
 <section class="section works">
