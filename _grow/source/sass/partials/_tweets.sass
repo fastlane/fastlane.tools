@@ -1,0 +1,139 @@
+.tweets
+  padding: 100px 0
+  position: relative
+  box-sizing: border-box
+  min-height: 100vh
+  height: auto
+  +breakpoint($bp-responsive-nav)
+    min-height: 35vh
+  +breakpoint($bp-large)
+    min-height: 0
+
+  &__carousel
+    text-align: center
+    margin-top: 20px
+    +breakpoint($bp-large)
+      margin: 0
+
+  &__quote
+    color: $color-grey-62
+    font-size: 30px
+    font-weight: 100
+    max-width: 300px
+    margin: 0 auto 30px auto
+    +breakpoint($bp-medium)
+      max-width: 600px
+    +breakpoint($bp-large)
+      max-width: 850px
+
+  &__logo
+    margin-right: 24px
+    img
+      display: inline-block
+      max-width: 26px
+
+  &__time-and-location
+    display: block
+    margin-top: 12px
+    font-size: 14px
+    color: $color-purple-36
+    font-weight: 100
+    +breakpoint($bp-large)
+      display: inline-block
+      margin: 0
+      font-size: 16px
+      color: $color-black
+
+  // Have to use different quotation marks placement for mobile / desktop
+  //
+  &__begin-quote-laptop,
+  &__end-quote-laptop
+    display: none
+    +breakpoint($bp-large)
+      display: block
+
+  &__begin-quote-laptop
+    +breakpoint($bp-large)
+      float: left
+      margin-left: 120px
+
+  &__end-quote-laptop
+    +breakpoint($bp-large)
+      float: right
+      margin: -70px 120px 0 0
+
+  &__begin-quote-mobile,
+  &__end-quote-mobile
+    position: absolute
+    display: block
+    +breakpoint($bp-large)
+      display: none
+
+  &__begin-quote-mobile
+    left: 20px
+    top: 40px
+
+  &__end-quote-mobile
+    right: 20px
+    bottom: 40px
+
+  &__end-quote-mobile,
+  &__end-quote-laptop
+    img
+      transform: rotate(180deg)
+
+// slick overrides
+.slick-arrow
+  background: transparent
+  border: none
+  color: transparent
+  cursor: pointer
+  outline: none
+  padding: 0
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+  z-index: 1
+  &::before
+    display: none
+    background-image: url('/assets/images/arrow-grey.svg')
+    background-repeat: no-repeat
+    content: ''
+    min-height: 67px
+    +breakpoint($bp-large)
+      display: block
+
+.slick-prev
+  left: 0
+  &::before
+    transform: rotate(180deg)
+
+.slick-next
+  right: 0
+
+.slick-dots
+  display: flex
+  justify-content: center
+  list-style: none
+  margin-top: 50px
+  padding: 0
+
+  button
+    background: #D8D8D8
+    border: none
+    border-radius: 50%
+    cursor: pointer
+    font-size: 0
+    height: 15px
+    margin-right: 15px
+    outline: none
+    padding: 0
+    width: 15px
+
+  .slick-active
+    button
+      background: $color-turquoise
+
+.slick-slide
+  &:focus
+    outline: 0

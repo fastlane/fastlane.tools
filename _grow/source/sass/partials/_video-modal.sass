@@ -1,0 +1,50 @@
+.video-modal
+  margin: auto
+  position: relative
+  width: 340px
+
+  img
+    max-width: 100%
+
+  &,
+  &__media
+    box-sizing: border-box
+
+  &__media
+    background: #000
+    position: fixed
+    display: none
+    height: 200px
+    left: 0
+    opacity: 0
+    top: 0
+    will-change: width, height, opacity
+    width: 340px
+    z-index: 10
+    &.open
+      border-color: blue
+
+  &__backdrop
+    background: rgba(0, 0, 0, 0.5)
+    bottom: 0
+    display: none
+    left: 0
+    opacity: 0
+    position: fixed
+    right: 0
+    top: 0
+    z-index: 9
+
+body.mobile
+  .video-modal
+    display: none
+
+  .video-modal__media
+    display: block
+    margin: 20px auto
+    position: static
+    opacity: 1
+
+body:not(.mobile)
+  #yt-player
+    opacity: 0
