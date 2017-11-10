@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, height=device-height">
+    <title>fastlane - App automation done right</title>
+
+    <meta property="og:title" content="fastlane - App automation done right">
+    <meta property="og:site_name" content="fastlane">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost/">
+
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-18658848-9', 'auto');
+        ga('send', 'pageview');
+      </script>
+      <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900">
+    <link rel="stylesheet" href="//www.gstatic.com/external_hosted/slick/slick.css">
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+  </head>
+
+  <body class="index">
+<header class="header">
+  <div class="header__wrapper">
+    <div class="header__lockup">
+      <button class="header__lockup__menu-button" type="button">
+        <img class="header__lockup__menu-button__open" src="/assets/images/menu-hamburger.svg" alt="Menu open">
+        <img class="header__lockup__menu-button__close" src="/assets/images/menu-close.svg" alt="Menu close">
+      </button>
+      <a href="/">
+        <img class="header__lockup__logo" src="/assets/images/fastlane-logo-lockup.png" alt="Fastlane logo">
+      </a>
+    </div>
+    <nav class="header__nav">
+      <ul class="header__nav__list header__nav__list--primary">
+        <li class="header__nav__list__item">
+          <a href="#">Use fastlane</a>
+          <ul class="header__nav__list header__nav__list--secondary">
+            <li class="header__nav__list__item header__nav__list__item--disc header__nav__list__item--screenshots"><a href="#">Automate screenshots</a></li>
+            <li class="header__nav__list__item header__nav__list__item--disc header__nav__list__item--beta"><a href="#">Beta deployments</a></li>
+            <li class="header__nav__list__item header__nav__list__item--disc header__nav__list__item--appstore"><a href="#">App store deployments</a></li>
+            <li class="header__nav__list__item header__nav__list__item--disc header__nav__list__item--codesigning"><a href="#">Code signing</a></li>
+          </ul>
+        </li>
+        <li class="header__nav__list__item"><a href="#">Integrations</a></li>
+        <li class="header__nav__list__item"><a href="#">How it works</a></li>
+        <li class="header__nav__list__item"><a href="#">Contribute</a></li>
+        <li class="header__nav__list__item"><a href="#">Docs</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+        <section class="section hero">
+  <div class="hero__wrapper">
+    <h1 class="section__headline">App automation done right</h1>
+    <div class="hero__summary">
+      The easiest way to build and release mobile apps.<br class="hide-lt-s"> <i>fastlane</i> handles tedious tasks so you don’t have to.
+
+    </div>
+    <div class="hero__hours-counter">
+      <h4 class="hero__hours-counter__headline">Developer hours saved</h4>
+      <div class="hero__hours-counter__counter">
+        7,153,219
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section features">
+  <div class="section__wrapper">
+    <hr class="features__divider">
+    <h2 class="section__headline">Automate your development and release process</h2>
+    <div class="section__summary">
+      <i>fastlane</i> is an open source platform aimed at simplifying Android and iOS deployment.<br class="hide-lt-m"> <i>fastlane</i> lets you automate every aspect of your development and release workflow.
+
+    </div>
+    <div class="hide-lt-s features__cards">
+        <div class="features__cards__card features__cards__card--screenshots card">
+          <div class="feature-icon feature-icon--screenshots">
+            <img src="" alt="">
+          </div>
+          <h4 class="features__cards__card__headline">Automate<br>screenshots</h4>
+          <div class="features__cards__card__summary">
+            Automatically generate localized screenshots for the app store
+          </div>
+          <a class="button button--screenshots features__cards__card__cta" href="None">Learn more</a>
+        </div>
+        <div class="features__cards__card features__cards__card--beta card">
+          <div class="feature-icon feature-icon--beta">
+            <img src="" alt="">
+          </div>
+          <h4 class="features__cards__card__headline">Beta<br>deployment</h4>
+          <div class="features__cards__card__summary">
+            Easily distribute beta builds to testers
+          </div>
+          <a class="button button--beta features__cards__card__cta" href="None">Learn more</a>
+        </div>
+        <div class="features__cards__card features__cards__card--appstore card">
+          <div class="feature-icon feature-icon--appstore">
+            <img src="" alt="">
+          </div>
+          <h4 class="features__cards__card__headline">App Store<br>deployment</h4>
+          <div class="features__cards__card__summary">
+            Publish a new release to the app store in seconds
+          </div>
+          <a class="button button--appstore features__cards__card__cta" href="None">Learn more</a>
+        </div>
+        <div class="features__cards__card features__cards__card--codesigning card">
+          <div class="feature-icon feature-icon--codesigning">
+            <img src="" alt="">
+          </div>
+          <h4 class="features__cards__card__headline">Code<br>signing</h4>
+          <div class="features__cards__card__summary">
+            Reliably and consistently code sign your app–no more headaches
+          </div>
+          <a class="button button--codesigning features__cards__card__cta" href="None">Learn more</a>
+        </div>
+    </div>
+  </div>
+</section>
+
+  <section class="section feature feature--screenshots">
+    <div class="section__wrapper">
+      <div class="feature__header">
+        <div class="feature-icon feature-icon--screenshots">
+          <img src="" alt="">
+        </div>
+        <h2 class="section__headline">Capture screenshots automatically</h2>
+      </div>
+      <div class="feature__flex">
+        <div class="feature__content-wrapper">
+          <h5>Generate localized app store screenshots in minutes.</h5>
+<ul>
+<li>Automatically capture localized screenshots for each language and device
+your app supports</li>
+<li>Configure it once, and store the configuration so anyone on the team
+generate screenshots</li>
+<li>Work on something else – fastlane takes screenshots without interrupting
+your other tasks</li>
+</ul>
+          <span class="feature__cta">
+            Capture screenshots on<br class="hide-gt-s"> <a href="https://docs.fastlane.tools/getting-started/ios/screenshots/"> iOS</a> and <a href="https://docs.fastlane.tools/getting-started/android/screenshots/"> Android</a>
+
+          </span>
+        </div>
+        <div class="feature__image-wrapper">
+          <img
+            class="feature__image-wrapper__image"
+            src="/assets/images/screenshots-illo.svg"
+            alt="Screenshots illustration"
+            width="634"
+            height="587">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section feature feature--beta">
+    <div class="section__wrapper">
+      <div class="feature__header">
+        <div class="feature-icon feature-icon--beta">
+          <img src="" alt="">
+        </div>
+        <h2 class="section__headline">Distribute beta builds</h2>
+      </div>
+      <div class="feature__flex">
+        <div class="feature__content-wrapper">
+          <h5>Easily publish new beta builds to testers so you can get valuable</h5>
+<p>feedback, fast.</p>
+<ul>
+<li>Automate the most time-consuming beta distribution steps including
+incrementing the build version, code signing, building and uploading
+the app, and setting a changelog</li>
+<li>Support for over 15 beta testing services including TestFlight,
+Crashlytics Beta, Play, and Hockey</li>
+<li>Freely switch between beta services without needing to reconfigure
+fastlane</li>
+</ul>
+          <span class="feature__cta">
+            Capture screenshots on<br class="hide-gt-s"> <a href="https://docs.fastlane.tools/getting-started/ios/beta-deployment/"> iOS</a> and <a href="https://docs.fastlane.tools/getting-started/android/beta-deployment/"> Android</a>
+
+          </span>
+        </div>
+        <div class="feature__image-wrapper">
+          <img
+            class="feature__image-wrapper__image"
+            src="/assets/images/beta-illo.svg"
+            alt="Beta illustration"
+            width="641"
+            height="549">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section feature feature--appstore">
+    <div class="section__wrapper">
+      <div class="feature__header">
+        <div class="feature-icon feature-icon--appstore">
+          <img src="" alt="">
+        </div>
+        <h2 class="section__headline">Publish your app with the push of a button</h2>
+      </div>
+      <div class="feature__flex">
+        <div class="feature__content-wrapper">
+          <h5>Automate the entire app store deployment process.</h5>
+<ul>
+<li>Create a repeatable custom workflow to build, upload and distribute
+new releases to the app store</li>
+<li>Upload and manage all of your app’s metadata including screenshots</li>
+<li>Automatically submit new versions of your app for review</li>
+</ul>
+          <span class="feature__cta">
+            Capture screenshots on<br class="hide-gt-s"> <a href="https://docs.fastlane.tools/getting-started/ios/appstore-deployment/"> iOS</a> and <a href="https://docs.fastlane.tools/getting-started/android/release-deployment/"> Android</a>
+
+          </span>
+        </div>
+        <div class="feature__image-wrapper">
+          <img
+            class="feature__image-wrapper__image"
+            src="/assets/images/appstore-illo.svg"
+            alt="Appstore illustration"
+            width="627"
+            height="487">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section feature feature--codesigning">
+    <div class="section__wrapper">
+      <div class="feature__header">
+        <div class="feature-icon feature-icon--codesigning">
+          <img src="" alt="">
+        </div>
+        <h2 class="section__headline">Automatic code signing</h2>
+      </div>
+      <div class="feature__flex">
+        <div class="feature__content-wrapper">
+          <h5>Avoid the frustration of managing code signing identities.</h5>
+<ul>
+<li>Store your code signing identities and profiles in your own private,
+encrypted git repository to securely sync them across machines</li>
+<li>Once set up, every developer on your team can reproduce signed builds
+on any computer</li>
+</ul>
+          <span class="feature__cta">
+            <a class="button button--codesigning" href="https://docs.fastlane.tools/codesigning/getting-started/"> Simplify signing</a>
+
+          </span>
+        </div>
+        <div class="feature__image-wrapper">
+          <img
+            class="feature__image-wrapper__image"
+            src="/assets/images/codesigning-illo.svg"
+            alt="Codesigning illustration"
+            width="684"
+            height="449">
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="section integration">
+  <div class="section__wrapper">
+    <h2 class="section__headline">Continuous integration support</h2>
+    <div class="section__summary">
+      <i>fastlane</i> integrates effortlessly into existing CI services with support for:
+
+    </div>
+    <div class="integration__flex">
+        <img class="integration__flex__item" src="/assets/images/bitrise-logo.png" alt="Bitrise logo" width="145" height="34">
+        <img class="integration__flex__item" src="/assets/images/travis-logo.png" alt="Travis CI logo" width="112" height="35">
+        <img class="integration__flex__item" src="/assets/images/jenkins-logo.png" alt="Jenkins logo" width="136" height="44">
+        <img class="integration__flex__item" src="/assets/images/circleci-logo.png" alt="Circle CI logo" width="53" height="43">
+    </div>
+    <hr>
+    <h2 class="section__headline">Extend fastlane</h2>
+    <div class="section__summary">
+      Customize your deployment workflows using the hundreds of community built <i>fastlane</i> <a href="https://docs.fastlane.tools/actions/">actions</a> and <a href="https://docs.fastlane.tools/plugins/available-plugins/">plugins </a>.
+
+    </div>
+  </div>
+</section>
+
+<section class="section tweets">
+  <div class="section__wrapper">
+    <span class="tweets__begin-quote-mobile">
+      <img src="/assets/images/quotation-mark.svg" alt="Quote">
+    </span>
+    <div class="tweets__carousel slick" data-arrows="true" data-dots="true" data-autoplay="true" data-carousel-name="intro">
+        <div class="tweets__item">
+          <span class="tweets__begin-quote-laptop">
+            <img src="/assets/images/quotation-mark.svg" alt="Quote">
+          </span>
+          <div class="tweets__quote">
+            1 - Was skeptical that a few words could generate certificates, provisioning files, etc. But @KrauseFx&#39;s @FastlaneTools have blown me away...
+
+          </div>
+          <span class="tweets__end-quote-laptop">
+            <img src="/assets/images/quotation-mark.svg" alt="Quote">
+          </span>
+          <div class="tweets__signature">
+            <span class="tweets__logo"><img src="/assets/images/twitter-logo.svg" alt="Twitter logo"></span>
+            <b>@ruddfawcett.</b> <span class="tweets__time-and-location">11:36AM - 2 Sep 2015 from Manhattan, NY</span></div>
+        </div>
+        <div class="tweets__item">
+          <span class="tweets__begin-quote-laptop">
+            <img src="/assets/images/quotation-mark.svg" alt="Quote">
+          </span>
+          <div class="tweets__quote">
+            2 - Was skeptical that a few words could generate certificates, provisioning files, etc. But @KrauseFx&#39;s @FastlaneTools have blown me away...
+
+          </div>
+          <span class="tweets__end-quote-laptop">
+            <img src="/assets/images/quotation-mark.svg" alt="Quote">
+          </span>
+          <div class="tweets__signature">
+            <span class="tweets__logo"><img src="/assets/images/twitter-logo.svg" alt="Twitter logo"></span>
+            <b>@ruddfawcett.</b> <span class="tweets__time-and-location">11:36AM - 2 Sep 2015 from Manhattan, NY</span></div>
+        </div>
+        <div class="tweets__item">
+          <span class="tweets__begin-quote-laptop">
+            <img src="/assets/images/quotation-mark.svg" alt="Quote">
+          </span>
+          <div class="tweets__quote">
+            3 - Was skeptical that a few words could generate certificates, provisioning files, etc. But @KrauseFx&#39;s @FastlaneTools have blown me away...
+
+          </div>
+          <span class="tweets__end-quote-laptop">
+            <img src="/assets/images/quotation-mark.svg" alt="Quote">
+          </span>
+          <div class="tweets__signature">
+            <span class="tweets__logo"><img src="/assets/images/twitter-logo.svg" alt="Twitter logo"></span>
+            <b>@ruddfawcett.</b> <span class="tweets__time-and-location">11:36AM - 2 Sep 2015 from Manhattan, NY</span></div>
+        </div>
+        <div class="tweets__item">
+          <span class="tweets__begin-quote-laptop">
+            <img src="/assets/images/quotation-mark.svg" alt="Quote">
+          </span>
+          <div class="tweets__quote">
+            4 - Was skeptical that a few words could generate certificates, provisioning files, etc. But @KrauseFx&#39;s @FastlaneTools have blown me away...
+
+          </div>
+          <span class="tweets__end-quote-laptop">
+            <img src="/assets/images/quotation-mark.svg" alt="Quote">
+          </span>
+          <div class="tweets__signature">
+            <span class="tweets__logo"><img src="/assets/images/twitter-logo.svg" alt="Twitter logo"></span>
+            <b>@ruddfawcett.</b> <span class="tweets__time-and-location">11:36AM - 2 Sep 2015 from Manhattan, NY</span></div>
+        </div>
+        <div class="tweets__item">
+          <span class="tweets__begin-quote-laptop">
+            <img src="/assets/images/quotation-mark.svg" alt="Quote">
+          </span>
+          <div class="tweets__quote">
+            5 - Was skeptical that a few words could generate certificates, provisioning files, etc. But @KrauseFx&#39;s @FastlaneTools have blown me away...
+
+          </div>
+          <span class="tweets__end-quote-laptop">
+            <img src="/assets/images/quotation-mark.svg" alt="Quote">
+          </span>
+          <div class="tweets__signature">
+            <span class="tweets__logo"><img src="/assets/images/twitter-logo.svg" alt="Twitter logo"></span>
+            <b>@ruddfawcett.</b> <span class="tweets__time-and-location">11:36AM - 2 Sep 2015 from Manhattan, NY</span></div>
+        </div>
+    </div>
+    <span class="tweets__end-quote-mobile">
+      <img src="/assets/images/quotation-mark.svg" alt="Quote">
+    </span>
+  </div>
+</section>
+
+<section class="section works">
+  <div class="section__wrapper">
+    <h2 class="section__headline">How fastlane works</h2>
+    <div class="section__summary">
+      Check out the <a href="#">getting started</a> docs on how to dive into fastlane
+
+    </div>
+    <hr />
+    <header class="typeahead">
+      <h2>fastlane <span class="typeahead__target">beta</span></h2>
+    </header>
+    <div class="animation">
+      <div class="animation__window">
+        <header>&bull;&bull;&bull;</header>
+        <code class="code">
+
+          <article class="code__block active" id="beta">
+            <div class="line">
+              <span class="code__def">lane</span> <span class="code__sym">:beta</span> <span class="code__op">do</span>
+            </div>
+            <div class="code__indent">
+              <div class="line"><span class="code__fn">increment_build_number</span></div>
+              <div class="line"><span class="code__fn">gym</span></div>
+              <div class="line"><span class="code__fn">testflight</span></div>
+            </div>
+            <div class="line">
+              <span class="code__def--end" id="emoji">end <img src="/assets/images/rocket.png" width="14"></span>
+            </div>
+          </article>
+
+          <article class="code__block" id="appstore">
+              <div class="line">
+                <span class="code__def">lane</span> <span class="code__sym">:appstore</span> <span class="code__op">do</span>
+              </div>
+              <div class="code__indent">
+                <div class="line"><span class="code__fn">snapshot</span></div>
+                <div class="line"><span class="code__fn">gym</span></div>
+                <div class="line"><span class="code__fn">deliver</span></div>
+                <div class="line"><span class="code__fn">slack</span></div>
+              </div>
+              <div class="line">
+                <span class="code__def--end">end</span>
+              </div>
+            </article>
+        </code>
+      </div>
+      <aside class="animation__steps">
+        <ol class="steps" id="steps-beta">
+          <li>
+            <div class="steps__ctn">
+              <div class="steps__icon" style="background: #3F40F8">S</div>
+              <p>Increment build number</p>
+            </div>
+          </li>
+          <li>
+            <div class="steps__ctn">
+              <div class="steps__icon" style="background: #D8D8D8">#</div>
+              <p>Build your app</p>
+            </div>
+          </li>
+          <li>
+            <div class="steps__ctn">
+              <div class="steps__icon">
+                <img src="/assets/images/fastlane.png" width="67" height="67">
+              </div>
+              <p>Distribute to TestFlight</p>
+            </div>
+          </li>
+        </ol>
+        <ol class="steps" id="steps-appstore">
+          <li>
+            <div class="steps__ctn">
+              <div class="steps__icon" style="background: #3F40F8">S</div>
+              <p>Increment build number</p>
+            </div>
+          </li>
+          <li>
+            <div class="steps__ctn">
+              <div class="steps__icon" style="background: #BD69F6">g</div>
+              <p>Build your app</p>
+            </div>
+          </li>
+          <li>
+            <div class="steps__ctn">
+              <div class="steps__icon" style="background: #D8D8D8">#</div>
+              <p>Upload to store</p>
+            </div>
+          </li>
+          <li>
+            <div class="steps__ctn">
+              <div class="steps__icon">
+                <img src="/assets/images/slack.png" width="67" height="67">
+              </div>
+              <p>Notify slack</p>
+            </div>
+          </li>
+        </ol>
+      </aside>
+    </div>
+    <h2>See it in action - getting started with fastlane</h2>
+    <div class="video-modal">
+      <img src="http://i.ytimg.com/vi/wOtANfkh2bI/maxresdefault.jpg">
+    </div>
+    <div class="video-modal__media">
+      <header class="video-modal__close">
+        <span><img src="/assets/images/ic_close.png" width="18"></span>
+      </header>
+      <div id="yt-player"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section contribute">
+  <div class="section__wrapper">
+    <h2 class="section__headline">Become a fastlane contributor</h2>
+    <div class="section__summary">
+      The strong open source community that contributes to fastlane is part of
+what makes it great. Together, we're building the most powerful set of
+tools for deploying mobile apps. Check out our GitHub repository for
+information on how to
+<a href="https://github.com/fastlane/fastlane/blob/master/CONTRIBUTING.md">
+contribute</a> and to become a
+<a href="https://github.com/fastlane/fastlane/blob/master/CORE_CONTRIBUTOR.md">
+core contributor</a>.
+    </div>
+    <a class="button button--contribute contribute__cta" href="https://docs.fastlane.tools/">Get started with fastlane</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__wrapper">
+    <hr>
+    <div class="footer__flex">
+      <div class="footer__logo">
+        <a href="#"><img src="" alt="Google Developers logo"></a>
+      </div>
+      <span class="footer__copyright">© 2017 Google, Inc. All Rights Reserved</span>
+      <nav>
+        <ul>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Cookies</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.4.2/intersection-observer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TimelineMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <script type="text/javascript" src="//www.gstatic.com/external_hosted/jquery2.min.js"></script>
+    <script type="text/javascript" src="//www.gstatic.com/external_hosted/slick/slick.min.js"></script>
+    <script type="text/javascript" src="/assets/js/main.min.js"></script>
+  </body>
+</html>
