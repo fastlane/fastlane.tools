@@ -11,7 +11,13 @@ var slick = function() {
       arrows: arrows,
       dots: dots,
       draggable: true,
-      accessibility: true
+      accessibility: true,
+      responsive: [{
+        breakpoint: 560,
+        settings: {
+          dots: false
+        }
+      }]
     });
 
     // Accessibility

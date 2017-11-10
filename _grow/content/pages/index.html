@@ -155,19 +155,34 @@ integration:
     and <a href="https://docs.fastlane.tools/plugins/available-plugins/">plugins
     </a>.
 
-tweets:
-  - quote@: 1  Was skeptical that a few words could generate certificates
-    author@: ruddfawcett
-    time_and_location@: 1136AM 2 Sep 2015 from Manhattan, NY
-  - quote@: 2  Was skeptical that a few words could generate certificates
-    author@: ruddfawcett
-    time_and_location@: 1136AM 2 Sep 2015 from Manhattan, NY
-  - quote@: 3  Was skeptical that a few words could generate certificates
-    author@: ruddfawcett
-    time_and_location@: 1136AM 2 Sep 2015 from Manhattan, NY
-  - quote@: 4  Was skeptical that a few words could generate certificates
-    author@: ruddfawcett
-    time_and_location@: 1136AM 2 Sep 2015 from Manhattan, NY
+tweet_carousel:
+  quotation_mark:
+    src: !g.static /source/images/quotation-mark.svg
+    alt@: Quote
+  twitter_logo:
+    src: !g.static /source/images/twitter-logo.svg
+    alt@: Twitter logo
+  tweets:
+    - quote@: >
+        1 - Was skeptical that a few words could generate certificates, provisioning files, etc. But @KrauseFx's @FastlaneTools have blown me away...
+      author@: ruddfawcett
+      time_and_location@: "11:36AM - 2 Sep 2015 from Manhattan, NY"
+    - quote@: >
+        2 - Was skeptical that a few words could generate certificates, provisioning files, etc. But @KrauseFx's @FastlaneTools have blown me away...
+      author@: ruddfawcett
+      time_and_location@: "11:36AM - 2 Sep 2015 from Manhattan, NY"
+    - quote@: >
+        3 - Was skeptical that a few words could generate certificates, provisioning files, etc. But @KrauseFx's @FastlaneTools have blown me away...
+      author@: ruddfawcett
+      time_and_location@: "11:36AM - 2 Sep 2015 from Manhattan, NY"
+    - quote@: >
+        4 - Was skeptical that a few words could generate certificates, provisioning files, etc. But @KrauseFx's @FastlaneTools have blown me away...
+      author@: ruddfawcett
+      time_and_location@: "11:36AM - 2 Sep 2015 from Manhattan, NY"
+    - quote@: >
+        5 - Was skeptical that a few words could generate certificates, provisioning files, etc. But @KrauseFx's @FastlaneTools have blown me away...
+      author@: ruddfawcett
+      time_and_location@: "11:36AM - 2 Sep 2015 from Manhattan, NY"
 
 contribute:
   headline@: Become a fastlane contributor
@@ -271,16 +286,32 @@ contribute:
 </section>
 
 <section class="section tweets">
-  <div class="tweets__carousel slick" data-arrows="true" data-dots="true" data-autoplay="true" data-carousel-name="intro">
-      {% for tweet in doc.tweets %}
+  <div class="section__wrapper">
+    <span class="tweets__begin-quote-mobile">
+      <img src="{{ doc.tweet_carousel.quotation_mark.src.url.path }}" alt="{{  doc.tweet_carousel.quotation_mark.alt }}">
+    </span>
+    <div class="tweets__carousel slick" data-arrows="true" data-dots="true" data-autoplay="true" data-carousel-name="intro">
+      {% for tweet in doc.tweet_carousel.tweets %}
         <div class="tweets__item">
-          <span class="tweets__begin-quote">"</span>
-          <h4>{{ tweet.quote }}</h4>
-          <span class="tweets__end-quote">"</span>
-          <p>{{ tweet.author }}. {{ tweet.time_and_location }}</p>
+          <span class="tweets__begin-quote-laptop">
+            <img src="{{ doc.tweet_carousel.quotation_mark.src.url.path }}" alt="{{  doc.tweet_carousel.quotation_mark.alt }}">
+          </span>
+          <div class="tweets__quote">
+            {{ tweet.quote }}
+          </div>
+          <span class="tweets__end-quote-laptop">
+            <img src="{{  doc.tweet_carousel.quotation_mark.src.url.path }}" alt="{{  doc.tweet_carousel.quotation_mark.alt }}">
+          </span>
+          <div class="tweets__signature">
+            <span class="tweets__logo"><img src="{{  doc.tweet_carousel.twitter_logo.src.url.path }}" alt="{{  doc.tweet_carousel.twitter_logo.alt }}"></span>
+            <b>@{{ tweet.author }}.</b> <span class="tweets__time-and-location">{{ tweet.time_and_location }}</span></div>
         </div>
       {% endfor %}
     </div>
+    <span class="tweets__end-quote-mobile">
+      <img src="{{  doc.tweet_carousel.quotation_mark.src.url.path }}" alt="{{  doc.tweet_carousel.quotation_mark.alt }}">
+    </span>
+  </div>
 </section>
 
 <section class="section works">
