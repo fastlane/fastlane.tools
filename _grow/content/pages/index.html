@@ -155,6 +155,50 @@ integration:
     and <a href="https://docs.fastlane.tools/plugins/available-plugins/">plugins
     </a>.
 
+work:
+  headline@: How fastlane works
+  summary@: >
+    Check out the <a href="#">getting started</a> docs on how to dive
+    into fastlane
+  video_headline@: See it in action - getting started with fastlane
+  code:
+  - title@: Increment build number
+    text@: lorem ipsum
+  - title@: Activate gym
+    text@: lorem ipsum
+  - title@: Testflight
+    text@: lorem ipsum
+
+  appstore_steps:
+  - text@: Increment build number
+    icon:
+      content: 'S'
+      color: '#3F40F8'
+  - text@: Build your app
+    icon:
+      content: 'g'
+      color: '#BD69F6'
+  - text@: Upload to store
+    icon:
+      content: '#'
+      color: '#D8D8D8'
+  - text@: Notify slack
+    icon:
+      url: /assets/images/slack.png
+
+  beta_steps:
+  - text@: Increment build number
+    icon:
+      content: 'S'
+      color: '#3F40F8'
+  - text@: Build your app
+    icon:
+      content: '#'
+      color: '#D8D8D8'
+  - text@: Distribute to TestFlight
+    icon:
+      url: /assets/images/fastlane.png
+
 contribute:
   headline@: Become a fastlane contributor
   summary@: |
@@ -252,6 +296,101 @@ contribute:
     <h2 class="section__headline">{{ doc.integration.headline_2 }}</h2>
     <div class="section__summary">
       {{ doc.integration.summary_2 | safe }}
+    </div>
+  </div>
+</section>
+
+<section class="section works">
+  <div class="section__wrapper">
+    <h2 class="section__headline">{{ doc.work.headline }}</h2>
+    <div class="section__summary">
+      {{ doc.work.summary | safe }}
+    </div>
+    <hr />
+    <header class="typeahead">
+      <h2>fastlane <span class="typeahead__target">beta</span></h2>
+    </header>
+    <div class="animation">
+      <div class="animation__window">
+        <header>&bull;&bull;&bull;</header>
+        <code class="code">
+
+          {# BETA code block #}
+          <article class="code__block active" id="beta">
+            <div class="line">
+              <span class="code__def">lane</span> <span class="code__sym">:beta</span> <span class="code__op">do</span>
+            </div>
+            <div class="code__indent">
+              <div class="line"><span class="code__fn">increment_build_number</span></div>
+              <div class="line"><span class="code__fn">gym</span></div>
+              <div class="line"><span class="code__fn">testflight</span></div>
+            </div>
+            <div class="line">
+              <span class="code__def--end" id="emoji">end <img src="/assets/images/rocket.png" width="14"></span>
+            </div>
+          </article>
+
+          {# APPSTORE code block #}
+          <article class="code__block" id="appstore">
+              <div class="line">
+                <span class="code__def">lane</span> <span class="code__sym">:appstore</span> <span class="code__op">do</span>
+              </div>
+              <div class="code__indent">
+                <div class="line"><span class="code__fn">snapshot</span></div>
+                <div class="line"><span class="code__fn">gym</span></div>
+                <div class="line"><span class="code__fn">deliver</span></div>
+                <div class="line"><span class="code__fn">slack</span></div>
+              </div>
+              <div class="line">
+                <span class="code__def--end">end</span>
+              </div>
+            </article>
+        </code>
+      </div>
+      <aside class="animation__steps">
+        <ol class="steps" id="steps-beta">
+          {% for step in doc.work.beta_steps %}
+          <li>
+            <div class="steps__ctn">
+              {% if step.icon.url %}
+              <div class="steps__icon">
+                <img src="{{ step.icon.url }}" width="67" height="67">
+              </div>
+              {% else %}
+              <div class="steps__icon" style="background: {{ step.icon.color }}">{{ step.icon.content }}</div>
+              {% endif %}
+              <p>{{ step.text }}</p>
+            </div>
+          </li>
+          {% endfor %}
+        </ol>
+        <ol class="steps" id="steps-appstore">
+          {% for step in doc.work.appstore_steps %}
+          <li>
+            <div class="steps__ctn">
+              {% if step.icon.url %}
+              <div class="steps__icon">
+                <img src="{{ step.icon.url }}" width="67" height="67">
+              </div>
+              {% else %}
+              <div class="steps__icon" style="background: {{ step.icon.color }}">{{ step.icon.content }}</div>
+              {% endif %}
+              <p>{{ step.text }}</p>
+            </div>
+          </li>
+          {% endfor %}
+        </ol>
+      </aside>
+    </div>
+    <h2>{{ doc.work.video_headline }}</h2>
+    <div class="video-modal">
+      <img src="http://i.ytimg.com/vi/wOtANfkh2bI/maxresdefault.jpg">
+    </div>
+    <div class="video-modal__media">
+      <header class="video-modal__close">
+        <span><img src="/assets/images/ic_close.png" width="18"></span>
+      </header>
+      <div id="yt-player"></div>
     </div>
   </div>
 </section>

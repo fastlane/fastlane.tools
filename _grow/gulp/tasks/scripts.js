@@ -5,13 +5,16 @@ var gulp = require('gulp');
 var rename = require('gulp-rename');
 var plumber = require('gulp-plumber');
 var uglify = require('gulp-uglify');
-var autoprefixer = require('gulp-autoprefixer');
+var debug = require('gulp-debug');
+var concat = require('gulp-concat')
 
 gulp.task('build_js', function() {
   return gulp
     .src(config.Path.JS_SOURCES)
+    .pipe(debug())
     .pipe(plumber())
-    .pipe(uglify())
+    .pipe(concat('main.js'))
+    // .pipe(uglify())
     .pipe(rename({
       suffix: '.min'
     }))
