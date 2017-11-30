@@ -19,30 +19,45 @@ features:
     - class: screenshots
       headline@: Automate<br>screenshots
       summary@: Automatically generate localized screenshots for the app store
+      icon:
+        image: !g.static /source/images/ic_screenshots.svg
+        alt@: Screenshots icon
       cta:
         title@: Learn more
-        href: ~
+        href: '#screenshots'
     - class: beta
       headline@: Beta<br>deployment
       summary@: Easily distribute beta builds to testers
+      icon:
+        image: !g.static /source/images/ic_beta.svg
+        alt@: Beta deployment icon
       cta:
         title@: Learn more
-        href: ~
+        href: '#beta'
     - class: appstore
       headline@: App Store<br>deployment
       summary@: Publish a new release to the app store in seconds
+      icon:
+        image: !g.static /source/images/ic_appstore.svg
+        alt@: App Store icon
       cta:
         title@: Learn more
-        href: ~
+        href: '#app-store'
     - class: codesigning
       headline@: Code<br>signing
       summary@: Reliably and consistently code sign your app–no more headaches
+      icon:
+        image: !g.static /source/images/ic_codesigning.svg
+        alt@: Code signing
       cta:
         title@: Learn more
-        href: ~
+        href: '#code-signing'
 
 feature_modules:
   - class: screenshots
+    icon:
+      image: !g.static /source/images/ic_screenshots.svg
+      alt@: Screenshots icon
     headline@: Capture screenshots automatically
     body@: |
       ##### Generate localized app store screenshots in minutes.
@@ -65,10 +80,12 @@ feature_modules:
       width: 634
       height: 587
   - class: beta
+    icon:
+      image: !g.static /source/images/ic_beta.svg
+      alt@: Beta deployment icon
     headline@: Distribute beta builds
     body@: |
-      ##### Easily publish new beta builds to testers so you can get valuable
-      feedback, fast.
+      ##### Easily publish new beta builds to testers so you can get valuable feedback, fast.
 
       - Automate the most time-consuming beta distribution steps including
       incrementing the build version, code signing, building and uploading
@@ -89,6 +106,9 @@ feature_modules:
       width: 641
       height: 549
   - class: appstore
+    icon:
+      image: !g.static /source/images/ic_appstore.svg
+      alt@: App Store icon
     headline@: Publish your app with the push of a button
     body@: |
       ##### Automate the entire app store deployment process.
@@ -109,6 +129,9 @@ feature_modules:
       width: 627
       height: 487
   - class: codesigning
+    icon:
+      image: !g.static /source/images/ic_codesigning.svg
+      alt@: Code signing
     headline@: Automatic code signing
     body@: |
       ##### Avoid the frustration of managing code signing identities.
@@ -134,20 +157,24 @@ integration:
   integrations:
     - image: !g.static /source/images/bitrise-logo.png
       alt@: Bitrise logo
+      href: https://www.bitrise.io/
       width: 145
       height: 34
-    - image: !g.static /source/images/travis-logo.png
-      alt@: Travis CI logo
-      width: 112
-      height: 35
-    - image: !g.static /source/images/jenkins-logo.png
-      alt@: Jenkins logo
-      width: 136
-      height: 44
     - image: !g.static /source/images/circleci-logo.png
       alt@: Circle CI logo
+      href: https://circleci.com/
       width: 53
       height: 43
+    - image: !g.static /source/images/jenkins-logo.png
+      alt@: Jenkins logo
+      href: https://jenkins.io/
+      width: 136
+      height: 44
+    - image: !g.static /source/images/travis-logo.png
+      alt@: Travis CI logo
+      href: https://travis-ci.org/
+      width: 112
+      height: 35
   headline_2@: Extend fastlane
   summary_2@: >
     Customize your deployment workflows using the hundreds of community built
@@ -268,7 +295,9 @@ contribute:
       {% for card in doc.features.cards %}
         <div class="features__cards__card features__cards__card--{{ card.class }} card">
           <div class="feature-icon feature-icon--{{ card.class }}">
-            <img src="" alt="">
+            <div class="feature-icon__flex">
+              <img class="feature-icon__image" src="{{ card.icon.image.url.path }}" alt="{{ card.icon.alt }}">
+            </div>
           </div>
           <h4 class="features__cards__card__headline">{{ card.headline | safe }}</h4>
           <div class="features__cards__card__summary">
@@ -286,7 +315,9 @@ contribute:
     <div class="section__wrapper">
       <div class="feature__header">
         <div class="feature-icon feature-icon--{{ feature.class }}">
-          <img src="" alt="">
+          <div class="feature-icon__flex">
+            <img src="{{ feature.icon.image.url.path }}" alt="{{ feature.icon.alt }}">
+          </div>
         </div>
         <h2 class="section__headline">{{ feature.headline | safe }}</h2>
       </div>
@@ -318,7 +349,9 @@ contribute:
     </div>
     <div class="integration__flex">
       {% for integration in doc.integration.integrations %}
-        <img class="integration__flex__item" src="{{ integration.image.url.path }}" alt="{{ integration.alt }}" width="{{ integration.width }}" height="{{ integration.height }}">
+        <a href="{{ integration.href }}" target="_blank">
+          <img class="integration__flex__item" src="{{ integration.image.url.path }}" alt="{{ integration.alt }}" width="{{ integration.width }}" height="{{ integration.height }}">
+        </a>
       {% endfor %}
     </div>
     <hr>

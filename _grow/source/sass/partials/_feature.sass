@@ -3,8 +3,7 @@
   padding-bottom: 40px
   padding-top: 40px
   +breakpoint($bp-large)
-    padding-bottom: 80px
-    padding-top: 80px
+    padding: 80px 40px
 
   &.feature--screenshots
     background-color: $color-bg-screenshots
@@ -93,6 +92,8 @@
 
   .feature__content-wrapper
     flex-basis: 55%
+    +breakpoint($bp-large)
+      max-width: 500px
 
   .feature__image-wrapper
     flex-basis: 40%
@@ -112,6 +113,8 @@
     line-height: 40px
     text-align: center
     text-transform: uppercase
+    +breakpoint($bp-large)
+      text-align: left
 
     a
       border: 2px solid $color-white

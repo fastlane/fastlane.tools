@@ -34,7 +34,7 @@
   .section__wrapper
     max-width: 900px !important
     overflow-x: hidden
-  
+
   .animation
     align-items: center
     display: flex
@@ -45,6 +45,9 @@
     &__window
       flex: 0 1 48%
       position: relative
+
+    &__steps
+      max-width: 350px
 
   .animation__window
     border-radius: 10px
@@ -76,7 +79,7 @@
           opacity: 0
         .line span
           color: $color-grey-41 !important
-      
+
 
     .instr
       position: relative
@@ -94,7 +97,7 @@
         left: -40px
         top: 9px
         width: 7px
-    
+
     &__indent
       text-indent: 1em
       span
@@ -122,7 +125,7 @@
       &:not(:last-child):after
         background: url(/assets/images/step-arrow.png) bottom center no-repeat
         background-size: contain
-        bottom: -40px
+        bottom: -32px
         content: ''
         height: 96px
         left: 50%
