@@ -9,12 +9,10 @@
   padding: 0 $layout-side-padding / 2
   text-align: center
 
-  .section__headline
-    margin: 0 0 20px
-    +breakpoint($bp-medium)
-      margin-bottom: 30px
+  &__wrapper
+    z-index: 5
 
-  .hero__summary
+  &__summary
     font-size: 20px
     margin: 0 0 40px
     opacity: .8
@@ -22,17 +20,81 @@
       font-size: 25px
       margin-bottom: 60px
 
-  .hero__hours-counter
+  &__hours-counter
     border-bottom: 1px solid $color-blue-48
     border-top: 1px solid $color-blue-48
     margin: 0 auto
     max-width: 400px
     padding: 20px 0
 
-    .hero__hours-counter__headline
+  &__hours-counter
+    &__headline
       margin: 0 0 20px
 
-    .hero__hours-counter__counter
+    &__counter
       font: $font-h1
       +breakpoint($bp-medium)
         font-size: 80px
+
+  .section__headline
+    margin: 0 0 20px
+    +breakpoint($bp-medium)
+      margin-bottom: 30px
+
+  // Animated background
+  //
+  &__background
+    height: 100%
+    max-height: 600px
+    overflow: hidden
+    position: absolute
+    width: 100%
+
+  canvas
+    position: absolute
+
+  svg
+    height: 100%
+    left: 0
+    overflow: visible
+    position: absolute
+    width: 100%
+
+  #particle__wrapper
+    height: 100%
+    position: absolute
+    width: 100%
+
+    canvas
+      left: 0
+
+  .particle
+    background-color: white
+    border-radius: 100%
+    height: 20px
+    width: 20px
+
+  // SVG
+  .mesh-lines
+    fill: none
+    stroke: #3e3ef8
+    stroke-miterlimit: 15
+
+  .triangle__wrapper
+    &--left, &--right
+      height: 100%
+      position: absolute
+      width: 100%
+
+    &--left
+      left: -242px
+      top: -82px
+
+    &--right
+      right: -122px
+      bottom: -120px
+
+    +breakpoint($bp-medium)
+      &--left, &--right
+        left: 0
+        top: 0

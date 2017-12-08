@@ -10,6 +10,11 @@
     "/source/images/codesigning-illo.svg",
     "/source/images/fastlane-logo-lockup.png",
     "/source/images/favicon.ico",
+    "/source/images/google-developers-lockup-color.svg",
+    "/source/images/ic_appstore.svg",
+    "/source/images/ic_beta.svg",
+    "/source/images/ic_codesigning.svg",
+    "/source/images/ic_screenshots.svg",
     "/source/images/jenkins-logo.png",
     "/source/images/menu-close.svg",
     "/source/images/menu-hamburger.svg",
@@ -18,6 +23,7 @@
     "/source/images/travis-logo.png",
     "/source/images/twitter-logo.svg",
     "/views/partials/_footer.html",
-    "/views/partials/_header.html"
+    "/views/partials/_header.html",
+    "/views/partials/_hero.html"
   ]
 }

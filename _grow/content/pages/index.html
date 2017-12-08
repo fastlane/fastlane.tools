@@ -269,20 +269,7 @@ contribute:
 
 ---
 
-<section class="section hero">
-  <div class="hero__wrapper">
-    <h1 class="section__headline">{{ doc.hero.headline }}</h1>
-    <div class="hero__summary">
-      {{ doc.hero.summary | safe }}
-    </div>
-    <div class="hero__hours-counter">
-      <h4 class="hero__hours-counter__headline">{{ doc.hero.counter.headline }}</h4>
-      <div class="hero__hours-counter__counter">
-        7,153,219
-      </div>
-    </div>
-  </div>
-</section>
+{% include 'views/partials/_hero.html' %}
 
 <section class="section features">
   <div class="section__wrapper">
