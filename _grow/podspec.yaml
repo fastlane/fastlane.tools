@@ -34,3 +34,10 @@ deployments:
       name: gh-pages
       host: fastlane.tools
       scheme: https
+  webreview:
+    destination: webreview
+    server: googwebreview.appspot.com
+    project: fguerrero/fastlane
+    subdomain: fastlane
+    env:
+      name: dev
