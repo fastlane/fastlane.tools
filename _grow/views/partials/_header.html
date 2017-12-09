@@ -1,0 +1,30 @@
+<header class="header" data-nav>
+  <div class="header__wrapper">
+    <div class="header__lockup">
+      <button class="header__lockup__menu-button" type="button" data-nav-toggle>
+        <img class="header__lockup__menu-button__open" src="{{ g.static('/source/images/menu-hamburger.svg').url.path }}" alt="Menu open">
+        <img class="header__lockup__menu-button__close" src="{{ g.static('/source/images/menu-close.svg').url.path }}" alt="Menu close">
+      </button>
+      <a href="{{ g.doc('/content/pages/index.html').url.path }}">
+        <img class="header__lockup__logo" src="{{ g.static('/source/images/fastlane-logo-lockup.png').url.path }}" alt="Fastlane logo">
+      </a>
+    </div>
+    <nav class="header__nav">
+      <ul class="header__nav__list header__nav__list--primary">
+        <li class="header__nav__list__item">
+          Use fastlane
+          <ul class="header__nav__list header__nav__list--secondary">
+            <li class="header__nav__list__item header__nav__list__item--disc header__nav__list__item--screenshots"><a href="#screenshots">Automate screenshots</a></li>
+            <li class="header__nav__list__item header__nav__list__item--disc header__nav__list__item--beta"><a href="#beta">Beta deployments</a></li>
+            <li class="header__nav__list__item header__nav__list__item--disc header__nav__list__item--appstore"><a href="#app-store">App store deployments</a></li>
+            <li class="header__nav__list__item header__nav__list__item--disc header__nav__list__item--codesigning"><a href="#code-signing">Code signing</a></li>
+          </ul>
+        </li>
+        <li class="header__nav__list__item"><a href="#integrations">Integrations</a></li>
+        <li class="header__nav__list__item"><a href="#how-it-works">How it works</a></li>
+        <li class="header__nav__list__item"><a href="#contribute">Contribute</a></li>
+        <li class="header__nav__list__item"><a href="https://docs.fastlane.tools/">Docs</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

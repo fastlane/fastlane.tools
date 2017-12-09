@@ -1,0 +1,48 @@
+body
+  font: $font-body
+  margin: 0
+  padding: $layout-nav-height 0 0 0
+
+hr
+  border: 0
+
+h1, h2, h3, h4, h5, h6, p, ul
+  margin: 0
+
+h1
+  font: $font-h1
+  +breakpoint($bp-medium)
+    font-size: 55px
+
+h2
+  font: $font-h2
+
+h4
+  font: $font-h4
+  text-transform: uppercase
+  letter-spacing: 2px
+  +breakpoint($bp-medium)
+    font-size: 15px
+
+h5
+  font: $font-h5
+
+a
+  text-decoration: none
+
+.content-wrapper
+  margin-left: auto
+  margin-right: auto
+  max-width: $layout-max-width
+
+.hide-lt-s
+  +breakpoint-under($bp-small)
+    display: none !important
+
+.hide-gt-s
+  +breakpoint($bp-small)
+    display: none !important
+
+.hide-lt-m
+  +breakpoint-under($bp-medium)
+    display: none !important

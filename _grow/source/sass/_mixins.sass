@@ -1,0 +1,71 @@
+=breakpoint($width)
+  @media all and (min-width: $width)
+    @content
+
+=breakpoint-under($width)
+  @media all and (max-width: $width)
+    @content
+
+=light-text()
+  color: $color-white
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+=angle($pseudo, $flip: false, $angle: 1.5deg)
+  @if $pseudo == 'before' or $pseudo == 'after' or $pseudo == 'both'
+    position: relative
+    $selector: if($pseudo == 'both', '&:before,&:after', '&:#{$pseudo}')
+
+    #{$selector}
+      background: inherit
+      content: ''
+      display: block
+      height: 50%
+      left: 0
+      position: absolute
+      right: 0
+      z-index: -1
+      -webkit-backface-visibility: hidden // for Chrome Windows
+
+    @if $pseudo == 'before'
+      #{$selector}
+        top: 0
+
+        @if $flip
+          transform: skewY($angle * -1)
+          transform-origin: 0 0
+        @else
+          transform: skewY($angle)
+          transform-origin: 100% 0
+
+    @if $pseudo == 'after'
+      #{$selector}
+        bottom: 0
+
+        @if $flip
+          transform: skewY($angle)
+          transform-origin: 0 100%
+        @else
+          transform: skewY($angle * -1)
+          transform-origin: 100%
+
+    @if $pseudo == 'both'
+      &:before
+        top: 0
+
+        @if $flip
+          transform: skewY($angle * -1)
+          transform-origin: 0 0
+        @else
+          transform: skewY($angle)
+          transform-origin: 100% 0
+
+      &:after
+        bottom: 0
+
+        @if $flip
+          transform: skewY($angle)
+          transform-origin: 0 0
+        @else
+          transform: skewY($angle * -1)
+          transform-origin: 100%

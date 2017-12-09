@@ -1,0 +1,192 @@
+.works
+  +light-text
+  background: $color-blue-95
+  padding: 60px 0
+
+  #emoji img
+    transition: opacity 250ms linear
+    margin-left: 5px
+
+  .line span
+    transition: color 250ms linear
+
+  // App store hidden at first
+  #steps-appstore
+    position: absolute
+    width: 100%
+    top: 0
+    opacity: 0
+    transition: opacity 250ms linear
+    z-index: 3
+    &.active
+      opacity: 1
+
+  h2,
+  .section__summary
+    text-align: center
+
+  h2
+      margin-bottom: 30px
+
+  a
+    color: $color-green-95
+
+  .section__wrapper
+    max-width: 900px !important
+    overflow-x: hidden
+
+  .animation
+    align-items: center
+    display: flex
+    margin: 60px auto
+    justify-content: space-between
+
+    &__steps,
+    &__window
+      flex: 0 1 48%
+      position: relative
+
+    &__steps
+      max-width: 350px
+
+  .animation__window
+    border-radius: 10px
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .5)
+    overflow: hidden
+    position: relative
+
+    header
+      background: $color-almost-white
+      font-size: 36px
+      height: 40px
+      line-height: 40px
+      padding: 0 10px
+      color: #ccc
+
+  .code
+    background: $color-almost-black
+    box-sizing: border-box
+    display: block
+    padding: 30px 70px
+
+    &__block
+
+      &:not(:last-child)
+        margin-bottom: 2em
+
+      &:not(.active)
+        #emoji img
+          opacity: 0
+        .line span
+          color: $color-grey-41 !important
+
+
+    .instr
+      position: relative
+
+      &.active:before
+        display: block
+
+      &:before
+        display: none
+        background: url(/assets/images/code-arrow.png) center center no-repeat
+        background-size: 7px 7px
+        content: ''
+        height: 7px
+        position: absolute
+        left: -40px
+        top: 9px
+        width: 7px
+
+    &__indent
+      text-indent: 1em
+      span
+        display: block
+    &__def
+      color: #ccc
+      &--end
+        color: $color-grey-41
+    &__sym
+      color: $color-green-95
+    &__op
+      color: $color-purple-95
+
+  .steps
+    list-style: none
+    margin: 0
+    padding: 0
+    height: 540px
+
+    li:last-child .steps__ctn
+      margin-bottom: 0
+
+    li
+      position: relative
+      &:not(:last-child):after
+        background: url(/assets/images/step-arrow.png) bottom center no-repeat
+        background-size: contain
+        bottom: -32px
+        content: ''
+        height: 96px
+        left: 50%
+        position: absolute
+        transform: translate(-50%)
+        width: 40px
+      &.active .steps__ctn
+        border: 2px solid $color-green-95
+        box-shadow: 0 0 8px $color-green-95 inset
+
+    &__ctn
+      align-items: center
+      background: #fff
+      border-radius: 10px
+      padding: 15px 12px
+      margin: 0 0 40px
+      display: flex
+      color: $color-text
+      box-shadow: 0 0 8px rgba(0, 0, 0, .5)
+      position: relative
+      z-index: 2
+
+    &__icon
+      font-family: 'Source Sans Pro'
+      font-weight: 100
+      font-size: 32px
+      margin-right: 20px
+      width: 75px
+      height: 75px
+      line-height: 70px
+      text-align: center
+      color: white
+      border-radius: 75px
+  hr
+    width: 100px
+    height: 3px
+    background: $color-green-95
+    margin: 40px auto
+
+  +breakpoint-under(768px)
+    .steps li:last-child .steps__ctn
+      margin-bottom: 40px
+    .steps#steps-beta
+      margin-bottom: -100px
+    .animation
+      flex-direction: column-reverse
+      &__steps
+        width: 90vw
+        transition: padding 250ms linear
+        &.expanded
+          padding-bottom: 140px
+      &__window
+        width: 100vw
+        border-radius: 0
+        header
+          display: none
+
+  +breakpoint-under(480px)
+    .animation__window code
+      padding: 30px 40px
+    .steps__icon
+      width: 55px
+      height: 55px
+      line-height: 50px
