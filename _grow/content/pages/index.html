@@ -11,6 +11,7 @@ hero:
     headline@: Developer hours saved
 
 features:
+  id: features
   headline@: Automate your development and release process
   summary@: >
     <i>fastlane</i> is an open source platform aimed at simplifying Android and iOS deployment.<br class="hide-lt-m">
@@ -54,7 +55,8 @@ features:
         href: '#code-signing'
 
 feature_modules:
-  - class: screenshots
+  - id: screenshots
+    class: screenshots
     icon:
       image: !g.static /source/images/ic_screenshots.svg
       alt@: Screenshots icon
@@ -79,7 +81,8 @@ feature_modules:
       alt@: Screenshots illustration
       width: 634
       height: 587
-  - class: beta
+  - id: beta
+    class: beta
     icon:
       image: !g.static /source/images/ic_beta.svg
       alt@: Beta deployment icon
@@ -105,7 +108,8 @@ feature_modules:
       alt@: Beta illustration
       width: 641
       height: 549
-  - class: appstore
+  - id: app-store
+    class: appstore
     icon:
       image: !g.static /source/images/ic_appstore.svg
       alt@: App Store icon
@@ -128,7 +132,8 @@ feature_modules:
       alt@: Appstore illustration
       width: 627
       height: 487
-  - class: codesigning
+  - id: code-signing
+    class: codesigning
     icon:
       image: !g.static /source/images/ic_codesigning.svg
       alt@: Code signing
@@ -149,7 +154,8 @@ feature_modules:
       width: 684
       height: 449
 
-integration:
+integrations:
+  id: integrations
   headline@: Continuous integration support
   summary: >
     <i>fastlane</i> integrates effortlessly into existing CI services with
@@ -212,6 +218,7 @@ tweet_carousel:
       time_and_location@: "11:36AM - 2 Sep 2015 from Manhattan, NY"
 
 work:
+  id: how-it-works
   headline@: How fastlane works
   summary@: >
     Check out the <a href="#">getting started</a> docs on how to dive
@@ -256,6 +263,7 @@ work:
       url: /assets/images/fastlane.png
 
 contribute:
+  id: contribute
   headline@: Become a fastlane contributor
   summary@: |
     The strong open source community that contributes to fastlane is part of
@@ -271,7 +279,7 @@ contribute:
 
 {% include 'views/partials/_hero.html' %}
 
-<section class="section features">
+<section id="{{ doc.features.id }}" class="section features">
   <div class="section__wrapper">
     <hr class="features__divider">
     <h2 class="section__headline">{{ doc.features.headline }}</h2>
@@ -298,7 +306,7 @@ contribute:
 </section>
 
 {% for feature in doc.feature_modules %}
-  <section class="section feature feature--{{ feature.class }}">
+  <section id="{{ feature.id }}" class="section feature feature--{{ feature.class }}">
     <div class="section__wrapper">
       <div class="feature__header">
         <div class="feature-icon feature-icon--{{ feature.class }}">
@@ -328,23 +336,23 @@ contribute:
   </section>
 {% endfor %}
 
-<section class="section integration">
+<section id="{{ doc.integrations.id }}" class="section integration">
   <div class="section__wrapper">
-    <h2 class="section__headline">{{ doc.integration.headline }}</h2>
+    <h2 class="section__headline">{{ doc.integrations.headline }}</h2>
     <div class="section__summary">
-      {{ doc.integration.summary | safe }}
+      {{ doc.integrations.summary | safe }}
     </div>
     <div class="integration__flex">
-      {% for integration in doc.integration.integrations %}
+      {% for integration in doc.integrations.integrations %}
         <a href="{{ integration.href }}" target="_blank">
           <img class="integration__flex__item" src="{{ integration.image.url.path }}" alt="{{ integration.alt }}" width="{{ integration.width }}" height="{{ integration.height }}">
         </a>
       {% endfor %}
     </div>
     <hr>
-    <h2 class="section__headline">{{ doc.integration.headline_2 }}</h2>
+    <h2 class="section__headline">{{ doc.integrations.headline_2 }}</h2>
     <div class="section__summary">
-      {{ doc.integration.summary_2 | safe }}
+      {{ doc.integrations.summary_2 | safe }}
     </div>
   </div>
 </section>
@@ -378,7 +386,7 @@ contribute:
   </div>
 </section>
 
-<section class="section works">
+<section id="{{ doc.work.id }}" class="section works">
   <div class="section__wrapper">
     <h2 class="section__headline">{{ doc.work.headline }}</h2>
     <div class="section__summary">
@@ -473,7 +481,7 @@ contribute:
   </div>
 </section>
 
-<section class="section contribute">
+<section id="{{ doc.contribute.id }}" class="section contribute">
   <div class="section__wrapper">
     <h2 class="section__headline">{{ doc.contribute.headline }}</h2>
     <div class="section__summary">
