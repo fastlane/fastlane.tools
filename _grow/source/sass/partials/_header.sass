@@ -68,6 +68,7 @@
       flex-basis: 100%
       font-size: 12px
       max-width: 600px
+      overflow: visible
 
     .header__nav__list
       list-style: none
@@ -85,16 +86,19 @@
             display: flex
             height: $layout-nav-height
 
+            &:hover > .header__nav__list--secondary
+              display: block
+
       &.header__nav__list--secondary
         padding-left: 40px
+        min-width: 180px
         +breakpoint($bp-responsive-nav)
-          background: rgba(255, 255, 255, .8)
+          background: rgba(255, 255, 255, .9)
           padding-right: 20px
           position: absolute
           top: $layout-nav-height
-
-          &:not(.header__nav__list--open)
-            display: none
+          left: -20px
+          display: none
 
           .header__nav__list__item
             margin: 15px 0
