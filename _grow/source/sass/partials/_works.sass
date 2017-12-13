@@ -3,13 +3,6 @@
   background: $color-blue-95
   padding: 60px 0
 
-  #emoji img
-    transition: opacity 250ms linear
-    margin-left: 5px
-
-  .line span
-    transition: color 250ms linear
-
   // App store hidden at first
   #steps-appstore
     position: absolute
@@ -26,7 +19,7 @@
     text-align: center
 
   h2
-      margin-bottom: 30px
+    margin-bottom: 30px
 
   a
     color: $color-green-95
@@ -69,47 +62,47 @@
     display: block
     padding: 30px 70px
 
+    article:last-child
+      margin-top: 2em
+
     &__block
-
-      &:not(:last-child)
-        margin-bottom: 2em
-
-      &:not(.active)
-        #emoji img
-          opacity: 0
-        .line span
-          color: $color-grey-41 !important
-
-
-    .instr
       position: relative
-
-      &.active:before
-        display: block
-
-      &:before
-        display: none
-        background: url(/assets/images/code-arrow.png) center center no-repeat
-        background-size: 7px 7px
-        content: ''
-        height: 7px
-        position: absolute
-        left: -40px
-        top: 9px
-        width: 7px
-
+    
     &__indent
       text-indent: 1em
-      span
-        display: block
-    &__def
-      color: #ccc
-      &--end
-        color: $color-grey-41
-    &__sym
+      .line:before
+        left: calc(1em - 20px)
+
+  .current-loc
+    background: url(/assets/images/code-arrow.png) center center no-repeat
+    background-size: 7px 7px
+    content: ''
+    height: 7px
+    opacity: 0
+    position: absolute
+    top: .5em
+    left: -1em
+    width: 7px
+
+  .line,
+    position: relative
+    transition: color 250ms linear
+
+    &.inactive,
+    &.inactive span
+      color: $color-grey-57 !important
+      &:before
+        display: none
+
+    /* Types of code */
+    &--end
+      color: $color-grey-41
+    &--sym
       color: $color-green-95
-    &__op
+    &--op
       color: $color-purple-95
+      &.active:before
+        display: block
 
   .steps
     list-style: none
@@ -122,19 +115,28 @@
 
     li
       position: relative
+      opacity: 0
       &:not(:last-child):after
         background: url(/assets/images/step-arrow.png) bottom center no-repeat
         background-size: contain
-        bottom: -32px
+        bottom: 0
         content: ''
-        height: 96px
+        height: 62px
         left: 50%
         position: absolute
         transform: translate(-50%)
+        transition: bottom 200ms ease-in, opacity 200ms ease-out
+        transition-delay: 1000ms
         width: 40px
-      &.active .steps__ctn
-        border: 2px solid $color-green-95
-        box-shadow: 0 0 8px $color-green-95 inset
+      .steps__ctn
+        border: 2px solid transparent
+        transition: border-color 200ms linear, box-shadow 200ms linear
+      &.active
+        &:after
+          bottom: -39px
+        .steps__ctn
+          border-color: $color-green-95
+          box-shadow: 0 0 8px $color-green-95 inset
 
     &__ctn
       align-items: center
@@ -166,11 +168,20 @@
     margin: 40px auto
 
   +breakpoint-under(768px)
-    .steps li:last-child .steps__ctn
-      margin-bottom: 40px
+    .steps__ctn
+      padding: 10px 12px
+
+    .steps .steps__ctn
+      margin-bottom: 30px
+    
+    .steps li.active:after
+      bottom: -29px
+
     .steps#steps-beta
       margin-bottom: -100px
+
     .animation
+      margin-top: 15px
       flex-direction: column-reverse
       &__steps
         width: 90vw
@@ -190,3 +201,4 @@
       width: 55px
       height: 55px
       line-height: 50px
+

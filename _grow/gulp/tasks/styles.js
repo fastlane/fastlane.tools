@@ -1,21 +1,23 @@
-'use strict';
-
-var config = require('../config');
-var gulp = require('gulp');
-var rename = require('gulp-rename');
-var plumber = require('gulp-plumber');
-var sass = require('gulp-sass');
-var sassGlob = require('gulp-sass-glob');
-var autoprefixer = require('gulp-autoprefixer');
+const config = require('../config');
+const gulp = require('gulp');
+const rename = require('gulp-rename');
+const plumber = require('gulp-plumber');
+const sass = require('gulp-sass');
+const sassGlob = require('gulp-sass-glob');
+const autoprefixer = require('gulp-autoprefixer');
+const gutil = require('gulp-util');
 
 gulp.task('build_css', function() {
   return gulp
     .src(config.Path.CSS_SOURCES)
-    .pipe(plumber())
     .pipe(sassGlob())
     .pipe(sass({
         outputStyle: 'compressed'
     }))
+    .on('error', function handleError(e) {
+      console.log(new gutil.PluginError('SCSS', e).message)
+      this.emit('end');
+    })
     .pipe(autoprefixer())
     .pipe(rename({
       suffix: '.min'

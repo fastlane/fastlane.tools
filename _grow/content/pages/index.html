@@ -221,8 +221,8 @@ work:
   id: how-it-works
   headline@: How fastlane works
   summary@: >
-    Check out the <a href="#">getting started</a> docs on how to dive
-    into fastlane
+    Check out the <a href="https://docs.fastlane.tools/">getting started</a>
+    docs on how to dive into fastlane
   video_headline@: See it in action - getting started with fastlane
   code:
   - title@: Increment build number
@@ -394,7 +394,7 @@ contribute:
     </div>
     <hr />
     <header class="typeahead">
-      <h2>fastlane <span class="typeahead__target">beta</span></h2>
+      <h2>fastlane <span class="typeahead__target"></span></h2>
     </header>
     <div class="animation">
       <div class="animation__window">
@@ -402,35 +402,41 @@ contribute:
         <code class="code">
 
           {# BETA code block #}
-          <article class="code__block active" id="beta">
-            <div class="line">
-              <span class="code__def">lane</span> <span class="code__sym">:beta</span> <span class="code__op">do</span>
+          <article class="code__block" id="code-beta">
+            <div class="current-loc"></div>
+            <div class="line line--first inactive">
+              <span class="line--def">lane</span>
+              <span class="line--sym">:beta</span>
+              <span class="line--op">do</span>
             </div>
             <div class="code__indent">
-              <div class="line"><span class="code__fn">increment_build_number</span></div>
-              <div class="line"><span class="code__fn">gym</span></div>
-              <div class="line"><span class="code__fn">testflight</span></div>
+              <div class="line line--fn inactive">increment_build_number</div>
+              <div class="line line--fn inactive">gym</div>
+              <div class="line line--fn inactive">testflight</div>
             </div>
-            <div class="line">
-              <span class="code__def--end" id="emoji">end <img src="/assets/images/rocket.png" width="14"></span>
+            <div class="line inactive">
+              <span class="line--end" id="emoji">end <img src="/assets/images/rocket.png" width="14"></span>
             </div>
           </article>
 
           {# APPSTORE code block #}
-          <article class="code__block" id="appstore">
-              <div class="line">
-                <span class="code__def">lane</span> <span class="code__sym">:appstore</span> <span class="code__op">do</span>
-              </div>
-              <div class="code__indent">
-                <div class="line"><span class="code__fn">snapshot</span></div>
-                <div class="line"><span class="code__fn">gym</span></div>
-                <div class="line"><span class="code__fn">deliver</span></div>
-                <div class="line"><span class="code__fn">slack</span></div>
-              </div>
-              <div class="line">
-                <span class="code__def--end">end</span>
-              </div>
-            </article>
+          <article class="code__block" id="code-appstore">
+            <div class="current-loc"></div>
+            <div class="line line--first inactive">
+              <span class="line--def">lane</span>
+              <span class="line--sym">:appstore</span>
+              <span class="line--op">do</span>
+            </div>
+            <div class="code__indent">
+              <div class="line line--fn inactive">snapshot</div>
+              <div class="line line--fn inactive">gym</div>
+              <div class="line line--fn inactive">deliver</div>
+              <div class="line line--fn inactive">slack</div>
+            </div>
+            <div class="line inactive">
+              <div class="line--end">end</div>
+            </div>
+          </article>
         </code>
       </div>
       <aside class="animation__steps">
@@ -440,7 +446,7 @@ contribute:
             <div class="steps__ctn">
               {% if step.icon.url %}
               <div class="steps__icon">
-                <img src="{{ step.icon.url }}" width="67" height="67">
+                <img src="{{ step.icon.url }}">
               </div>
               {% else %}
               <div class="steps__icon" style="background: {{ step.icon.color }}">{{ step.icon.content }}</div>
@@ -456,7 +462,7 @@ contribute:
             <div class="steps__ctn">
               {% if step.icon.url %}
               <div class="steps__icon">
-                <img src="{{ step.icon.url }}" width="67" height="67">
+                <img src="{{ step.icon.url }}">
               </div>
               {% else %}
               <div class="steps__icon" style="background: {{ step.icon.color }}">{{ step.icon.content }}</div>

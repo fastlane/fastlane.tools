@@ -1,13 +1,8 @@
-(function(){
-  // Init YouTube player
-  var tag = document.createElement('script');
+import 'fl/globals/polyfills';
+import 'fl/globals/init';
 
-  tag.src = 'https://www.youtube.com/iframe_api';
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+import 'fl/deployment/typer';
+import 'fl/deployment/step-loop';
 
-  // Add mobile class
-  if (/ip(ad|hone|od)|android/i.test(window.navigator.userAgent)) {
-    document.body.classList.add('mobile');
-  }
-})();
+import 'fl/counter';
+import 'fl/carousel';

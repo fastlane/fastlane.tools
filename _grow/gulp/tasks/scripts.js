@@ -1,22 +1,17 @@
-'use strict';
+const gulp = require('gulp');
+const webpack = require('webpack-stream');
+const gutil = require('gulp-util');
+const config = require('../config');
 
-var config = require('../config');
-var gulp = require('gulp');
-var rename = require('gulp-rename');
-var plumber = require('gulp-plumber');
-var uglify = require('gulp-uglify');
-var debug = require('gulp-debug');
-var concat = require('gulp-concat')
+let cfg = process.env.NODE_ENV == 'production' ? 'prod' : 'config';
+console.log(`Using ${cfg} build.`);
 
 gulp.task('build_js', function() {
-  return gulp
-    .src(config.Path.JS_SOURCES)
-    // .pipe(debug())
-    .pipe(plumber())
-    .pipe(concat('main.js'))
-    // .pipe(uglify())
-    .pipe(rename({
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest(config.Path.JS_OUT_DIR));
-});
+  return gulp.src(config.Path.JS_ENTRY)
+  .pipe(webpack(require(`../../webpack.${cfg}`)))
+  .on('error', function handleError() {
+    console.log(new gutil.PluginError('JS', 'Error', { showStack: true }))
+    this.emit('end');
+  })
+  .pipe(gulp.dest(config.Path.JS_OUT_DIR));
+})
