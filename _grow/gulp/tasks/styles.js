@@ -7,8 +7,15 @@ const autoprefixer = require('gulp-autoprefixer');
 const gutil = require('gulp-util');
 
 gulp.task('build_css', function() {
-  return gulp
+
+  // TODO: clean this up, temp fix
+  gulp
     .src(config.Path.CSS_SOURCES)
+    .pipe(gulp.dest(config.Path.CSS_OUT_DIR));
+
+  return gulp
+    // Compile SASS
+    .src(config.Path.SASS_SOURCES)
     .pipe(sassGlob())
     .pipe(sass({
         outputStyle: 'compressed'
@@ -21,5 +28,5 @@ gulp.task('build_css', function() {
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(gulp.dest(config.Path.CSS_OUT_DIR));
+    .pipe(gulp.dest(config.Path.CSS_OUT_DIR))
 });

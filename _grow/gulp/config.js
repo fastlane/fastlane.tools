@@ -2,7 +2,8 @@ const path = require('path');
 
 module.exports = {
   Path: {
-    CSS_SOURCES: './source/sass/**/*.{sass,scss}',
+    SASS_SOURCES: './source/sass/**/*.{sass,scss}',
+    CSS_SOURCES: './source/css/**/*.css',
     CSS_OUT_DIR: './dist/css/',
     JS_ENTRY: './source/js/main.js',
     JS_SOURCES: ['./source/js/main.js', './source/js/**/*.js'],
