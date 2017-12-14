@@ -7,12 +7,6 @@ const autoprefixer = require('gulp-autoprefixer');
 const gutil = require('gulp-util');
 
 gulp.task('build_css', function() {
-
-  // TODO: clean this up, temp fix
-  gulp
-    .src(config.Path.CSS_SOURCES)
-    .pipe(gulp.dest(config.Path.CSS_OUT_DIR));
-
   return gulp
     // Compile SASS
     .src(config.Path.SASS_SOURCES)
