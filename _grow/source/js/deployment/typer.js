@@ -14,7 +14,7 @@ import {
 let request;
 
 // The string to write, either appstore or beta.
-let string;
+let string = '';
 
 // Keystroke interval
 let typeSpeed = 120;
@@ -66,7 +66,7 @@ function type() {
     return;
   }
   typeSpeed = 120;
-  target.textContent += string[typeIndex++];
+  target.textContent += string.charAt(typeIndex++);
   if (typeIndex == string.length) {
     cancelAnimationFrame(request);
     typeIndex = 0;

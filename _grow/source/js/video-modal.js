@@ -130,7 +130,6 @@ function setupModalPlayer(player) {
 
   /**
    * Callback for clicking elsewhere on the document to close the modal.
-   * @todo(sgeer)
    */
   function checkModalClose(e) {
     if (e.target.classList.contains('video-modal__backdrop')) {

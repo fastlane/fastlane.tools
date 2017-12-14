@@ -1,7 +1,8 @@
 const path = require('path');
+const config = require('./gulp/config')
 
 module.exports = {
-  entry: './source/js/main.js',
+  entry: config.Path.JS_ENTRY,
   output: {
     path: path.resolve(__dirname, 'dist/js'),
     filename: 'main.min.js'
