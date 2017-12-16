@@ -3,6 +3,7 @@ import 'fl/globals/init';
 
 import 'fl/deployment/typer';
 import 'fl/deployment/step-loop';
+import 'fl/deployment/video-modal'
 
 import 'fl/hero';
 import 'fl/counter';
