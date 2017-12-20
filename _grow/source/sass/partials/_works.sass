@@ -67,7 +67,7 @@
 
     &__block
       position: relative
-    
+
     &__indent
       text-indent: 1em
       .line:before
@@ -173,7 +173,7 @@
 
     .steps .steps__ctn
       margin-bottom: 30px
-    
+
     .steps li.active:after
       bottom: -29px
 
@@ -182,15 +182,16 @@
 
     .animation
       margin-top: 15px
-      flex-direction: column-reverse
+      flex-direction: column
       &__steps
-        width: 90vw
         transition: padding 250ms linear
+        width: 90vw
         &.expanded
           padding-bottom: 140px
       &__window
-        width: 100vw
         border-radius: 0
+        margin-bottom: 40px
+        width: 100vw
         header
           display: none
 
@@ -201,4 +202,3 @@
       width: 55px
       height: 55px
       line-height: 50px
-

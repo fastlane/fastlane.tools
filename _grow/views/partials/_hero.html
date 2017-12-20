@@ -3,11 +3,11 @@
     <div id="particle__wrapper"></div>
     <div class="triangle__wrapper">
       <div class="triangle__wrapper--left">
-        <svg>
+        <svg class="mesh-lines-top-left" viewBox="0 0 400 400" width="400" preserveAspectRatio="xMinYMin">
           <polygon class="triangle triangle-1--detach has-transform" fill="transparent" stroke="#3e3ef8" points="50 15, 100 100, 0 100" transform="translate(355,140) rotate(30)" />
           <polygon class="triangle triangle-1--attach has-transform" fill="transparent" stroke="#3e3ef8" points="50 15, 100 100, 0 100" transform="translate(500,-110)" cx="0" cy="0"/>
           <polygon class="triangle triangle-3--attach has-transform" fill="transparent" stroke="#3e3ef8" points="50 15, 100 100, 0 100" transform="translate(355,140) rotate(30)" cx="0" cy="0"/>
-           <g class="mesh-lines-group mesh-lines-top-left has-transform" transform="translate(0,100)">
+           <g class="mesh-lines-group has-transform" transform="translate(0,100)">
              <path class="mesh-lines" d="M374.85,416.26" transform="translate(-185.26 -306.7)"/>
              <path class="mesh-lines" d="M374.85,343.54" transform="translate(-185.26 -306.7)"/>
              <path class="mesh-lines" d="M374.85,489" transform="translate(-185.26 -306.7)"/>
@@ -58,8 +58,8 @@
              <path class="mesh-lines" d="M374.69,416.22v72.72" transform="translate(-185.26 -306.7)"/>
            </g>
         </svg>
-        <svg>
-          <g class="mesh-lines-group mesh-lines-bottom-left has-transform" transform="translate(-100,400)" >
+        <svg class="mesh-lines-bottom-left" viewBox="0 0 400 400" width="400" preserveAspectRatio="xMinYMin">
+          <g class="mesh-lines-group has-transform" transform="translate(-100,400)" >
             <path class="mesh-lines" d="M374.85,416.26" transform="translate(-248.24 -306.74)"/>
             <path class="mesh-lines" d="M374.85,561.7" transform="translate(-248.24 -306.74)"/>
             <path class="mesh-lines" d="M374.85,489" transform="translate(-248.24 -306.74)"/>
@@ -111,10 +111,10 @@
         </svg>
       </div>
       <div class="triangle__wrapper--right">
-        <svg>
-          <polygon class="triangle triangle-2--attach has-transform" fill="transparent" stroke="#3e3ef8" points="50 15, 100 100, 0 100" transform="translate(2200,300) rotate(30)" cx="0" cy="0"/>
-          <polygon class="triangle triangle-2--float-in has-transform" fill="transparent" stroke="#3e3ef8" points="50 15, 100 100, 0 100" transform="translate(2200,300) rotate(30)" cx="0" cy="0"/>
-          <g class="mesh-lines-group mesh-lines-top-right" transform="translate(1200,100) rotate(30)">
+        <svg class="mesh-lines-top-right" viewBox="0 0 320 320" width="320" preserveAspectRatio="xMinYMin">
+          <polygon class="triangle triangle-2--attach has-transform" fill="transparent" stroke="#3e3ef8" points="50 15, 100 100, 0 100" transform="rotate(30)" />
+          <polygon class="triangle triangle-2--float-in has-transform" fill="transparent" stroke="#3e3ef8" points="50 15, 100 100, 0 100" transform="rotate(30)" />
+          <g class="mesh-lines-group mesh-lines-top-right-group" transform="rotate(30)">
             <path class="mesh-lines" d="M300.45,341.79" transform="translate(-263.66 -341.7)"/>
             <line class="mesh-lines" x1="73.3" y1="63.23" x2="0.43" y2="63.23"/>
             <line class="mesh-lines" x1="145.87" y1="63.23" x2="73.3" y2="63.23"/>
@@ -126,7 +126,7 @@
             <line class="mesh-lines" x1="36.79" y1="0.25" x2="0.43" y2="63.23"/>
           </g>
         </svg>
-        <svg class="mesh-lines-group mesh-lines-bottom-right" transform="translate(1440, 320)">
+        <svg class="mesh-lines-group mesh-lines-bottom-right" viewBox="0 -320 320 320" width="320" preserveAspectRatio="xMinYMin">
            <g>
              <path class="mesh-lines" d="M374.85,489" transform="translate(-122.12 -343.12)"/>
              <path class="mesh-lines" d="M374.85,416.24" transform="translate(-122.12 -343.12)"/>
@@ -188,14 +188,16 @@
     </div>
   </div>
   <div class="hero__wrapper">
-    <h1 class="section__headline">{{ doc.hero.headline }}</h1>
-    <div class="hero__summary">
-      {{ doc.hero.summary | safe }}
-    </div>
-    <div class="hero__hours-counter">
-      <h4 class="hero__hours-counter__headline">{{ doc.hero.counter.headline }}</h4>
-      <div class="hero__hours-counter__counter odometer" id="odometer">
-        10,558,200
+    <div class="hero__inner-wrapper">
+      <h1 class="section__headline">{{ doc.hero.headline }}</h1>
+      <div class="hero__summary">
+        {{ doc.hero.summary | safe }}
+      </div>
+      <div class="hero__hours-counter">
+        <h4 class="hero__hours-counter__headline">{{ doc.hero.counter.headline }}</h4>
+        <div class="hero__hours-counter__counter odometer" id="odometer">
+          10,558,200
+        </div>
       </div>
     </div>
   </div>

@@ -1,71 +1,37 @@
 'use strict';
 
-var hero = function() {
-
-  /*
-  * Browser fixes
-  */
-  // IE does not supports the transform attribute, but not the CSS style
-  // This is a workaround for it
-  var transformedElements = $('.has-transform');
-  $.each(transformedElements, function(index, el){
-    var transform = getComputedStyle(el).getPropertyValue('transform');
-    $(el).attr('transform', transform);
-  })
-
-  /*
-  * Helper methods
-  */
-  Math.randMinMax = function(t, n, a){
-    var r = t + Math.random() * (n - t);
-    return a && ( r = Math.round(r) ), r;
-  }
-
-  /*
-  * Placing elements based on viewport width
-  */
-  var bottomRightX;
-  var bottomRightMeshWidth = 300;
-  var placeElements = function(){
-    var $heroBg = $('.hero__background');
-    var heroWidth = $heroBg.width();
-    var heroHeight = $heroBg.height();
-
-    var $triangleBottomRight = $('.mesh-lines-bottom-right');
-    bottomRightX = heroWidth - bottomRightMeshWidth;
-
-    TweenMax.set($triangleBottomRight, {
-      x: bottomRightX
-    });
-  }
-
+let hero = function() {
   /*
   * Animates individual line opacities on large meshes
   */
-  var animateLineOpacity = function(){
-    var triangleLines = $('.mesh-lines').toArray();
+  (function(){
+    let triangleLines = $('.mesh-lines').toArray();
     triangleLines.sort(function(){ return 0.5-Math.random() });
-    var opacityTl = new TimelineMax();
+    let opacityTl = new TimelineMax();
 
-    opacityTl.staggerTo(triangleLines, 1, {alpha:0.3, repeatDelay:4, repeat:-1, yoyo:true}, 0.1);
+    opacityTl.staggerTo(triangleLines, 1, {alpha:0.4, repeatDelay:4, repeat:-1, yoyo:true}, 0.1)
     opacityTl.play();
-  }
+  }());
 
   /*
   * Animates individual triangles attaching / reattaching to meshes (loop)
   */
-  var animateTriangles = function(){
-    var triangles = document.querySelectorAll('.triangle');
+  (function(){
+    let triangles = document.querySelectorAll('.triangle');
     TweenMax.set(triangles, {
       scale: 0.75,
       alpha: 0
     });
 
     // Triangle Left Top animation (Attach + Drop down)
-    var triangle1Detach = document.querySelector('.triangle-1--detach');
-    var triangle1Attach = document.querySelector('.triangle-1--attach');
+    let triangle1Detach = document.querySelector('.triangle-1--detach');
+    let triangle1Attach = document.querySelector('.triangle-1--attach');
+    TweenMax.set(triangle1Detach, {
+      x: 347,
+      rotation: '30'
+    });
 
-    var tl1 = new TimelineMax({repeat: -1, repeatDelay:10});
+    let tl1 = new TimelineMax({repeat: -1, repeatDelay:10});
     tl1.timeScale(6);
     tl1.to(triangle1Attach, 5, {
       alpha: 1
@@ -95,32 +61,36 @@ var hero = function() {
     });
 
     // Triangle Right Half (Little machine drop / conveyor belt)
-    var triangle2FloatIn = document.querySelector('.triangle-2--float-in');
-    var triangle2Attach = document.querySelector('.triangle-2--attach');
-    var meshTopRight = document.querySelector('.mesh-lines-top-right');
-    var triangle2Curve1 =[{x: bottomRightX - 200, y:600}, {x:bottomRightX - 350, y:320}, {x:bottomRightX - 250, y: 278}];
-    var triangle2Curve2 =[{x:bottomRightX - 250, y: 278}, {x:bottomRightX - 250, y:420}, {x:bottomRightX - 233, y: 435}];
+    let triangle2FloatIn = document.querySelector('.triangle-2--float-in');
+    let triangle2Attach = document.querySelector('.triangle-2--attach');
+    let meshTopRight = document.querySelector('.mesh-lines-top-right-group');
+    let triangle2Curve1 =[{x: -200, y:600}, {x:-350, y:320}, {x:-250, y: 278}];
+    let triangle2Curve2 =[{x:-250, y: 278}, {x:-250, y:420}, {x:-233, y: 435}];
 
     TweenMax.set(triangle2FloatIn, {
-      x: bottomRightX,
-      y: 600
+      x: 0,
+      y: 600,
+      rotation: '30'
     });
     TweenMax.set(triangle2Attach, {
-      x: bottomRightX - 200,
-      y: 600
+      x: -200,
+      y: 600,
+      rotation: '30'
     });
     TweenMax.set(meshTopRight, {
-      x: bottomRightX + 60,
-      y: 100
+      x: 60,
+      y: 100,
+      rotation: '30'
     });
-    var tl2 = new TimelineMax({repeat: -1, repeatDelay:25});
+
+    let tl2 = new TimelineMax({repeat: -1, repeatDelay:25});
     tl2.timeScale(6);
     tl2.to([triangle2Attach, triangle2FloatIn], 25, {
       alpha: 1
     });
     tl2.to(triangle2Attach, 25, {
       rotation:'+=120',
-      svgOrigin: (bottomRightX) + ' 700',
+      svgOrigin: '0 700',
       ease:Power2.easeInOut,
       bezier:{
         type: "quadratic",
@@ -130,7 +100,7 @@ var hero = function() {
     });
     tl2.to([triangle2Attach, meshTopRight], 10, {
       rotation:'-=60',
-      svgOrigin: (bottomRightX + 137) + ' 120'
+      svgOrigin: '137 120'
     })
     tl2.to(triangle2Attach, 15, {
       bezier:{
@@ -141,16 +111,16 @@ var hero = function() {
     });
     tl2.to(triangle2Attach, 15, {
       rotate: '+=13',
-      x: bottomRightX + 50,
+      x: 50,
       y: 260
     });
     tl2.to(meshTopRight, 10, {
       rotation:'+=60',
-      svgOrigin: (bottomRightX + 137) + ' 120'
+      svgOrigin: '137 120'
     })
     tl2.to(triangle2FloatIn, 25, {
       ease: Power2.easeInOut,
-      x: bottomRightX + 30,
+      x: 30,
       y: 396
     });
     tl2.to(triangle2FloatIn, 5, {
@@ -158,13 +128,13 @@ var hero = function() {
     });
 
     // Triangle Left Bottom animation
-    var triangle3Attach = document.querySelector('.triangle-3--attach');
+    let triangle3Attach = document.querySelector('.triangle-3--attach');
     TweenMax.set(triangle3Attach, {
-      rotate: '-250',
+      rotation: '30',
       x: -40,
       y: 420
     });
-    var tl3 = new TimelineMax({repeat: -1, repeatDelay:25});
+    let tl3 = new TimelineMax({repeat: -1, repeatDelay:25});
     tl3.timeScale(6);
     tl3.to(triangle3Attach, 5, {
       alpha: 1
@@ -188,17 +158,17 @@ var hero = function() {
     });
     tl3.to(triangle3Attach, 15, {
       rotation:'-=270',
-      transformOrigin:'0 0',
+      svgOrigin:'183 280',
       ease:Power2.easeIn,
       x: 650,
       y: 700
     });
-  }
+  }());
 
   /*
   * Animates floating particles (uses particles.js)
   */
-  var createParticles = function() {
+  (function() {
     particlesJS("particle__wrapper", {
       "particles": {
         "number": {
@@ -298,16 +268,5 @@ var hero = function() {
       },
       "retina_detect": true
     });
-  }
-
-  /*
-  * Initialize
-  */
-  var init = function() {
-    placeElements();
-    animateLineOpacity();
-    animateTriangles();
-    createParticles();
-  }();
-
+  }());
 }();

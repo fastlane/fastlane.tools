@@ -1,7 +1,9 @@
 .video-modal
   margin: auto
   position: relative
-  width: 340px
+  width: 100%
+  +breakpoint($bp-medium)
+    width: 340px
   &:before
     background: url(/assets/images/fastlane-play.png)
     background-size: 72px 72px

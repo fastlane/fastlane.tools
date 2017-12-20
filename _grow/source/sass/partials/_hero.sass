@@ -1,16 +1,29 @@
 .hero
   +light-text
   align-items: center
-  justify-content: center
   background-color: $color-blue-28
   display: flex
-  height: calc(100vh - #{$layout-nav-height})
-  max-height: 600px
+  height: 600px
+  justify-content: center
   padding: 0 $layout-side-padding / 2
   text-align: center
 
   &__wrapper
+    align-items: center
+    background-image: radial-gradient(rgba(9,8,71,0.65), 60%, transparent, 90%, transparent)
+    background-position: 50% 100%
+    background-repeat: no-repeat
+    display: flex
+    height: 600px
+    justify-content: center
+    left: 0
+    top: $layout-nav-height
+    width: 100%
     z-index: 5
+    +breakpoint($bp-large)
+        background-image: radial-gradient(rgba(9,8,71,0.65), 50%, transparent, 60%, transparent)
+        background-position: 50% 0%
+        background-size: 75% 100%
 
   &__summary
     font-size: 20px
@@ -44,57 +57,62 @@
   // Animated background
   //
   &__background
-    height: 100%
-    max-height: 600px
+    height: inherit
+    left: 0
     overflow: hidden
     position: absolute
+    top: $layout-nav-height
     width: 100%
 
   canvas
+    left: 0
     position: absolute
 
   svg
     height: 100%
-    left: 0
     overflow: visible
     position: absolute
-    width: 100%
 
   #particle__wrapper
     height: 100%
     position: absolute
     width: 100%
 
-    canvas
-      left: 0
-
-  .particle
-    background-color: white
-    border-radius: 100%
-    height: 20px
-    width: 20px
-
   // SVG
   .mesh-lines
     fill: none
-    stroke: #3e3ef8
-    stroke-miterlimit: 15
+    stroke-width: 1.5
+    stroke: $color-blue-95
+
+  .triangle
+    stroke-width: 1.8
 
   .triangle__wrapper
     &--left, &--right
       height: 100%
       position: absolute
-      width: 100%
+      width: 50%
 
     &--left
-      left: -242px
-      top: -82px
+      left: -25%
+      top: 0
+      +breakpoint($bp-small)
+        left: -10%
+      +breakpoint(768px)
+        left: 0
 
     &--right
-      right: -122px
-      bottom: -120px
-
-    +breakpoint($bp-medium)
-      &--left, &--right
-        left: 0
+      right: -41%
+      top: 53%
+      +breakpoint($bp-small)
+        right: -20%
+        top: 25%
+      +breakpoint(768px)
+        right: 0
         top: 0
+
+  .mesh-lines-top-left, .mesh-lines-bottom-left
+    left: 0
+
+  .mesh-lines-top-right, .mesh-lines-bottom-right
+    right: 0
