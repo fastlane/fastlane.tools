@@ -133,10 +133,11 @@
     text-transform: uppercase
     +breakpoint($bp-large)
       text-align: left
-
     a
       border: 2px solid $color-white
       display: inline-block
       line-height: 1
       margin: 0 5px
       padding: 10px
+      &.preserve-case
+        text-transform: none

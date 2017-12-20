@@ -1,8 +1,9 @@
 .footer
   background: $color-grey-95
-  color: $color-text-nav
+  color: $color-text-footer
   text-align: center
   line-height: 2.2
+  font-size: 14px
 
   ul
     list-style: none
@@ -13,7 +14,7 @@
     padding: 0 10px
 
   a
-    color: $color-text-nav
+    color: inherit
 
   hr
     background: $color-grey-62
@@ -26,6 +27,7 @@
     padding: 10px $layout-side-padding $layout-side-padding
 
   .footer__flex
+    align-items: center
     +breakpoint($bp-large)
       display: flex
 

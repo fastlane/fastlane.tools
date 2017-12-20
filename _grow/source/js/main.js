@@ -1,3 +1,4 @@
+import 'fl/nav';
 import 'fl/globals/polyfills';
 import 'fl/globals/init';
 

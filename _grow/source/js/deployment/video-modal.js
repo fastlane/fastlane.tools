@@ -72,7 +72,7 @@ function setupModalPlayer(player) {
    * @param {MouseEvent} e
    */
   function openModal(e) {
-    var pos = modalContainer.getBoundingClientRect();
+    const pos = modalContainer.getBoundingClientRect();
     const {left: x, top: y} = pos;
 
     vMedia.style.display = 'block';
@@ -104,10 +104,7 @@ function setupModalPlayer(player) {
   function closeModal(e, force) {
     if (force === true || e.keyCode == 27) {
       player.pauseVideo();
-
-      var pos = modalContainer.getBoundingClientRect();
-      var x = pos.left;
-      var y = pos.top;
+      const {left: x, top: y} = modalContainer.getBoundingClientRect();
 
       TweenMax.to(vMedia, EXPAND_DURATION_, {
         width: modalWidth + 'px',
