@@ -72,9 +72,14 @@ feature_modules:
       your other tasks
     cta@: >
       Capture screenshots on<br class="hide-gt-s">
-      <a class="preserve-case" href="https://docs.fastlane.tools/getting-started/ios/screenshots/">
+      <a
+        target="_blank"
+        class="preserve-case"
+        href="https://docs.fastlane.tools/getting-started/ios/screenshots/">
       iOS</a> and
-      <a href="https://docs.fastlane.tools/getting-started/android/screenshots/">
+      <a
+        target="_blank"
+        href="https://docs.fastlane.tools/getting-started/android/screenshots/">
       Android</a>
     illo:
       image: !g.static /source/images/screenshots-illo.svg
@@ -99,9 +104,14 @@ feature_modules:
       fastlane
     cta@: >
       Capture screenshots on<br class="hide-gt-s">
-      <a class="preserve-case" href="https://docs.fastlane.tools/getting-started/ios/beta-deployment/">
+      <a
+        target="_blank"
+        class="preserve-case"
+        href="https://docs.fastlane.tools/getting-started/ios/beta-deployment/">
       iOS</a> and
-      <a href="https://docs.fastlane.tools/getting-started/android/beta-deployment/">
+      <a
+        target="_blank"
+        href="https://docs.fastlane.tools/getting-started/android/beta-deployment/">
       Android</a>
     illo:
       image: !g.static /source/images/beta-illo.svg
@@ -123,9 +133,14 @@ feature_modules:
       - Automatically submit new versions of your app for review
     cta@: >
       Capture screenshots on<br class="hide-gt-s">
-      <a class="preserve-case" href="https://docs.fastlane.tools/getting-started/ios/appstore-deployment/">
+      <a
+        target="_blank"
+        class="preserve-case"
+        href="https://docs.fastlane.tools/getting-started/ios/appstore-deployment/">
       iOS</a> and
-      <a href="https://docs.fastlane.tools/getting-started/android/release-deployment/">
+      <a
+        target="_blank"
+        href="https://docs.fastlane.tools/getting-started/android/release-deployment/">
       Android</a>
     illo:
       image: !g.static /source/images/appstore-illo.svg
@@ -137,7 +152,7 @@ feature_modules:
     icon:
       image: !g.static /source/images/ic_codesigning.svg
       alt@: Code signing
-    headline@: Automatic code signing
+    headline@: Automatic code signing for iOS
     body@: |
       ##### Avoid the frustration of managing code signing identities.
 
@@ -146,7 +161,10 @@ feature_modules:
       - Once set up, every developer on your team can reproduce signed builds
       on any computer
     cta@: >
-      <a class="button button--codesigning" href="https://docs.fastlane.tools/codesigning/getting-started/">
+      <a
+        target="_blank"
+        class="button button--codesigning"
+        href="https://docs.fastlane.tools/codesigning/getting-started/">
       Simplify signing</a>
     illo:
       image: !g.static /source/images/codesigning-illo.svg
@@ -156,7 +174,7 @@ feature_modules:
 
 integrations:
   id: integrations
-  headline@: Continuous integration support
+  headline@: Continuous Integration support
   summary: >
     <i>fastlane</i> integrates effortlessly into existing CI services with
     support for:
@@ -184,9 +202,8 @@ integrations:
   headline_2@: Extend fastlane
   summary_2@: >
     Customize your deployment workflows using the hundreds of community built
-    <i>fastlane</i> <a href="https://docs.fastlane.tools/actions/">actions</a>
-    and <a href="https://docs.fastlane.tools/plugins/available-plugins/">plugins
-    </a>.
+    <i>fastlane</i> <a target="_blank" href="https://docs.fastlane.tools/actions/">actions</a>
+    and <a target="_blank" href="https://docs.fastlane.tools/plugins/available-plugins/">plugins</a>.
 
 tweet_carousel:
   quotation_mark:
@@ -221,16 +238,13 @@ work:
   id: how-it-works
   headline@: How fastlane works
   summary@: >
-    Check out the <a href="https://docs.fastlane.tools/">getting started</a>
-    docs on how to dive into fastlane
+    Fastlane lets you configure lanes to support your team’s deployment workflows.
+    Use a single command to run a lane!
   video_headline@: See it in action - getting started with fastlane
   code:
   - title@: Increment build number
-    text@: lorem ipsum
   - title@: Activate gym
-    text@: lorem ipsum
   - title@: Testflight
-    text@: lorem ipsum
 
   appstore_steps:
   - text@: Increment build number
@@ -258,7 +272,7 @@ work:
     icon:
       content: '#'
       color: '#D8D8D8'
-  - text@: Distribute to TestFlight
+  - text@: Upload to TestFlight
     icon:
       url: /assets/images/fastlane.png
 
@@ -411,8 +425,8 @@ contribute:
             </div>
             <div class="code__indent">
               <div class="line line--fn inactive">increment_build_number</div>
-              <div class="line line--fn inactive">gym</div>
-              <div class="line line--fn inactive">testflight</div>
+              <div class="line line--fn inactive">build_app</div>
+              <div class="line line--fn inactive">upload_to_testflight</div>
             </div>
             <div class="line inactive">
               <span class="line--end" id="emoji">end <img src="/assets/images/rocket.png" width="14"></span>
@@ -428,9 +442,9 @@ contribute:
               <span class="line--op">do</span>
             </div>
             <div class="code__indent">
-              <div class="line line--fn inactive">snapshot</div>
-              <div class="line line--fn inactive">gym</div>
-              <div class="line line--fn inactive">deliver</div>
+              <div class="line line--fn inactive">capture_screenshots</div>
+              <div class="line line--fn inactive">build_app</div>
+              <div class="line line--fn inactive">upload_to_app_store</div>
               <div class="line line--fn inactive">slack</div>
             </div>
             <div class="line inactive">
@@ -493,6 +507,9 @@ contribute:
     <div class="section__summary">
       {{ doc.contribute.summary | safe }}
     </div>
-    <a class="button button--contribute contribute__cta" href="https://docs.fastlane.tools/">Get started with fastlane</a>
+    <a
+      target="_blank"
+      class="button button--contribute contribute__cta"
+      href="https://docs.fastlane.tools/">Get started with fastlane</a>
   </div>
 </section>

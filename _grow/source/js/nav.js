@@ -40,16 +40,14 @@ function attachScroll_() {
 
   let target, hash;
   el.addEventListener('click', e => {
-    e.preventDefault();
     hash = e.target.hash;
-    if (!hash) {
-      return;
+    if (hash) {
+      e.preventDefault();
+      target = $(hash);
+      htmlBod.animate({
+        scrollTop: target.offset().top - SCROLL_OFFSET
+      }, ANIMATION_SPEED);
     }
-
-    target = $(hash);
-    htmlBod.animate({
-      scrollTop: target.offset().top - SCROLL_OFFSET
-    }, ANIMATION_SPEED);
   }, true);
   
 }

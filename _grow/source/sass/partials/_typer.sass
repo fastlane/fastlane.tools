@@ -1,26 +1,31 @@
-.typeahead__target
-  position: relative
-  display: inline-block
+.typeahead
+  h2,
+  &__target
+    font-family: "Courier New", monospace
 
-  &:after
-    display: block
-    content: ''
-    position: absolute
-    right: -5px
-    top: 5px
-    bottom: 5px
-    width: 1px
-    background: rgba(255,255,255,.8)
-    animation: blink 1000ms infinite
+  &__target
+    position: relative
+    display: inline-block
 
-  @keyframes blink
-    0%
-      opacity: 1
-    49%
-      opacity: 1
-    50%
-      opacity: 0
-    99%
-      opacity: 0
-    100%
-      opacity: 1
+    &:after
+      display: block
+      content: ''
+      position: absolute
+      right: -5px
+      top: 5px
+      bottom: 5px
+      width: 1px
+      background: rgba(255,255,255,.8)
+      animation: blink 1000ms infinite
+
+    @keyframes blink
+      0%
+        opacity: 1
+      49%
+        opacity: 1
+      50%
+        opacity: 0
+      99%
+        opacity: 0
+      100%
+        opacity: 1
