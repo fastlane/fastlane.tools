@@ -1,6 +1,7 @@
 import 'fl/nav';
 import 'fl/globals/polyfills';
 import 'fl/globals/init';
+import 'fl/vendor/autotrack'
 
 import 'fl/deployment/typer';
 import 'fl/deployment/step-loop';

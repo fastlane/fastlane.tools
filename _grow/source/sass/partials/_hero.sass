@@ -34,8 +34,9 @@
       margin-bottom: 60px
 
   &__hours-counter
-    border-bottom: 1px solid $color-blue-48
-    border-top: 1px solid $color-blue-48
+    +breakpoint($bp-medium)
+      border-bottom: 1px solid $color-blue-48
+      border-top: 1px solid $color-blue-48
     margin: 0 auto
     max-width: 400px
     padding: 20px 0

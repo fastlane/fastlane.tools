@@ -75,10 +75,16 @@ feature_modules:
       <a
         target="_blank"
         class="preserve-case"
+        ga-on="click"
+        ga-event-category="Screenshots"
+        ga-event-label="iOS"
         href="https://docs.fastlane.tools/getting-started/ios/screenshots/">
       iOS</a> and
       <a
         target="_blank"
+        ga-on="click"
+        ga-event-category="Screenshots"
+        ga-event-label="Android"
         href="https://docs.fastlane.tools/getting-started/android/screenshots/">
       Android</a>
     illo:
@@ -107,10 +113,16 @@ feature_modules:
       <a
         target="_blank"
         class="preserve-case"
+        ga-on="click"
+        ga-event-category="Distribute Beta"
+        ga-event-label="iOS"
         href="https://docs.fastlane.tools/getting-started/ios/beta-deployment/">
       iOS</a> and
       <a
         target="_blank"
+        ga-on="click"
+        ga-event-category="Distribute Beta"
+        ga-event-label="Android"
         href="https://docs.fastlane.tools/getting-started/android/beta-deployment/">
       Android</a>
     illo:
@@ -136,10 +148,16 @@ feature_modules:
       <a
         target="_blank"
         class="preserve-case"
+        ga-on="click"
+        ga-event-category="Publish"
+        ga-event-label="iOS"
         href="https://docs.fastlane.tools/getting-started/ios/appstore-deployment/">
       iOS</a> and
       <a
         target="_blank"
+        ga-on="click"
+        ga-event-category="Publish"
+        ga-event-label="Android"
         href="https://docs.fastlane.tools/getting-started/android/release-deployment/">
       Android</a>
     illo:
@@ -164,6 +182,8 @@ feature_modules:
       <a
         target="_blank"
         class="button button--codesigning"
+        ga-on="click"
+        ga-event-="Codesigning"
         href="https://docs.fastlane.tools/codesigning/getting-started/">
       Simplify signing</a>
     illo:
@@ -176,8 +196,7 @@ integrations:
   id: integrations
   headline@: Continuous Integration support
   summary: >
-    <i>fastlane</i> integrates effortlessly into existing CI services with
-    support for:
+    <i>Fastlane</i> integrates effortlessly into existing CI services, including:
   integrations:
     - image: !g.static /source/images/bitrise-logo.png
       alt@: Bitrise logo
@@ -202,8 +221,19 @@ integrations:
   headline_2@: Extend fastlane
   summary_2@: >
     Customize your deployment workflows using the hundreds of community built
-    <i>fastlane</i> <a target="_blank" href="https://docs.fastlane.tools/actions/">actions</a>
-    and <a target="_blank" href="https://docs.fastlane.tools/plugins/available-plugins/">plugins</a>.
+    <i>fastlane</i>
+    <a
+      ga-on="click"
+      ga-event-category="Extend Fastlane"
+      ga-event-label="Actions"
+      target="_blank"
+      href="https://docs.fastlane.tools/actions/">actions</a>
+    and
+      <a
+        ga-on="click"
+        ga-event-category="Extend Fastlane"
+        ga-event-label="Plugins"
+        target="_blank" href="https://docs.fastlane.tools/plugins/available-plugins/">plugins</a>.
 
 tweet_carousel:
   quotation_mark:
@@ -214,25 +244,25 @@ tweet_carousel:
     alt@: Twitter logo
   tweets:
     - quote@: >
-        1 - Was skeptical that a few words could generate certificates, provisioning files, etc. But @KrauseFx's @FastlaneTools have blown me away...
-      author@: ruddfawcett
-      time_and_location@: "11:36AM - 2 Sep 2015 from Manhattan, NY"
+        Fastlane is AMAZING! Thank you! ❤️❤️❤️
+      author@: nicollhunt
+      time_and_location@: "2:46 PM - 21 Jun 2017"
     - quote@: >
-        2 - Was skeptical that a few words could generate certificates, provisioning files, etc. But @KrauseFx's @FastlaneTools have blown me away...
-      author@: ruddfawcett
-      time_and_location@: "11:36AM - 2 Sep 2015 from Manhattan, NY"
+        Some free advice:  if you develop mobile apps you really need Fastlane.  It's a game changer.  <a href="https://fastlane.tools" target="_blank">https://fastlane.tools</a>
+      author@: deadwinter
+      time_and_location@: "7:01 PM - 5 Apr 2017"
     - quote@: >
-        3 - Was skeptical that a few words could generate certificates, provisioning files, etc. But @KrauseFx's @FastlaneTools have blown me away...
-      author@: ruddfawcett
-      time_and_location@: "11:36AM - 2 Sep 2015 from Manhattan, NY"
+        I'm mad I haven't been using <a href="https://twitter.com/FastlaneTools" target="_blank">@FastlaneTools</a> sooner.<br>This is 🔥🔥🔥!
+      author@: t_guidon
+      time_and_location@: "4:03 PM - 27 Jun 2017"
     - quote@: >
-        4 - Was skeptical that a few words could generate certificates, provisioning files, etc. But @KrauseFx's @FastlaneTools have blown me away...
-      author@: ruddfawcett
-      time_and_location@: "11:36AM - 2 Sep 2015 from Manhattan, NY"
+        I love <a href="https://twitter.com/FastlaneTools" target="_blank">@FastlaneTools</a> ❤️<br>Generating all the screenshots for iTunes Connect with one line of code feels like cheating.
+      author@: haawa799
+      time_and_location@: "8:42 AM - 11 Jun 2017"
     - quote@: >
-        5 - Was skeptical that a few words could generate certificates, provisioning files, etc. But @KrauseFx's @FastlaneTools have blown me away...
-      author@: ruddfawcett
-      time_and_location@: "11:36AM - 2 Sep 2015 from Manhattan, NY"
+        Software like <a href="https://twitter.com/FastlaneTools" target="_blank">@FastlaneTools</a> makes me glad to build stuff. Still kinda shocked that it's possible to send builds to Testflight w/ 1 command
+      author@: austinlouden
+      time_and_location@: "10:31 PM - 20 Feb 2017"
 
 work:
   id: how-it-works
@@ -247,17 +277,17 @@ work:
   - title@: Testflight
 
   appstore_steps:
-  - text@: Increment build number
+  - text@: Capture screenshots
     icon:
-      content: 'S'
+      content: '📸'
       color: '#3F40F8'
   - text@: Build your app
     icon:
-      content: 'g'
+      content: '💪'
       color: '#BD69F6'
   - text@: Upload to store
     icon:
-      content: '#'
+      content: '⬆️'
       color: '#D8D8D8'
   - text@: Notify slack
     icon:
@@ -266,11 +296,11 @@ work:
   beta_steps:
   - text@: Increment build number
     icon:
-      content: 'S'
+      content: '#️⃣'
       color: '#3F40F8'
   - text@: Build your app
     icon:
-      content: '#'
+      content: '💪'
       color: '#D8D8D8'
   - text@: Upload to TestFlight
     icon:
@@ -281,12 +311,20 @@ contribute:
   headline@: Become a fastlane contributor
   summary@: |
     The strong open source community that contributes to fastlane is part of
-    what makes it great. Together, we're building the most powerful set of
-    tools for deploying mobile apps. Check out our GitHub repository for
-    information on how to
-    <a href="https://github.com/fastlane/fastlane/blob/master/CONTRIBUTING.md">
-    contribute</a> and to become a
-    <a href="https://github.com/fastlane/fastlane/blob/master/CORE_CONTRIBUTOR.md">
+    what makes it great. With over 700 contributors, we're building the most
+    powerful set of tools for deploying mobile apps. Check out our GitHub
+    repository for information on how to 
+    <a
+      ga-on="click"
+      ga-event-category="Contributing"
+      ga-event-label="Contributing"
+      href="https://github.com/fastlane/fastlane/blob/master/CONTRIBUTING.md">
+      contribute</a> and to become a
+    <a
+      ga-on="click"
+      ga-event-category="Contributing"
+      ga-event-label="Core Contributing"
+      href="https://github.com/fastlane/fastlane/blob/master/CORE_CONTRIBUTOR.md">
     core contributor</a>.
 
 ---
@@ -312,7 +350,12 @@ contribute:
           <div class="features__cards__card__summary">
             {{ card.summary | safe }}
           </div>
-          <a class="button button--{{ card.class }} features__cards__card__cta" href="{{ card.cta.href }}">{{ card.cta.title }}</a>
+          <a
+            class="button button--{{ card.class }} features__cards__card__cta"
+            ga-on="click"
+            ga-event-category="Learn More"
+            ga-event-label="{{ card.class }}"
+            href="{{ card.cta.href }}">{{ card.cta.title }}</a>
         </div>
       {% endfor %}
     </div>
@@ -358,7 +401,7 @@ contribute:
     </div>
     <div class="integration__flex">
       {% for integration in doc.integrations.integrations %}
-        <a href="{{ integration.href }}" target="_blank">
+        <a href="{{ integration.href }}" target="_blank" ga-on="click" ga-event-category="Integration" ga-event-label="{{ integration.alt }}">
           <img class="integration__flex__item" src="{{ integration.image.url.path }}" alt="{{ integration.alt }}" width="{{ integration.width }}" height="{{ integration.height }}">
         </a>
       {% endfor %}
@@ -383,14 +426,14 @@ contribute:
             <img src="{{ doc.tweet_carousel.quotation_mark.src.url.path }}" alt="{{  doc.tweet_carousel.quotation_mark.alt }}">
           </span>
           <div class="tweets__quote">
-            {{ tweet.quote }}
+            {{ tweet.quote | safe }}
           </div>
           <span class="tweets__end-quote-laptop">
             <img src="{{  doc.tweet_carousel.quotation_mark.src.url.path }}" alt="{{  doc.tweet_carousel.quotation_mark.alt }}">
           </span>
           <div class="tweets__signature">
             <span class="tweets__logo"><img src="{{  doc.tweet_carousel.twitter_logo.src.url.path }}" alt="{{  doc.tweet_carousel.twitter_logo.alt }}"></span>
-            <b>@{{ tweet.author }}.</b> <span class="tweets__time-and-location">{{ tweet.time_and_location }}</span></div>
+            <b>@{{ tweet.author }}</b> <span class="tweets__time-and-location">{{ tweet.time_and_location }}</span></div>
         </div>
       {% endfor %}
     </div>

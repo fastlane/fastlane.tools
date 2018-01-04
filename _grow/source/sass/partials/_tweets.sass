@@ -1,7 +1,7 @@
 .tweets
   box-sizing: border-box
   height: auto
-  min-height: 80vh
+  min-height: 50vh
   overflow: hidden
   padding: 100px 0
   position: relative
@@ -23,7 +23,12 @@
     font-weight: 100
     margin: 0 auto 30px auto
     max-width: 80vw
+    a
+      &:visited,
+      &:link
+        color: $color-blue-95
     +breakpoint($bp-medium)
+      padding: 0 60px
       max-width: 600px
     +breakpoint($bp-large)
       max-width: 930px
