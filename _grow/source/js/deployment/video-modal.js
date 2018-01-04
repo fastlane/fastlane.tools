@@ -13,7 +13,8 @@ window.onYouTubeIframeAPIReady = function() {
     height: '100%',
     videoId: 'wOtANfkh2bI',
     events: {
-      onReady: initModal
+      onReady: initModal,
+      onStateChange: onPlayerStateChange
     }
   });
 }
@@ -23,23 +24,28 @@ const MAX_WIDTH_PERC_ = 0.25;
 const EXPAND_DURATION_ = 0.45; // seconds
 const RATIO = 16 / 9;
 
+var isMobile = document.body.classList.contains('mobile');
+
 /**
  * Sets up event listeners, etc for modal interaction.
  */
 function initModal(player) {
-  var isMobile = document.body.classList.contains('mobile');
-  return isMobile ?
-    setupMobilePlayer(player.target) :
-    setupModalPlayer(player.target);
+  if (!isMobile) {
+    return setupModalPlayer(player.target);
+  }
+}
+
+function onPlayerStateChange(e) {
+  if (e.data === YT.PlayerState.PLAYING) {
+    ga('send', 'event', 'Video', 'click', (isMobile ? 'mobile' : 'desktop'));
+  }
 }
 
 /**
  * Don't interrupt the normal mobile YouTube player flow if the user is
- * on a device.
+ * on a device. Noop for now.
  */
-function setupMobilePlayer(player) {
-  // noop for now
-}
+function setupMobilePlayer(player) { }
 
 /**
  * If we have an idea the user isn't on a mobile device, set up the
@@ -72,6 +78,7 @@ function setupModalPlayer(player) {
    * @param {MouseEvent} e
    */
   function openModal(e) {
+    ga('send', 'event', 'Watch Video', 'click');
     const pos = modalContainer.getBoundingClientRect();
     const {left: x, top: y} = pos;
 

@@ -5,7 +5,11 @@
         <img class="header__lockup__menu-button__open" src="{{ g.static('/source/images/menu-hamburger.svg').url.path }}" alt="Menu open">
         <img class="header__lockup__menu-button__close" src="{{ g.static('/source/images/menu-close.svg').url.path }}" alt="Menu close">
       </button>
-      <a href="{{ g.doc('/content/pages/index.html').url.path }}">
+      <a
+        ga-on="click"
+        ga-event-category="Navigation"
+        ga-event-label="Home"
+        href="{{ g.doc('/content/pages/index.html').url.path }}">
         <img class="header__lockup__logo" src="{{ g.static('/source/images/fastlane-logo-lockup.png').url.path }}" alt="Fastlane logo">
       </a>
     </div>
@@ -14,16 +18,32 @@
         <li class="header__nav__list__item">
           Use fastlane
           <ul class="header__nav__list header__nav__list--secondary">
-            <li class="header__nav__list__item header__nav__list__item--disc header__nav__list__item--screenshots"><a href="#screenshots">Automate screenshots</a></li>
-            <li class="header__nav__list__item header__nav__list__item--disc header__nav__list__item--beta"><a href="#beta">Beta deployments</a></li>
-            <li class="header__nav__list__item header__nav__list__item--disc header__nav__list__item--appstore"><a href="#app-store">App store deployments</a></li>
-            <li class="header__nav__list__item header__nav__list__item--disc header__nav__list__item--codesigning"><a href="#code-signing">Code signing</a></li>
+            <li class="header__nav__list__item header__nav__list__item--disc header__nav__list__item--screenshots">
+              <a ga-on="click" ga-event-category="Navigation" ga-event-label="Automate screenshots" href="#screenshots">Automate screenshots</a>
+            </li>
+            <li class="header__nav__list__item header__nav__list__item--disc header__nav__list__item--beta">
+              <a ga-on="click" ga-event-category="Navigation" ga-event-label="Beta deployments" href="#beta">Beta deployments</a>
+            </li>
+            <li class="header__nav__list__item header__nav__list__item--disc header__nav__list__item--appstore">
+              <a ga-on="click" ga-event-category="Navigation" ga-event-label="Deployments" href="#app-store">App store deployments</a>
+            </li>
+            <li class="header__nav__list__item header__nav__list__item--disc header__nav__list__item--codesigning">
+              <a ga-on="click" ga-event-category="Navigation" ga-event-label="Code signing" href="#code-signing">Code signing</a>
+            </li>
           </ul>
         </li>
-        <li class="header__nav__list__item"><a href="#integrations">Integrations</a></li>
-        <li class="header__nav__list__item"><a href="#how-it-works">How it works</a></li>
-        <li class="header__nav__list__item"><a href="#contribute">Contribute</a></li>
-        <li class="header__nav__list__item"><a target="_blank" href="https://docs.fastlane.tools/">Docs</a></li>
+        <li class="header__nav__list__item">
+          <a ga-on="click" ga-event-category="Navigation" ga-event-label="Integrations" href="#integrations">Integrations</a>
+        </li>
+        <li class="header__nav__list__item">
+          <a ga-on="click" ga-event-category="Navigation" ga-event-label="How it works" href="#how-it-works">How it works</a>
+        </li>
+        <li class="header__nav__list__item">
+          <a ga-on="click" ga-event-category="Navigation" ga-event-label="Contribute" href="#contribute">Contribute</a>
+        </li>
+        <li class="header__nav__list__item">
+          <a ga-on="click" ga-event-category="Navigation" ga-event-label="Docs" target="_blank" href="https://docs.fastlane.tools/">Docs</a>
+        </li>
       </ul>
     </nav>
   </div>
