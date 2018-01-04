@@ -35,11 +35,14 @@ function initMobile_() {
  * Intercept nav click, smooth scroll.
  */
 function attachScroll_() {
-  const targetElClass = '.header__nav__list--primary';
-  const el = document.querySelector(targetElClass);
+  const targetElClasses = ['.header__nav__list--primary', '.features__cards__card__cta'];
+  targetElClasses.forEach(sel => {
+    const els = [...document.querySelectorAll(sel)];
+    els.map(element => element.addEventListener('click', smoothScroll, true))
+  })
 
   let target, hash;
-  el.addEventListener('click', e => {
+  function smoothScroll (e) {
     hash = e.target.hash;
     if (hash) {
       e.preventDefault();
@@ -48,6 +51,5 @@ function attachScroll_() {
         scrollTop: target.offset().top - SCROLL_OFFSET
       }, ANIMATION_SPEED);
     }
-  }, true);
-  
+  }
 }
