@@ -1,0 +1,119 @@
+.hero
+  +light-text
+  align-items: center
+  background-color: $color-blue-28
+  display: flex
+  height: 600px
+  justify-content: center
+  padding: 0 $layout-side-padding / 2
+  text-align: center
+
+  &__wrapper
+    align-items: center
+    background-image: radial-gradient(rgba(9,8,71,0.65), 60%, transparent, 90%, transparent)
+    background-position: 50% 100%
+    background-repeat: no-repeat
+    display: flex
+    height: 600px
+    justify-content: center
+    left: 0
+    top: $layout-nav-height
+    width: 100%
+    z-index: 5
+    +breakpoint($bp-large)
+        background-image: radial-gradient(rgba(9,8,71,0.65), 50%, transparent, 60%, transparent)
+        background-position: 50% 0%
+        background-size: 75% 100%
+
+  &__summary
+    font-size: 20px
+    margin: 0 0 40px
+    opacity: .8
+    +breakpoint($bp-medium)
+      font-size: 25px
+      margin-bottom: 60px
+
+  &__hours-counter
+    +breakpoint($bp-medium)
+      border-bottom: 1px solid $color-blue-48
+      border-top: 1px solid $color-blue-48
+    margin: 0 auto
+    max-width: 400px
+    padding: 20px 0
+
+  &__hours-counter
+    &__headline
+      margin: 0 0 20px
+
+    &__counter
+      font: $font-h1
+      +breakpoint($bp-medium)
+        font-size: 80px
+
+  .section__headline
+    margin: 0 0 20px
+    +breakpoint($bp-medium)
+      margin-bottom: 30px
+
+  // Animated background
+  //
+  &__background
+    height: inherit
+    left: 0
+    overflow: hidden
+    position: absolute
+    top: $layout-nav-height
+    width: 100%
+
+  canvas
+    left: 0
+    position: absolute
+
+  svg
+    height: 100%
+    overflow: visible
+    position: absolute
+
+  #particle__wrapper
+    height: 100%
+    position: absolute
+    width: 100%
+
+  // SVG
+  .mesh-lines
+    fill: none
+    stroke-width: 1.5
+    stroke: $color-blue-95
+
+  .triangle
+    stroke-width: 1.8
+
+  .triangle__wrapper
+    &--left, &--right
+      height: 100%
+      position: absolute
+      width: 50%
+
+    &--left
+      left: -25%
+      top: 0
+      +breakpoint($bp-small)
+        left: -10%
+      +breakpoint(768px)
+        left: 0
+
+    &--right
+      right: -41%
+      top: 53%
+      +breakpoint($bp-small)
+        right: -20%
+        top: 25%
+      +breakpoint(768px)
+        right: 0
+        top: 0
+
+  .mesh-lines-top-left, .mesh-lines-bottom-left
+    left: 0
+
+  .mesh-lines-top-right, .mesh-lines-bottom-right
+    right: 0
