@@ -10,7 +10,7 @@
 
   &__wrapper
     align-items: center
-    background-image: radial-gradient(rgba(9,8,71,0.65), 60%, transparent, 90%, transparent)
+    background-image: radial-gradient(rgba(9,8,71,0.65), 60%, rgba(9,8,71,0), 90%, rgba(9,8,71,0))
     background-position: 50% 100%
     background-repeat: no-repeat
     display: flex
@@ -21,7 +21,7 @@
     width: 100%
     z-index: 5
     +breakpoint($bp-large)
-        background-image: radial-gradient(rgba(9,8,71,0.65), 50%, transparent, 60%, transparent)
+        background-image: radial-gradient(rgba(9,8,71,0.65), 50%, rgba(9,8,71,0), 60%, rgba(9,8,71,0))
         background-position: 50% 0%
         background-size: 75% 100%
 
@@ -105,6 +105,8 @@
     &--right
       right: -41%
       top: 53%
+      +breakpoint-under(320px)
+        display: none
       +breakpoint($bp-small)
         right: -20%
         top: 25%

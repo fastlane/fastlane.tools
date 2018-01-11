@@ -42,7 +42,11 @@ function attachScroll_() {
   })
 
   let target, hash;
+  const navItemClass = '.header__nav__list__item';
   function smoothScroll (e) {
+    // Remove selected style from all list items
+    $(navItemClass).removeClass('selected');
+
     hash = e.target.hash;
     if (hash) {
       e.preventDefault();
@@ -51,5 +55,10 @@ function attachScroll_() {
         scrollTop: target.offset().top - SCROLL_OFFSET
       }, ANIMATION_SPEED);
     }
+
+    // Add selected style to relevant list item
+    $(e.target).closest(navItemClass).addClass('selected');
+
+    // TODO : Remove selected item when user scrolls to another section
   }
 }
