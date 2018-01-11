@@ -59,6 +59,6 @@ function attachScroll_() {
     // Add selected style to relevant list item
     $(e.target).closest(navItemClass).addClass('selected');
 
-    // TODO : Remove selected item when user scrolls to another section
+    // TODO : Remove selected style from item when user scrolls to another section
   }
 }
