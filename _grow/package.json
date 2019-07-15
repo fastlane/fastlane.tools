@@ -27,7 +27,7 @@
     "webpack-stream": "^4.0.3",
     "tar": ">=4.4.2",
     "extend": ">=3.0.2",
-    "lodash": ">=4.17.11",
+    "lodash": ">=4.17.13",
     "randomatic": ">=3.0.0",
     "minimatch": ">=3.0.2"
   },
