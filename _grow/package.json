@@ -30,7 +30,7 @@
     "webpack-stream": "^4.0.3",
     "tar": ">=4.4.2",
     "extend": ">=3.0.2",
-    "lodash": ">=4.17.13",
+    "lodash": ">=4.17.19",
     "randomatic": ">=3.0.0",
     "minimatch": ">=3.0.2"
   },
