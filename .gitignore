@@ -10,5 +10,6 @@ activate
 node_modules/
 
 # grow
+.grow
 build
 dist

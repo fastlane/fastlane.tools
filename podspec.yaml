@@ -29,7 +29,6 @@ preprocessors:
 deployments:
   default:
     destination: local
-    out_dir: ../
     env:
       name: gh-pages
       host: fastlane.tools
