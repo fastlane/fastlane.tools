@@ -1,5 +1,5 @@
 # fastlane.tools
-_A [grow](https://github.com/grow/grow) static site.
+_A [grow](https://github.com/grow/grow) static site._
 
 ## Requirements
 1. [uv](https://docs.astral.sh/uv/) - for managing virtual environments and dependencies
