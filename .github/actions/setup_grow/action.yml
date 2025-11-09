@@ -17,4 +17,5 @@ runs:
       uses: astral-sh/setup-uv@v6
 
     - name: Install Grow dependencies
+      shell: bash
       run: uv run grow install
