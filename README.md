@@ -12,6 +12,3 @@ _A [grow](https://github.com/grow/grow) static site.
 4. `uv run grow install`
 5. `uv run grow run` 
 6. Open your browser to `http://localhost:8080`
-
-## Building
-1. `uv run grow deploy`
