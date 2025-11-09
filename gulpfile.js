@@ -11,6 +11,6 @@ fs.readdirSync('./gulp/tasks').filter(function(file) {
   require('./gulp/tasks/' + file);
 });
 
-var build = gulp.parallel('build_js', 'build_css');
+var build = gulp.parallel('build_js', 'build_css', 'build_redirects');
 gulp.task('build', build);
 gulp.task('default', gulp.series('build', 'watch'));

@@ -2,8 +2,8 @@
 _A [grow](https://github.com/grow/grow) static site.
 
 ## Requirements
-1. `uv` - for managing virtual environments and dependencies
-2. `Node.js` - for JavaScript dependencies
+1. [uv](https://docs.astral.sh/uv/) - for managing virtual environments and dependencies
+2. [Node.js](https://nodejs.org/en/download) - for JavaScript dependencies
 
 ## Local Development
 1. `uv venv`
