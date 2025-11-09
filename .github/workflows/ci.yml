@@ -2,9 +2,8 @@ name: CI
 on:
   pull_request:
     branches:
-      - master
+      - gh-pages
   push:
-
 
 jobs:
   test:
