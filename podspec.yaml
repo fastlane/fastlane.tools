@@ -31,5 +31,5 @@ deployments:
     destination: local
     env:
       name: gh-pages
-      host: ibotpeaches.github.io/fastlane.tools
+      host: fastlane.tools
       scheme: https
