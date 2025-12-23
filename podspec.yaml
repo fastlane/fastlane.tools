@@ -29,7 +29,9 @@ preprocessors:
 deployments:
   default:
     destination: local
+  github:
+    destination: local
     env:
-      name: gh-pages
+      name: github
       host: fastlane.tools
       scheme: https

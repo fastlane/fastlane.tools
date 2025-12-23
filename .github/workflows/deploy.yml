@@ -25,7 +25,7 @@ jobs:
         uses: ./.github/actions/setup_grow
 
       - name: Build website
-        run: uv run grow build
+        run: uv run grow build --deployment github
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
