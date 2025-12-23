@@ -1,12 +1,15 @@
-.idea*
-.DS_STORE
-._DS_STORE
-node_modules/
-node_modules
-.sass-cache
-.sass-cache/
-*.css.map
-npm-debug.log
-._*
+# uv
+.venv
+activate
 
-fastlane/report.xml
+# ide
+.idea
+.vscode
+
+# node
+node_modules/
+
+# grow
+.grow
+build
+dist

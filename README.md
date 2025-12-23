@@ -1,26 +1,14 @@
-Run `fastlane generate` to generate the short links
+# fastlane.tools
+_A [grow](https://github.com/grow/grow) static site._
 
-```
-https://fastlane.tools/sigh
-```
+## Requirements
+1. [uv](https://docs.astral.sh/uv/) - for managing virtual environments and dependencies
+2. [Node.js](https://nodejs.org/en/download) - for JavaScript dependencies
 
-### Making changes
-
-fastlane uses an open source platform called Grow.  Follow the [installation instructions](https://github.com/grow/grow) to get started.
-
-Once grow is installed, `cd` into `_grow` and run `grow install`.
-
-Execute `grow run`, and open your browser to `http://localhost:8080`.
-
-Once you're happy with your changes, run `grow deploy`, which will publish all changes to the root directory.
-
-### Installation
-
-grow requires Python 2. The suggested method for running specific versions of Python is [pyenv](https://github.com/pyenv/pyenv).
-
-```
-brew install pyenv
-pyenv install 2.7.14
-pyenv local 2.7.14
-pip install grow
-```
+## Local Development
+1. `uv venv`
+2. `source .venv/bin/activate`
+3. `uv sync`
+4. `uv run grow install`
+5. `uv run grow run` 
+6. Open your browser to `http://localhost:8080`

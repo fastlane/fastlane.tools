@@ -1,0 +1,35 @@
+# Project meta
+title@: fastlane
+description: App automation done right
+
+# Localization
+localization:
+  default_locale: en
+
+# Routes config
+home: /content/pages/index.yaml
+static_dirs:
+  - static_dir: /dist/
+    serve_at: /assets/
+  - static_dir: /source/images/
+    serve_at: /assets/images/
+
+# Website meta
+meta:
+  favicon_path: /source/images/favicon.ico
+  google_analytics_id: UA-18658848-9
+
+# Preprocessors
+preprocessors:
+  - kind: gulp
+    build_task: build
+    run_task: default
+
+# Deployments
+deployments:
+  default:
+    destination: local
+    env:
+      name: gh-pages
+      host: fastlane.tools
+      scheme: https

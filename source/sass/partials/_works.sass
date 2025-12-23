@@ -1,0 +1,206 @@
+.works
+  +light-text
+  background: $color-blue-95
+  padding: 60px 0
+
+  // App store hidden at first
+  #steps-appstore
+    position: absolute
+    width: 100%
+    top: 0
+    opacity: 0
+    transition: opacity 250ms linear
+    z-index: 3
+    &.active
+      opacity: 1
+
+  h2,
+  .section__summary
+    text-align: center
+
+  h2
+    margin-bottom: 30px
+
+  a
+    color: $color-green-95
+
+  .section__wrapper
+    max-width: 900px !important
+    overflow-x: hidden
+
+  .animation
+    align-items: center
+    display: flex
+    margin: 60px auto
+    justify-content: space-between
+
+    &__steps,
+    &__window
+      flex: 0 1 48%
+      position: relative
+
+    &__steps
+      max-width: 350px
+
+  .animation__window
+    border-radius: 10px
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .5)
+    overflow: hidden
+    position: relative
+
+    header
+      background: $color-almost-white
+      font-size: 36px
+      height: 40px
+      line-height: 40px
+      padding: 0 10px
+      color: #ccc
+
+  .code
+    background: $color-almost-black
+    box-sizing: border-box
+    display: block
+    padding: 30px 70px
+
+    article:last-child
+      margin-top: 2em
+
+    &__block
+      position: relative
+
+    &__indent
+      text-indent: 1em
+      .line:before
+        left: calc(1em - 20px)
+
+  .current-loc
+    background: url(../../images/code-arrow.png) center center no-repeat
+    background-size: 7px 7px
+    content: ''
+    height: 7px
+    opacity: 0
+    position: absolute
+    top: .5em
+    left: -1em
+    width: 7px
+
+  .line
+    position: relative
+    transition: color 250ms linear
+
+    &.inactive,
+    &.inactive span
+      color: $color-grey-57 !important
+      &:before
+        display: none
+
+    /* Types of code */
+    &--end
+      color: $color-grey-41
+    &--sym
+      color: $color-green-95
+    &--op
+      color: $color-purple-95
+      &.active:before
+        display: block
+
+  .steps
+    list-style: none
+    margin: 0
+    padding: 0
+    height: 540px
+
+    li:last-child .steps__ctn
+      margin-bottom: 0
+
+    li
+      position: relative
+      opacity: 0
+      &:not(:last-child):after
+        background: url(../../images/step-arrow.png) bottom center no-repeat
+        background-size: contain
+        bottom: 0
+        content: ''
+        height: 62px
+        left: 50%
+        position: absolute
+        transform: translate(-50%)
+        transition: bottom 200ms ease-in, opacity 200ms ease-out
+        transition-delay: 1000ms
+        width: 40px
+      .steps__ctn
+        border: 2px solid transparent
+        transition: border-color 200ms linear, box-shadow 200ms linear
+      &.active
+        &:after
+          bottom: -32px
+        .steps__ctn
+          border-color: $color-green-95
+          box-shadow: 0 0 8px $color-green-95 inset
+
+    &__ctn
+      align-items: center
+      background: #fff
+      border-radius: 10px
+      padding: 15px 12px
+      margin: 0 0 40px
+      display: flex
+      color: $color-text
+      box-shadow: 0 0 8px rgba(0, 0, 0, .5)
+      position: relative
+      z-index: 2
+
+    &__icon
+      font-family: 'Source Sans Pro'
+      font-weight: 100
+      font-size: 32px
+      margin-right: 20px
+      width: 75px
+      height: 75px
+      line-height: 76px
+      text-align: center
+      color: white
+      border-radius: 75px
+  hr
+    width: 100px
+    height: 3px
+    background: $color-green-95
+    margin: 40px auto
+
+  +breakpoint-under(768px)
+    .steps__ctn
+      padding: 10px 12px
+
+    .steps .steps__ctn
+      margin-bottom: 30px
+
+    .steps li.active:after
+      bottom: -29px
+
+    .steps#steps-beta
+      margin-bottom: -100px
+
+    .animation
+      margin-top: 15px
+      flex-direction: column
+      &__steps
+        transition: padding 250ms linear
+        width: 90vw
+        &.expanded
+          padding-bottom: 140px
+      &__window
+        border-radius: 0
+        margin-bottom: 40px
+        width: 100vw
+        header
+          display: none
+
+  +breakpoint-under(480px)
+    .animation__window code
+      padding: 30px 40px
+
+  +breakpoint-under(768px)
+    .steps__icon
+      width: 55px
+      height: 55px
+      line-height: 50px
