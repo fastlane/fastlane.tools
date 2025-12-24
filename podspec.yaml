@@ -13,6 +13,8 @@ static_dirs:
     serve_at: /assets/
   - static_dir: /source/images/
     serve_at: /assets/images/
+  - static_dir: /source/static
+    serve_at: /
 
 # Website meta
 meta:
