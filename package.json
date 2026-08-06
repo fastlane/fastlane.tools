@@ -16,7 +16,7 @@
         "fancy-log": "^2.0.0",
         "fstream": ">=1.0.12",
         "gulp": "^4.0.2",
-        "gulp-autoprefixer": "^4.1.0",
+        "gulp-autoprefixer": "^10.0.0",
         "gulp-concat": "^2.6.1",
         "gulp-debug": "^3.2.0",
         "gulp-plumber": "^1.2.0",
